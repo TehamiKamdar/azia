@@ -91,6 +91,8 @@
                 },
                 error: function (response) {
 
+                    $("#ap-tabContent").removeClass("spin-active");
+                    $("#gridLoader3").addClass("display-hidden");
                 }
             }).done(function () {
                 $("#ap-tabContent").removeClass("spin-active");
@@ -311,45 +313,7 @@
                 urlParams.append("type", type);
                 sendAjaxRequest(url, urlParams, dataObj);
 
-                {{--$("#advertiserWrapper").html("");--}}
-                {{--$.ajax({--}}
-                {{--    url: '{{ route("publisher.advertiser-types") }}',--}}
-                {{--    type: 'GET',--}}
-                {{--    data: dataObj,--}}
-                {{--    beforeSend: function () {--}}
-                {{--    },--}}
-                {{--    success: function (response) {--}}
-
-                {{--        $("#advertiserWrapper").html(response.html);--}}
-
-                {{--        $("#ap-overview").html("");--}}
-
-                {{--        let url = new URL(document.URL);--}}
-                {{--        let urlParams = url.searchParams;--}}
-
-                {{--        if(url.search) {--}}
-                {{--            if(urlParams.has(`type`)) {--}}
-                {{--                urlParams.delete(`type`);--}}
-                {{--            }--}}
-                {{--            if(urlParams.has(`source`)) {--}}
-                {{--                urlParams.delete(`source`);--}}
-                {{--            }--}}
-                {{--            if(urlParams.has('page')) {--}}
-                {{--                urlParams.delete('page');--}}
-                {{--                urlParams.append('page', "1");--}}
-                {{--            }--}}
-                {{--        }--}}
-                {{--        if(response.source)--}}
-                {{--        {--}}
-                {{--            urlParams.append("source", response.source);--}}
-                {{--        }--}}
-                {{--        urlParams.append("type", type);--}}
-                {{--        sendAjaxRequest(url, urlParams, dataObj);--}}
-                {{--    },--}}
-                {{--    error: function (response) {--}}
-
-                {{--    }--}}
-                {{--});--}}
+                
             });
             $("#SearchByPromotionalMethod").change(() => {
                 filterAdvertiser("search_by_promotional_method", "SearchByPromotionalMethod")
@@ -428,6 +392,7 @@
                                         <div class="dropdown-divider"></div>
                                         @php
                                             $queryParams = request()->all();
+                                            // dd(request());
                                         @endphp
                                         <a href="{{ route("publisher.export-advertisers", array_merge(['type' => 'xlsx'], $queryParams)) }}" class="dropdown-item" id="exportXLSX">
                                             <i class="la la-file-excel"></i> Excel (XLSX)</a>

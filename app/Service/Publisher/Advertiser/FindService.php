@@ -56,6 +56,7 @@ class FindService extends BaseController
             if($type && $message)
                 Session::put($type, $message);
 
+            dd($request->ajax());
             if($request->ajax()) {
                 $countries = [];
                 $categories = [];
@@ -67,7 +68,6 @@ class FindService extends BaseController
                 }
 
                 $advertisers = new Advertiser();
-
                 if(empty($section) || in_array($section, [AdvertiserApply::STATUS_NEW, $section == AdvertiserApply::STATUS_NOT_ACTIVE]))
                 {
                     $advertisers = $advertisers::where('is_active',1)->where('is_show',1)->select([

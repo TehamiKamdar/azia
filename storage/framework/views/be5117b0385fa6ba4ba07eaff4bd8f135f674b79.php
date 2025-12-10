@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('1354e423-f844-4813-9171-ecb69f82bd52')): $__env->markAsRenderedOnce('1354e423-f844-4813-9171-ecb69f82bd52');
+<?php if (! $__env->hasRenderedOnce('b450de71-1a98-489a-a3bc-801f973963e9')): $__env->markAsRenderedOnce('b450de71-1a98-489a-a3bc-801f973963e9');
 $__env->startPush('styles'); ?>
 
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/select2.min.css")); ?>"/>
@@ -14,7 +14,7 @@ $__env->startPush('styles'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('e6cfcd40-4ae4-438c-a522-f29eb2afc2f0')): $__env->markAsRenderedOnce('e6cfcd40-4ae4-438c-a522-f29eb2afc2f0');
+<?php if (! $__env->hasRenderedOnce('d3880cc7-c91f-4d3e-963f-f687c91707b0')): $__env->markAsRenderedOnce('d3880cc7-c91f-4d3e-963f-f687c91707b0');
 $__env->startPush('scripts'); ?>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/select2.full.min.js")); ?>"></script>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/drawer.js")); ?>"></script>
@@ -91,6 +91,8 @@ $__env->startPush('scripts'); ?>
                 },
                 error: function (response) {
 
+                    $("#ap-tabContent").removeClass("spin-active");
+                    $("#gridLoader3").addClass("display-hidden");
                 }
             }).done(function () {
                 $("#ap-tabContent").removeClass("spin-active");
@@ -428,6 +430,7 @@ $__env->startPush('scripts'); ?>
                                         <div class="dropdown-divider"></div>
                                         <?php
                                             $queryParams = request()->all();
+                                            // dd(request());
                                         ?>
                                         <a href="<?php echo e(route("publisher.export-advertisers", array_merge(['type' => 'xlsx'], $queryParams))); ?>" class="dropdown-item" id="exportXLSX">
                                             <i class="la la-file-excel"></i> Excel (XLSX)</a>
