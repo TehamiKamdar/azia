@@ -23,7 +23,7 @@
               </nav>
             </li>
 
-           
+
 
 
              <li class="nav-item">
@@ -40,7 +40,7 @@
               <nav class="az-menu-sub">
                 <a href="{{ route("publisher.reports.performance-by-transactions.list") }}" class="nav-link">Analytical Report</a>
                 <a href="{{ route("publisher.reports.transactions.list") }}" class="nav-link">All Conversions</a>
-               
+
               </nav>
             </li>
 
@@ -79,7 +79,7 @@
                   </div><!-- media-body -->
                 </div><!-- media -->
                 <div class="media">
-                  <div class="az-img-user"><img src="../img/faces/face4.jpg" alt=""></div> 
+                  <div class="az-img-user"><img src="../img/faces/face4.jpg" alt=""></div>
                   <div class="media-body">
                     <p><strong>Althea Cabardo</strong> just created a new blog post</p>
                     <span>Mar 13 02:56am</span>
@@ -114,7 +114,10 @@
               <a href="" class="dropdown-item"><i class="typcn typcn-edit"></i> Edit Profile</a>
               <a href="" class="dropdown-item"><i class="typcn typcn-time"></i> Activity Logs</a>
               <a href="" class="dropdown-item"><i class="typcn typcn-cog-outline"></i> Account Settings</a>
-              <a href="page-signin.html" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+              <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logoutform').submit();" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+              <form id="logoutform" action="{{ route('logout') }}" method="POST" class="display-hidden">
+                                    {{ csrf_field() }}
+                                </form>
             </div><!-- dropdown-menu -->
           </div>
         </div><!-- az-header-right -->

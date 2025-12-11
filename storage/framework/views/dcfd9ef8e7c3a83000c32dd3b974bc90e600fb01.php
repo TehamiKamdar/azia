@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('a22dbdbe-447f-4458-ad4c-cbf5beafee57')): $__env->markAsRenderedOnce('a22dbdbe-447f-4458-ad4c-cbf5beafee57');
+<?php if (! $__env->hasRenderedOnce('f08df338-65b5-4693-9a8d-fa8a7388eff2')): $__env->markAsRenderedOnce('f08df338-65b5-4693-9a8d-fa8a7388eff2');
 $__env->startPush('styles'); ?>
     <script>
         function changeLimit()
@@ -111,22 +111,22 @@ $__env->startPush('styles'); ?>
     </script>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('20d820ed-8140-4d72-b6ae-14f61822dfc8')): $__env->markAsRenderedOnce('20d820ed-8140-4d72-b6ae-14f61822dfc8');
+<?php if (! $__env->hasRenderedOnce('25030b99-23c0-4598-b49a-2a7c8d117976')): $__env->markAsRenderedOnce('25030b99-23c0-4598-b49a-2a7c8d117976');
 $__env->startPush('scripts'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
 <?php $__env->startSection("content"); ?>
 
-    <div class="contents">
+    <div class="az-content az-content-dashboard">
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
 
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Text Links</h4>
+                            <h4 class="az-dashboard-title">Text Links</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <div class="project-search project-search--height global-shadow mr-md-10 mt-md-1">
                                     <div class="d-flex align-items-center user-member__form">
@@ -163,7 +163,7 @@ $__env->startPush('scripts'); ?>
                         <div class="project-top-wrapper d-flex justify-content-end flex-wrap mb-25 mt-n10">
 
                             <div class="content-center mt-10">
-                                <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0 mr-10">Total
+                                <p class="az-dashboard-text">Total
                                     Results: <strong id="totalResults"><?php echo e($total); ?></strong></p>
                             </div><!-- End: .content-center -->
 

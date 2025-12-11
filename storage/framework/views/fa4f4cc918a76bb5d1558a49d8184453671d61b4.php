@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('bb89e836-7a48-47cc-bf96-25962c2bd917')): $__env->markAsRenderedOnce('bb89e836-7a48-47cc-bf96-25962c2bd917');
+<?php if (! $__env->hasRenderedOnce('d0b122f5-67c7-4ef5-a696-282a8d2f45b6')): $__env->markAsRenderedOnce('d0b122f5-67c7-4ef5-a696-282a8d2f45b6');
 $__env->startPush('styles'); ?>
     <style>
         .user-member__form .form-control {
@@ -7,7 +7,7 @@ $__env->startPush('styles'); ?>
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('1c8c9362-b4c3-44ff-a926-5651f7c8f566')): $__env->markAsRenderedOnce('1c8c9362-b4c3-44ff-a926-5651f7c8f566');
+<?php if (! $__env->hasRenderedOnce('ca77429a-b553-4e1a-b59b-82848230c5f0')): $__env->markAsRenderedOnce('ca77429a-b553-4e1a-b59b-82848230c5f0');
 $__env->startPush('scripts'); ?>
     <script>
         function changeLimit()
@@ -136,15 +136,15 @@ $__env->startPush('scripts'); ?>
 
 <?php $__env->startSection("content"); ?>
 
-    <div class="contents">
+    <div class="az-content az-content-dashboard">
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
 
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Coupons</h4>
+                            <h4 class="az-dashboard-title">Coupons</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <div class="project-search project-search--height global-shadow mr-md-10 mt-md-1">
                                     <div class="d-flex align-items-center user-member__form">
@@ -179,19 +179,17 @@ $__env->startPush('scripts'); ?>
                         </div>
 
                         <div class="project-top-wrapper d-flex justify-content-end flex-wrap mb-25 mt-n10">
-
                             <div class="content-center mt-10">
-                                <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0 mr-10">Total
+                                <p class="az-dashboard-text">Total
                                     Results: <strong id="totalResults"><?php echo e($total); ?></strong></p>
                             </div><!-- End: .content-center -->
-
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <?php echo $__env->make("partial.admin.alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -207,4 +205,4 @@ $__env->startPush('scripts'); ?>
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make("layouts.publisher.panel_app", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\lenovo\Downloads\application\resources\views/template/publisher/creatives/coupons/list.blade.php ENDPATH**/ ?>
+<?php echo $__env->make("layouts.publisher.publisher_panel", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\lenovo\Downloads\application\resources\views/template/publisher/creatives/coupons/list.blade.php ENDPATH**/ ?>

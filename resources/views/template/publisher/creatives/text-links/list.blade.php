@@ -118,15 +118,15 @@
 
 @section("content")
 
-    <div class="contents">
+    <div class="az-content az-content-dashboard">
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
 
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Text Links</h4>
+                            <h4 class="az-dashboard-title">Text Links</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <div class="project-search project-search--height global-shadow mr-md-10 mt-md-1">
                                     <div class="d-flex align-items-center user-member__form">
@@ -163,7 +163,7 @@
                         <div class="project-top-wrapper d-flex justify-content-end flex-wrap mb-25 mt-n10">
 
                             <div class="content-center mt-10">
-                                <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0 mr-10">Total
+                                <p class="az-dashboard-text">Total
                                     Results: <strong id="totalResults">{{ $total }}</strong></p>
                             </div><!-- End: .content-center -->
 

@@ -21,13 +21,16 @@
         <?php echo $__env->yieldPushContent('styles'); ?>
         <?php echo $__env->yieldPushContent('extended_styles'); ?>
         <link href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/fontawesome-free/css/all.min.css")); ?>" rel="stylesheet">
-    <link href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/ionicons/css/ionicons.min.css")); ?>" rel="stylesheet">
-    <link href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/typicons.font/typicons.css")); ?>" rel="stylesheet">
-    <link href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/flag-icon-css/css/flag-icon.min.css")); ?>" rel="stylesheet">
+        <link href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/ionicons/css/ionicons.min.css")); ?>" rel="stylesheet">
+        <link href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/typicons.font/typicons.css")); ?>" rel="stylesheet">
+        <link href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/flag-icon-css/css/flag-icon.min.css")); ?>" rel="stylesheet">
+        <!-- Bootstrap 5 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- azia CSS -->
+        <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/css/azia.css")); ?>">
 
-    <!-- azia CSS -->
-    <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/css/azia.css")); ?>">
-        
 
     </head>
 
@@ -35,14 +38,14 @@
 
         <div class="notification-wrapper top-right"></div>
 
-       
+
         <?php echo $__env->make("partial.publisher.new_header", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <main class="main-content">
             <?php echo $__env->yieldContent("content"); ?>
             <?php echo $__env->make("partial.publisher.footer", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </main>
 
-      
+
 
 
 <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/jquery/jquery.min.js")); ?>"></script>
@@ -338,7 +341,7 @@
             });
         </script>
 
-         
+
 
         <?php if(env("APP_ENV") == "production" && empty(request()->search)): ?>
             <!-- Hotjar Tracking Code for https://app.linkscircle.com/ -->
@@ -356,4 +359,19 @@
 
     </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Optional: Add some interactivity
+    document.addEventListener('DOMContentLoaded', function() {
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // You can add custom logic here
+                console.log('Accordion toggled:', this.querySelector('.advertiser-name').textContent.trim());
+            });
+        });
+    });
+</script>
 <?php /**PATH C:\Users\lenovo\Downloads\application\resources\views/layouts/publisher/publisher_panel.blade.php ENDPATH**/ ?>

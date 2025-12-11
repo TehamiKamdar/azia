@@ -56,7 +56,7 @@ class FindService extends BaseController
             if($type && $message)
                 Session::put($type, $message);
 
-            dd($request->ajax());
+
             if($request->ajax()) {
                 $countries = [];
                 $categories = [];
@@ -247,7 +247,7 @@ class FindService extends BaseController
 //                $advertiserType = $advertiserType->selectRaw('sid, source as advertiser, count(source) as total_advertisers')->where("status", true)->where("type", "api")->groupBy("source")->get()->toArray();
 //            }
 
-            return view("template.publisher.advertisers.find", compact('view', 'countries', 'categories', 'methods', 'advertisers'));
+            return view("template.publisher.advertisers.find", compact('view', 'countries', 'categories', 'methods'));
         }
         catch (\Exception $exception)
         {

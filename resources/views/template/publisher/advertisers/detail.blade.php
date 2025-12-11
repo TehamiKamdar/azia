@@ -1,4 +1,4 @@
-@extends("layouts.publisher.panel_app")
+@extends("layouts.publisher.publisher_panel")
 
 @pushonce('styles')
 
