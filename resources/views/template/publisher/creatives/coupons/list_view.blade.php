@@ -1,8 +1,8 @@
 <!-- Start Table Responsive -->
 <div class="table-responsive">
-    <table class="table mb-0 table-hover table-borderless border-0">
+    <table class="table table-hover table-primary border-0">
         <thead>
-        <tr class="userDatatable-header">
+        <tr>
             <th style="width: 20%;">
                 <span class="userDatatable-title">Advertiser</span>
             </th>
@@ -60,7 +60,7 @@
         @else
             <tr>
                 <td colspan="5">
-                    <h6 class="text-center mt-5">Coupons Data Not Exist</h6>
+                    <h6 class="text-center my-2">Coupons Data Not Exist</h6>
                 </td>
             </tr>
         @endif

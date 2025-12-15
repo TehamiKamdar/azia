@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('f08df338-65b5-4693-9a8d-fa8a7388eff2')): $__env->markAsRenderedOnce('f08df338-65b5-4693-9a8d-fa8a7388eff2');
+<?php if (! $__env->hasRenderedOnce('08822f06-a8aa-4e7a-9ce7-5f137ebcd119')): $__env->markAsRenderedOnce('08822f06-a8aa-4e7a-9ce7-5f137ebcd119');
 $__env->startPush('styles'); ?>
     <script>
         function changeLimit()
@@ -17,10 +17,22 @@ $__env->startPush('styles'); ?>
                 }
             });
         }
-        function copyLink(id)
-        {
-            copyToClipboard(document.getElementById(`trackingURL${id}`))
-            normalMsg({"message": `Tracking Successfully Copied.`, "success": true});
+        function copyText(button, text) {
+            if (!text) return;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+
+                button.innerText = 'Copied!';
+                button.disabled = true;
+                button.classList.add("text-success");
+
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.disabled = false;
+                    button.classList.remove("text-success");
+                }, 1500);
+            });
         }
         function sendAjaxRequest(url, urlParams, dataObj)
         {
@@ -111,79 +123,86 @@ $__env->startPush('styles'); ?>
     </script>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('25030b99-23c0-4598-b49a-2a7c8d117976')): $__env->markAsRenderedOnce('25030b99-23c0-4598-b49a-2a7c8d117976');
+<?php if (! $__env->hasRenderedOnce('90836bb3-9bfe-4a16-8933-7184515a5b2c')): $__env->markAsRenderedOnce('90836bb3-9bfe-4a16-8933-7184515a5b2c');
 $__env->startPush('scripts'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
 <?php $__env->startSection("content"); ?>
 
+    
+
     <div class="az-content az-content-dashboard">
+        <div class="container-fluid">
+            <div class="az-content-body">
+                <div class="az-dashboard-one-title">
+                    <div>
+                        <h2 class="az-dashboard-title">Text Links</h2>
+                        <p class="az-dashboard-text">
+                            Total <span id="totalAdvertiser"><?php echo e($total); ?></span> links found
+                        </p>
+                    </div>
+                </div>
+                <div class="az-dashboard-nav">
+                    <nav class="nav">
+                        <a class="nav-link active" data-toggle="tab" href="#">Text Links</a>
+                    </nav>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="shop-breadcrumb">
+                    <nav class="nav">
+                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
+                    </nav>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top" style="top: 20px;">
+                            <!-- Header -->
+                            <div class="card-header bg-primary text-white py-3 px-4">
+                                <h5 class="mb-0 d-flex align-items-center fw-semibold">
+                                    <i class="fas fa-sliders-h me-2"></i> Filters
+                                </h5>
+                            </div>
 
-                        <div class="breadcrumb-main">
-                            <h4 class="az-dashboard-title">Text Links</h4>
-                            <div class="breadcrumb-action justify-content-center flex-wrap">
-                                <div class="project-search project-search--height global-shadow mr-md-10 mt-md-1">
-                                    <div class="d-flex align-items-center user-member__form">
-                                        <span data-feather="search"></span>
-                                        <input class="form-control mr-sm-2 border-0 box-shadow-none" id="SearchByName" type="text" placeholder="Search by Name" aria-label="Search" value="<?php echo e(request()->search_by_name); ?>">
+                            <!-- Body -->
+                            <div class="card-body p-4">
+                                <!-- Search Filter -->
+                                <div class="mb-4 pb-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="mb-0 fw-semibold d-flex align-items-center">
+                                            <i class="fas fa-search me-2 text-muted"></i> Search
+                                        </h6>
+                                        <a href="javascript:void(0)" id="clearSearchByName"
+                                            onclick="clearFilter('clearSearchByName')"
+                                            class="text-danger <?php echo e(request()->search_by_name ? '' : 'd-none'); ?>">
+                                            <i class="fas fa-times me-1"></i> Clear
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="project-category d-flex align-items-center mt-xl-10 mt-15">
-                                    <a href="javascript:void(0)" id="clearSearchByName"
-                                       onclick="clearFilter('clearSearchByName')"
-                                       class="margin-left-minus-60px margin-top-minus-11px <?php echo e(request()->search_by_name ? null : "display-hidden"); ?>">
-                                        <small>Clear</small>
-                                    </a>
-                                </div>
-                                <div class="dropdown action-btn">
-                                    <button class="btn btn-sm btn-default btn-white dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="la la-download"></i> Export
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <span class="dropdown-item">Export With</span>
-                                        <div class="dropdown-divider"></div>
-                                        <?php
-                                            $queryParams = request()->all();
-                                        ?>
-                                        <a href="<?php echo e(route("publisher.creatives.text-links.export", array_merge(['type' => 'xlsx'], $queryParams))); ?>" class="dropdown-item" id="exportXLSX">
-                                            <i class="la la-file-excel"></i> Excel (XLSX)</a>
-                                        <a href="<?php echo e(route("publisher.creatives.text-links.export", array_merge(['type' => 'csv'], $queryParams))); ?>" class="dropdown-item" id="exportCSV">
-                                            <i class="la la-file-csv"></i> CSV</a>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text bg-light border-end-0">
+                                            <i class="fas fa-search text-muted"></i>
+                                        </span>
+                                        <input type="text" class="form-control border-start-0" id="SearchByName"
+                                            placeholder="Search by name..." value="<?php echo e(request()->search_by_name); ?>">
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="project-top-wrapper d-flex justify-content-end flex-wrap mb-25 mt-n10">
-
-                            <div class="content-center mt-10">
-                                <p class="az-dashboard-text">Total
-                                    Results: <strong id="totalResults"><?php echo e($total); ?></strong></p>
-                            </div><!-- End: .content-center -->
-
-                        </div>
-
                     </div>
+                    <div class="col-lg-9 col-md-4 col-sm-12">
+                        <!-- End: Top Bar -->
+                        <?php echo $__env->make("partial.admin.alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        <div class="tab-content mt-25" id="ap-tabContent">
+                            <?php echo $__env->make("template.publisher.widgets.loader-3", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                            <div class="tab-pane fade show active" id="ap-overview" role="tabpanel"
+                                aria-labelledby="ap-overview-tab">
+                                <?php echo $__env->make("template.publisher.creatives.text-links.list_view", compact('links'), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                            </div>
+                        </div>
+                    </div><!-- End: .columns-2 -->
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <?php echo $__env->make("partial.admin.alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    <div class="orderDatatable global-shadow border py-30 px-sm-30 px-20 bg-white radius-xl w-100 mb-30" id="ap-overview">
-                        <?php echo $__env->make("template.publisher.creatives.text-links.list_view", compact('links'), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    </div><!-- End: .userDatatable -->
-                </div><!-- End: .col -->
-            </div>
-        </div>
-
     </div>
 
 <?php $__env->stopSection(); ?>

@@ -595,8 +595,8 @@
                     </nav>
 
                     <nav class="nav">
-                        <a class="nav-link" href="#"><i class="far fa-save"></i> Save Report</a>
-                        <a class="nav-link" href="#"><i class="far fa-file-excel"></i> Export to CSV</a>
+                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
                 </div>

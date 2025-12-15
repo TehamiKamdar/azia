@@ -91,7 +91,7 @@
             align-items: center;
             justify-content: center;
             border: 1px solid #eee;
-            font-size: 2rem;
+            font-size: 1rem;
             color: #666;
         }
         .detail-item {
@@ -138,7 +138,7 @@
                 padding: 15px;
             }
         }
-    </style>
+</style>
 <div class="accordion" id="advertisersAccordion">
     <?php if(count($advertisers)): ?>
         <?php $__currentLoopData = $advertisers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $advertiser): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -279,15 +279,14 @@
             </div>
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </div>
-</div>
-<?php else: ?>
-    <div class="card">
-        <div class="card-body">
-            <h6 class="text-center">Advertiser Data Not Exist</h6>
+        <?php else: ?>
+        <div class="card">
+            <div class="card-body">
+                <h6 class="text-center">Advertiser Data Not Exist</h6>
+            </div>
         </div>
-    </div>
-<?php endif; ?>
+        <?php endif; ?>
+</div>
 
 
 

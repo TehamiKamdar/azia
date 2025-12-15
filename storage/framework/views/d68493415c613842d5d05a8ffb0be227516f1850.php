@@ -1,9 +1,9 @@
-<?php if (! $__env->hasRenderedOnce('ccfa2396-fad3-4e38-9bba-b3b02745d128')): $__env->markAsRenderedOnce('ccfa2396-fad3-4e38-9bba-b3b02745d128');
+<?php if (! $__env->hasRenderedOnce('67818f15-837e-4535-a8e7-0b45906c9c35')): $__env->markAsRenderedOnce('67818f15-837e-4535-a8e7-0b45906c9c35');
 $__env->startPush('styles'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('8374b706-d2cc-467a-8efa-1d2e87a0da97')): $__env->markAsRenderedOnce('8374b706-d2cc-467a-8efa-1d2e87a0da97');
+<?php if (! $__env->hasRenderedOnce('ca6d3901-05e1-432f-b821-15bf7134df75')): $__env->markAsRenderedOnce('ca6d3901-05e1-432f-b821-15bf7134df75');
 $__env->startPush('scripts'); ?>
 
 <?php $__env->stopPush(); endif; ?>
@@ -33,4 +33,4 @@ $__env->startPush('scripts'); ?>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make("layouts.publisher.panel_app", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\lenovo\Downloads\application\resources\views/template/publisher/tools/deeplink/view.blade.php ENDPATH**/ ?>
+<?php echo $__env->make("layouts.publisher.publisher_panel", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\lenovo\Downloads\application\resources\views/template/publisher/tools/deeplink/view.blade.php ENDPATH**/ ?>

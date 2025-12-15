@@ -18,10 +18,22 @@
                 }
             });
         }
-        function copyLink(id)
-        {
-            copyToClipboard(document.getElementById(`trackingURL${id}`))
-            normalMsg({"message": `Deep Link Successfully Copied.`, "success": true});
+        function copyText(button, text) {
+            if (!text) return;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+
+                button.innerText = 'Copied!';
+                button.disabled = true;
+                button.classList.add("text-success");
+
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.disabled = false;
+                    button.classList.remove("text-success");
+                }, 1500);
+            });
         }
         function sendAjaxRequest(url, urlParams, dataObj)
         {

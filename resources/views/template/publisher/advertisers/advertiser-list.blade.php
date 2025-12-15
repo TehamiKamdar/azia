@@ -91,7 +91,7 @@
             align-items: center;
             justify-content: center;
             border: 1px solid #eee;
-            font-size: 2rem;
+            font-size: 1rem;
             color: #666;
         }
         .detail-item {
@@ -138,7 +138,7 @@
                 padding: 15px;
             }
         }
-    </style>
+</style>
 <div class="accordion" id="advertisersAccordion">
     @if(count($advertisers))
         @foreach($advertisers as $advertiser)
@@ -282,15 +282,14 @@
             </div>
         </div>
         @endforeach
-    </div>
-</div>
-@else
-    <div class="card">
-        <div class="card-body">
-            <h6 class="text-center">Advertiser Data Not Exist</h6>
+        @else
+        <div class="card">
+            <div class="card-body">
+                <h6 class="text-center">Advertiser Data Not Exist</h6>
+            </div>
         </div>
-    </div>
-@endif
+        @endif
+</div>
 
 {{-- <div class="projectDatatable project-table  global-shadow border p-10 bg-white radius-xl w-100 mx-0">
     <div class="table-responsive">
