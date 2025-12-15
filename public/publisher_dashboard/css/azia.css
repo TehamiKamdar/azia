@@ -105,7 +105,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --blue: #3366ff;
+  --blue: #5b47fb;
   --indigo: #5b47fb;
   --purple: #6f42c1;
   --pink: #f10075;
@@ -118,7 +118,7 @@
   --white: #fff;
   --gray: #7987a1;
   --gray-dark: #3b4863;
-  --primary: #3366ff;
+  --primary: #5b47fb;
   --secondary: #7987a1;
   --success: #3bb001;
   --info: #17a2b8;
@@ -230,7 +230,7 @@ sup {
   top: -.5em; }
 
 a {
-  color: #3366ff;
+  color: #5b47fb;
   text-decoration: none;
   background-color: transparent; }
   a:hover {
@@ -1870,8 +1870,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #3366ff;
-  border-color: #3366ff; }
+  background-color: #5b47fb;
+  border-color: #5b47fb; }
   .btn-primary:hover {
     color: #fff;
     background-color: #0d49ff;
@@ -1883,8 +1883,8 @@ fieldset:disabled a.btn {
     box-shadow: 0 0 0 0.2rem rgba(82, 125, 255, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #3366ff;
-    border-color: #3366ff; }
+    background-color: #5b47fb;
+    border-color: #5b47fb; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
@@ -2077,22 +2077,22 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(88, 99, 122, 0.5); }
 
 .btn-outline-primary {
-  color: #3366ff;
-  border-color: #3366ff; }
+  color: #5b47fb;
+  border-color: #5b47fb; }
   .btn-outline-primary:hover {
     color: #fff;
-    background-color: #3366ff;
-    border-color: #3366ff; }
+    background-color: #5b47fb;
+    border-color: #5b47fb; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
     box-shadow: 0 0 0 0.2rem rgba(51, 102, 255, 0.5); }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #3366ff;
+    color: #5b47fb;
     background-color: transparent; }
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #3366ff;
-    border-color: #3366ff; }
+    background-color: #5b47fb;
+    border-color: #5b47fb; }
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-primary.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(51, 102, 255, 0.5); }
@@ -2246,7 +2246,7 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #3366ff;
+  color: #5b47fb;
   text-decoration: none; }
   .btn-link:hover {
     color: #0039e6;
@@ -2480,7 +2480,7 @@ input[type="button"].btn-block {
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #3366ff; }
+    background-color: #5b47fb; }
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #7987a1;
     pointer-events: none;
@@ -2758,8 +2758,8 @@ input[type="button"].btn-block {
   opacity: 0; }
   .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
-    border-color: #3366ff;
-    background-color: #3366ff; }
+    border-color: #5b47fb;
+    background-color: #5b47fb; }
   .custom-control-input:focus ~ .custom-control-label::before {
     box-shadow: 0 0 0 0.2rem rgba(51, 102, 255, 0.25); }
   .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
@@ -2805,8 +2805,8 @@ input[type="button"].btn-block {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e"); }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  border-color: #3366ff;
-  background-color: #3366ff; }
+  border-color: #5b47fb;
+  background-color: #5b47fb; }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e"); }
@@ -2973,7 +2973,7 @@ input[type="button"].btn-block {
     width: 1rem;
     height: 1rem;
     margin-top: -0.25rem;
-    background-color: #3366ff;
+    background-color: #5b47fb;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2994,7 +2994,7 @@ input[type="button"].btn-block {
   .custom-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background-color: #3366ff;
+    background-color: #5b47fb;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3018,7 +3018,7 @@ input[type="button"].btn-block {
     margin-top: 0;
     margin-right: 0.2rem;
     margin-left: 0.2rem;
-    background-color: #3366ff;
+    background-color: #5b47fb;
     border: 0;
     border-radius: 1rem;
     transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3111,7 +3111,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #3366ff; }
+  background-color: #5b47fb; }
 
 .nav-fill > .nav-link,
 .nav-fill .nav-item {
@@ -3599,7 +3599,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #3366ff;
+  color: #5b47fb;
   background-color: #fff;
   border: 1px solid #cdd4e0; }
   .page-link:hover {
@@ -3625,8 +3625,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #3366ff;
-  border-color: #3366ff; }
+  background-color: #5b47fb;
+  border-color: #5b47fb; }
 
 .page-item.disabled .page-link {
   color: #7987a1;
@@ -3691,7 +3691,7 @@ input[type="button"].btn-block {
 
 .badge-primary {
   color: #fff;
-  background-color: #3366ff; }
+  background-color: #5b47fb; }
   a.badge-primary:hover, a.badge-primary:focus {
     color: #fff;
     background-color: #0040ff; }
@@ -3900,7 +3900,7 @@ input[type="button"].btn-block {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #3366ff;
+  background-color: #5b47fb;
   transition: width 0.6s ease; }
   @media (prefers-reduced-motion: reduce) {
     .progress-bar {
@@ -3962,8 +3962,8 @@ input[type="button"].btn-block {
   .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #3366ff;
-    border-color: #3366ff; }
+    background-color: #5b47fb;
+    border-color: #5b47fb; }
   .list-group-item + .list-group-item {
     border-top-width: 0; }
     .list-group-item + .list-group-item.active {
@@ -4777,7 +4777,7 @@ a.close.disabled {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #3366ff !important; }
+  background-color: #5b47fb !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
@@ -4877,7 +4877,7 @@ button.bg-dark:focus {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #3366ff !important; }
+  border-color: #5b47fb !important; }
 
 .border-secondary {
   border-color: #7987a1 !important; }
@@ -7113,7 +7113,7 @@ button.bg-dark:focus {
   color: #fff !important; }
 
 .text-primary {
-  color: #3366ff !important; }
+  color: #5b47fb !important; }
 
 a.text-primary:hover, a.text-primary:focus {
   color: #0039e6 !important; }
@@ -7736,7 +7736,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .btn-az-secondary {
   color: #fff;
-  background-color: #3366ff;
+  background-color: #5b47fb;
   border-color: #1a53ff; }
   .btn-az-secondary:hover {
     color: #fff;
@@ -7749,7 +7749,7 @@ a.text-dark:hover, a.text-dark:focus {
     box-shadow: 0 0 0 0.2rem rgba(60, 109, 255, 0.5); }
   .btn-az-secondary.disabled, .btn-az-secondary:disabled {
     color: #fff;
-    background-color: #3366ff;
+    background-color: #5b47fb;
     border-color: #1a53ff; }
   .btn-az-secondary:not(:disabled):not(.disabled):active, .btn-az-secondary:not(:disabled):not(.disabled).active,
   .show > .btn-az-secondary.dropdown-toggle {
@@ -7843,7 +7843,7 @@ a.text-dark:hover, a.text-dark:focus {
       background-size: 65%;
       background-repeat: no-repeat;
       background-position: 55% 45%;
-      background-color: #3366ff;
+      background-color: #5b47fb;
       line-height: 17px;
       display: none; }
     .ckbox span:empty {
@@ -7900,7 +7900,7 @@ a.text-dark:hover, a.text-dark:focus {
     margin: 0; }
     .rdiobox input[type='radio']:checked + span:before {
       border-color: transparent;
-      background-color: #3366ff; }
+      background-color: #5b47fb; }
     .rdiobox input[type='radio']:checked + span:after {
       display: block; }
     .rdiobox input[type='radio'][disabled] + span,
@@ -7962,7 +7962,7 @@ a.text-dark:hover, a.text-dark:focus {
       left: 37px; }
 
 .az-toggle-secondary.on {
-  background-color: #3366ff; }
+  background-color: #5b47fb; }
 
 .az-toggle-success.on {
   background-color: #3bb001; }
@@ -8436,7 +8436,7 @@ a.text-dark:hover, a.text-dark:focus {
       background-color: #fff;
       color: #031b4e; }
     .ui-datepicker .ui-datepicker-calendar .ui-datepicker-today a, .ui-datepicker .ui-datepicker-calendar .ui-datepicker-today a:hover, .ui-datepicker .ui-datepicker-calendar .ui-datepicker-today a:focus {
-      background-color: #3366ff;
+      background-color: #5b47fb;
       color: #fff; }
 
 .ui-datepicker-multi .ui-datepicker-group {
@@ -8504,7 +8504,7 @@ a.text-dark:hover, a.text-dark:focus {
         .datetimepicker table th.prev:hover span::before, .datetimepicker table th.prev:focus span::before,
         .datetimepicker table th.next:hover span::before,
         .datetimepicker table th.next:focus span::before {
-          color: #3366ff; }
+          color: #5b47fb; }
     .datetimepicker table th.prev span::before {
       content: '\f3cf';
       left: 0; }
@@ -8519,17 +8519,17 @@ a.text-dark:hover, a.text-dark:focus {
       color: #1c273c; }
       .datetimepicker table th.switch:hover, .datetimepicker table th.switch:focus {
         background-color: #fff;
-        color: #3366ff; }
+        color: #5b47fb; }
     .datetimepicker table td {
       font-size: 0.875rem;
       text-align: center; }
       .datetimepicker table td.old, .datetimepicker table td.new {
         color: #97a3b9; }
       .datetimepicker table td.active, .datetimepicker table td.active:hover, .datetimepicker table td.active:focus {
-        background-color: #3366ff;
+        background-color: #5b47fb;
         color: #fff; }
     .datetimepicker table span.active, .datetimepicker table span.active:hover, .datetimepicker table span.active:focus {
-      background-color: #3366ff;
+      background-color: #5b47fb;
       color: #fff; }
   .datetimepicker .datetimepicker-days table thead tr:first-child th {
     height: 38px; }
@@ -8614,7 +8614,7 @@ a.text-dark:hover, a.text-dark:focus {
           background-color: #e3e7ed;
           cursor: pointer; }
         .az-datetimepicker > .datepicker_inner_container > .datepicker_calendar td.active {
-          background-color: #3366ff;
+          background-color: #5b47fb;
           color: #fff; }
     .az-datetimepicker > .datepicker_inner_container > .datepicker_timelist {
       float: none;
@@ -8627,7 +8627,7 @@ a.text-dark:hover, a.text-dark:focus {
         .az-datetimepicker > .datepicker_inner_container > .datepicker_timelist > div.timelist_item:hover, .az-datetimepicker > .datepicker_inner_container > .datepicker_timelist > div.timelist_item:focus {
           background-color: #e3e7ed; }
         .az-datetimepicker > .datepicker_inner_container > .datepicker_timelist > div.timelist_item.active {
-          background-color: #3366ff;
+          background-color: #5b47fb;
           color: #fff; }
 
 /* Picker JS */
@@ -8646,7 +8646,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .picker-picked {
   font-weight: 500;
-  color: #3366ff; }
+  color: #5b47fb; }
 
 /* ###### 5.11 Select2 ###### */
 .select2-results__option {
@@ -8978,7 +8978,7 @@ a.text-dark:hover, a.text-dark:focus {
   @media (min-width: 992px) {
     .az-footer .container {
       padding: 10px 0 0; } }
-  
+
   .az-footer .container-fluid,
   .az-footer .container-sm,
   .az-footer .container-md,
@@ -10050,7 +10050,7 @@ body {
     .az-navbar > .container {
       padding: 0; } }
   @media (min-width: 992px) {
-    
+
     .az-navbar > .container-fluid,
     .az-navbar > .container-sm,
     .az-navbar > .container-md,
@@ -11226,7 +11226,7 @@ body {
       .az-breadcrumbs .breadcrumb-item a:hover {
         color: #97a3b9; }
     .az-breadcrumbs .breadcrumb-item.active {
-      color: #3366ff; }
+      color: #5b47fb; }
     .az-breadcrumbs .breadcrumb-item + .breadcrumb-item {
       padding-left: 8px; }
       .az-breadcrumbs .breadcrumb-item + .breadcrumb-item::before {
@@ -11944,8 +11944,8 @@ body {
           margin-left: 30px; } }
     .card-dashboard-one .card-body-top label {
       font-size: 12px;
-      margin-bottom: 3px; 
-      margin-top: 3px; 
+      margin-bottom: 3px;
+      margin-top: 3px;
     }
       @media (min-width: 576px) {
         .card-dashboard-one .card-body-top label {
@@ -12322,8 +12322,8 @@ body {
       justify-content: center; }
     .card-dashboard-calendar .ui-datepicker .ui-datepicker-calendar .ui-datepicker-today a {
       background-color: transparent;
-      border: 2px solid #3366ff;
-      color: #3366ff;
+      border: 2px solid #5b47fb;
+      color: #5b47fb;
       font-weight: 700; }
 
 .card-dashboard-twelve {
@@ -12883,7 +12883,7 @@ body {
   border-right-width: 1px; }
 
 .bd-primary {
-  border-color: #3366ff; }
+  border-color: #5b47fb; }
 
 .bd-success {
   border-color: #3bb001; }
@@ -22240,7 +22240,7 @@ body {
       transform: scale(1.05);
       border-width: 0; }
   .image-grouped .text-avatar {
-    color: #3366ff;
+    color: #5b47fb;
     font-size: 11px;
     font-weight: 600; }
 
@@ -31356,7 +31356,7 @@ body {
   color: #000; }
 
 .tx-primary {
-  color: #3366ff; }
+  color: #5b47fb; }
 
 .tx-success {
   color: #3bb001; }

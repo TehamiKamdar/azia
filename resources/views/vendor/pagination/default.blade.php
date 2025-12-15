@@ -1,14 +1,19 @@
-<nav class="atbd-page mt-3">
-    <ul class="atbd-pagination d-flex" id="publisherPagination">
+<style>li{list-style:none}</style>
+<nav class="atbd-page mt-4">
+    <ul class="atbd-pagination d-flex align-items-center" id="publisherPagination">
         @if ($paginator->hasPages())
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
-                <li class="atbd-pagination__item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
-                    <span class="atbd-pagination__link pagination-control" aria-hidden="true">&lsaquo;</span>
+                <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
+                    <span class="page-link" aria-hidden="true">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
                 </li>
             @else
-                <li class="atbd-pagination__item">
-                    <a class="atbd-pagination__link pagination-control" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</a>
+                <li class="page-item">
+                    <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
                 </li>
             @endif
 
@@ -16,16 +21,22 @@
             @foreach ($elements as $element)
                 {{-- "Three Dots" Separator --}}
                 @if (is_string($element))
-                    <li class="atbd-pagination__item disabled" aria-disabled="true"><span class="atbd-pagination__link">{{ $element }}</span></li>
+                    <li class="page-item disabled" aria-disabled="true">
+                        <span class="page-link">{{ $element }}</span>
+                    </li>
                 @endif
 
                 {{-- Array Of Links --}}
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
-                            <li class="atbd-pagination__item" aria-current="page"><span class="atbd-pagination__link active">{{ $page }}</span></li>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">{{ $page }}</span>
+                            </li>
                         @else
-                            <li class="atbd-pagination__item"><a class="atbd-pagination__link" href="{{ $url }}">{{ $page }}</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                            </li>
                         @endif
                     @endforeach
                 @endif
@@ -33,15 +44,20 @@
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
-                <li class="atbd-pagination__item">
-                    <a class="atbd-pagination__link" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">&rsaquo;</a>
+                <li class="page-item">
+                    <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                 </li>
             @else
-                <li class="atbd-pagination__item disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
-                    <span class="atbd-pagination__link" aria-hidden="true">&rsaquo;</span>
+                <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+                    <span class="page-link" aria-hidden="true">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
                 </li>
             @endif
         @endif
+
         @if(
             request()->route()->getName() == "publisher.reports.transactions.list"
             || request()->route()->getName() == "publisher.find-advertisers"
@@ -51,8 +67,7 @@
             || request()->route()->getName() == "publisher.creatives.coupons.list"
             || request()->route()->getName() == "publisher.creatives.text-links.list"
         )
-
-            <li class="ml-2 atbd-pagination__item">
+            <li class="ms-2">
                 <div class="paging-option">
                     @if(request()->route()->getName() == "publisher.find-advertisers" || request()->route()->getName() == "publisher.own-advertisers")
                         @php
@@ -97,7 +112,7 @@
                             }
                         @endphp
                     @endif
-                    <select name="limit" id="limit" class="page-selection">
+                    <select name="limit" id="limit" class="form-select form-select-sm page-selection" style="width: auto;">
                         <option value="10" @if($limit == "10") selected @endif>10/page</option>
                         <option value="20" @if($limit == "20") selected @endif>20/page</option>
                         <option value="40" @if($limit == "40") selected @endif>40/page</option>

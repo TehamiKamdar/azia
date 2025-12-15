@@ -4,8 +4,236 @@
 
 <link rel="stylesheet" href="{{ \App\Helper\Static\Methods::staticAsset("vendor_assets/css/select2.min.css") }}" />
 <style>
+    :root {
+        --primary-color: #5b47fb;
+        --primary-light: rgba(91, 71, 251, 0.1);
+        --border-color: #eef1f7;
+    }
+
     .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
         display: none;
+    }
+
+    .select2-container {
+        z-index: 9999 !important;
+    }
+
+    .select2-dropdown {
+        z-index: 999999 !important;
+    }
+
+    /* Brand Tabs Styling */
+    .nav-tabs-wrapper {
+        position: relative;
+    }
+
+    .nav-tabs {
+        gap: 2px;
+    }
+
+    .nav-tabs .nav-item .nav-link {
+        background: transparent;
+        border: none;
+        color: #6c757d;
+        font-weight: 500;
+        font-size: 0.875rem;
+        border-radius: 6px 6px 0 0 !important;
+        position: relative;
+        transition: all 0.2s ease;
+        margin-bottom: -1px;
+        border: 1px solid transparent;
+        border-bottom: none;
+    }
+
+    .nav-tabs .nav-item .nav-link:hover {
+        color: var(--primary-color);
+        background-color: var(--primary-light);
+        border-color: var(--border-color) var(--border-color) transparent;
+    }
+
+    .nav-tabs .nav-item .nav-link.active {
+        color: var(--primary-color);
+        background-color: white;
+        border-color: var(--border-color) var(--border-color) transparent;
+        border-top: 2px solid var(--primary-color);
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Active state with top-left-right borders only */
+    .nav-tabs .nav-item .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: white;
+        z-index: 2;
+    }
+
+    /* View Tabs Styling */
+    .view-tabs {
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        overflow: hidden;
+        background: white;
+    }
+
+    .view-tabs .btn {
+        background: transparent;
+        border: none;
+        color: #6c757d;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0;
+        transition: all 0.2s ease;
+        position: relative;
+    }
+
+    .view-tabs .btn:first-child {
+        border-right: 1px solid var(--border-color);
+    }
+
+    .view-tabs .btn:hover {
+        color: var(--primary-color);
+        background-color: var(--primary-light);
+    }
+
+    .view-tabs .btn-check:checked + .btn {
+        color: var(--primary-color);
+        background-color: white;
+        font-weight: 600;
+        position: relative;
+    }
+
+    /* Active state with top-left-right borders for view tabs */
+    .view-tabs .btn-check:checked + .btn::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        height: 2px;
+        background: var(--primary-color);
+        border-radius: 6px 6px 0 0;
+    }
+
+    .view-tabs .btn-check:checked + .btn {
+        border-top: 2px solid var(--primary-color);
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        margin-top: -1px;
+    }
+
+    /* Sleek minimal design */
+    .nav-tabs .nav-link,
+    .view-tabs .btn {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    /* Icons styling */
+    .nav-tabs .nav-link i,
+    .view-tabs .btn i {
+        font-size: 0.875rem;
+        width: 16px;
+        text-align: center;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .d-flex.justify-content-between {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+        }
+
+        .view-toggle-container {
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .nav-tabs {
+            flex-wrap: wrap;
+        }
+
+        .nav-tabs .nav-item {
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    /* Border radius fix */
+    .nav-tabs .nav-link {
+        border-top-left-radius: 6px !important;
+        border-top-right-radius: 6px !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+
+    .form-select[multiple]:focus,
+    .form-select[multiple]:active {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.25rem rgba(91, 71, 251, 0.25);
+    }
+
+    .form-check-input:checked {
+        background-color: var(--primary-color) !important;
+        border-color: var(--primary-color) !important;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.25rem rgba(91, 71, 251, 0.25);
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    .btn-primary:hover {
+        background-color: #4a3bd9;
+        border-color: #4a3bd9;
+    }
+
+    .btn-outline-secondary:hover {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    .sticky-lg-top {
+        z-index: 1020;
+    }
+
+    .border-bottom,
+    .border-top {
+        border-color: #eef1f7 !important;
+    }
+
+    .text-muted {
+        color: #6c757d !important;
+    }
+
+    .fw-semibold {
+        font-weight: 600;
+    }
+
+    option:checked {
+        background-color: rgba(91, 71, 251, 0.1);
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+
+    .form-check-label {
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .form-check-label:hover {
+        color: var(--primary-color);
     }
 
     .loaded-spin {
@@ -156,7 +384,7 @@
         $(`#${key}`).hide();
     }
     function showClear(key) {
-        $(`#clear${key}`).show();
+        $(`#clear${key}`).removeClass('d-none', true);
     }
     function pushInfo(id, name) {
         $("#advertiser_id").val(id);
@@ -260,48 +488,45 @@
         $("#SearchByCountry, #SearchByPromotionalMethod, #SearchByCategory").select2({
             placeholder: "Please Select",
             dropdownCssClass: "tag",
-            allowClear: false
+            allowClear: false,
+
         });
         $("#SearchByName").keyup(() => {
+            console.log("Keyword");
             filterAdvertiser("search_by_name", "SearchByName");
             if (!$("#SearchByName").val()) {
                 $(`#clearSearchByName`).hide();
             }
         });
         $("#SearchByCountry").change(() => {
+            console.log('Country')
             filterAdvertiser("search_by_country", "SearchByCountry")
         });
         $("#SearchByCategory").change(() => {
+            console.log('Category');
             filterAdvertiser("search_by_category", "SearchByCategory")
         });
-        $("#advertiserType").change(() => {
-            let type = $("#advertiserType").val();
+        $("input[name='advertiserType']").change(() => {
+            let type = $("input[name='advertiserType']:checked").val();
             let dataObj = { type };
 
             let url = new URL(document.URL);
             let urlParams = url.searchParams;
 
             if (url.search) {
-                if (urlParams.has(`type`)) {
-                    urlParams.delete(`type`);
+                if (urlParams.has('type')) {
+                    urlParams.delete('type');
                 }
-                // if(urlParams.has(`source`)) {
-                //     urlParams.delete(`source`);
-                // }
                 if (urlParams.has('page')) {
                     urlParams.delete('page');
                     urlParams.append('page', "1");
                 }
             }
-            // if(response.source)
-            // {
-            //     urlParams.append("source", response.source);
-            // }
+
             urlParams.append("type", type);
             sendAjaxRequest(url, urlParams, dataObj);
-
-
         });
+
         $("#SearchByPromotionalMethod").change(() => {
             filterAdvertiser("search_by_promotional_method", "SearchByPromotionalMethod")
         });
@@ -356,22 +581,17 @@
     <div class="az-content az-content-dashboard">
         <div class="container-fluid">
             <div class="az-content-body">
-                <div class="az-dashboard-title-one">
-                    <h2 class="az-dashboard-title">Advertisers</h2>
-                    <div class="breadcrumb-action justify-content-center flex-wrap">
-                        <div class="action-btn">
-                            <div class="form-group mb-0">
-                                <span class="az-dashboard-text">
-                                    Total <span id="totalAdvertiser">0</span> advertisers found
-                                </span>
-                            </div>
-                        </div>
+                <div class="az-dashboard-one-title">
+                    <div>
+                        <h2 class="az-dashboard-title">Brands</h2>
+                        <p class="az-dashboard-text">
+                            Total <span id="totalAdvertiser">0</span> brands found
+                        </p>
                     </div>
                 </div>
-                <div class="az-dashboard-nav mt-4">
+                <div class="az-dashboard-nav">
                     <nav class="nav">
-                        <a class="nav-link active" data-toggle="tab" href="#">Our Advertisers</a>
-
+                        <a class="nav-link active" data-toggle="tab" href="#">Our Brands</a>
                     </nav>
 
                     <nav class="nav">
@@ -381,60 +601,52 @@
                     </nav>
                 </div>
                 <div class="row justify-content-between">
-                <div class="col-lg-2 col-md-5 col-sm-8">
-                    <div class="widget">
-                        <div class="widget-header-title px-20 py-15 border-bottom">
-                            <h6 class="d-flex align-content-center fw-500">
-                                <span data-feather="sliders"></span> Filters
-                            </h6>
-                        </div>
-                        <div class="category_sidebar">
-                            <!-- Start: Aside -->
-                            <aside class="product-sidebar-widget mb-30">
-                                <!-- Title -->
-                                <div class="widget_title mb-20">
-                                    <h6 class="float-left">Search</h6>
-                                    <a href="javascript:void(0)" id="clearSearchByName"
-                                        onclick="clearFilter('clearSearchByName')"
-                                        class="float-right {{ request()->search_by_name ? null : "display-hidden" }}"><small>Clear</small></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!-- Title -->
-                                <!-- Body -->
-                                <div class="card border-0">
-                                    <div class="project-search shop-search  global-shadow ">
-                                        <form action="/" class="order-search__form">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-search">
-                                                <circle cx="11" cy="11" r="8"></circle>
-                                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                            </svg>
-                                            <input class="form-control mr-sm-2 border-0 box-shadow-none" type="text"
-                                                id="SearchByName" placeholder="Search by Name" aria-label="Search"
-                                                value="{{ request()->search_by_name }}">
-                                        </form>
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top" style="top: 20px;">
+                            <!-- Header -->
+                            <div class="card-header bg-primary text-white py-3 px-4">
+                                <h5 class="mb-0 d-flex align-items-center fw-semibold">
+                                    <i class="fas fa-sliders-h me-2"></i> Filters
+                                </h5>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="card-body p-4">
+                                <!-- Search Filter -->
+                                <div class="mb-4 pb-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="mb-0 fw-semibold d-flex align-items-center">
+                                            <i class="fas fa-search me-2 text-muted"></i> Search
+                                        </h6>
+                                        <a href="javascript:void(0)" id="clearSearchByName"
+                                            onclick="clearFilter('clearSearchByName')"
+                                            class="text-danger {{ request()->search_by_name ? '' : 'd-none' }}">
+                                            <i class="fas fa-times me-1"></i> Clear
+                                        </a>
+                                    </div>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text bg-light border-end-0">
+                                            <i class="fas fa-search text-muted"></i>
+                                        </span>
+                                        <input type="text" class="form-control border-start-0" id="SearchByName"
+                                            placeholder="Search by name..." value="{{ request()->search_by_name }}">
                                     </div>
                                 </div>
-                                <!-- Body -->
-                            </aside>
-                            <!-- End: Aside -->
-                            <!-- Start: Aside -->
-                            <aside class="product-sidebar-widget mb-30">
-                                <!-- Title -->
-                                <div class="widget_title mb-20">
-                                    <h6 class="float-left">Country</h6>
-                                    <a href="javascript:void(0)" id="clearSearchByCountry"
-                                        onclick="clearFilter('clearSearchByCountry')"
-                                        class="float-right {{ request()->search_by_country ? null : "display-hidden" }}"><small>Clear</small></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!-- Title -->
-                                <!-- Body -->
-                                <div class="card border-0">
-                                    <div class="project-category__select">
-                                        <select id="SearchByCountry" class="form-control" multiple>
+
+                                <!-- Country Filter -->
+                                <div class="mb-4 pb-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="mb-0 fw-semibold d-flex align-items-center">
+                                            <i class="fas fa-globe-americas me-2 text-muted"></i> Country
+                                        </h6>
+                                        <a href="javascript:void(0)" id="clearSearchByCountry"
+                                            onclick="clearFilter('clearSearchByCountry')"
+                                            class="text-danger {{ request()->search_by_country ? '' : 'd-none' }}">
+                                            <i class="fas fa-times me-1"></i> Clear
+                                        </a>
+                                    </div>
+                                    <div class="form-group">
+                                        <select id="SearchByCountry" class="form-select" multiple>
                                             <?php
     $countriesArr = [];
     if (str_contains(request()->search_by_country, ',')) {
@@ -442,61 +654,60 @@
     } else {
         $countriesArr = [request()->search_by_country];
     }
-                                                            ?>
+                                            ?>
                                             @foreach($countries as $country)
                                                 <option @if(in_array($country['iso2'], $countriesArr)) selected @endif
-                                                    value="{{ $country['iso2'] }}">{{ $country['name'] }}</option>
+                                                    value="{{ $country['iso2'] }}">
+                                                    <i class="fas fa-flag me-1"></i> {{ $country['name'] }}
+                                                </option>
                                             @endforeach
                                         </select>
+                                        <small class="text-muted mt-1 d-block">Hold Ctrl/Cmd to select multiple</small>
                                     </div>
                                 </div>
-                            </aside>
-                            <!-- End: Aside -->
-                            <!-- Start: Aside -->
-                            <aside class="product-sidebar-widget mb-30">
-                                <!-- Title -->
-                                <div class="widget_title mb-20">
-                                    <h6>Advertiser Type</h6>
-                                </div>
-                                <!-- Title -->
-                                <!-- Body -->
-                                <div class="card border-0">
-                                    <div class="project-category__select">
-                                        <select class="js-example-basic-single js-states form-control" id="advertiserType">
-                                            <option value="all" {{ request()->type == "third_party_advertiser" || empty(request()->type) ? "selected" : "" }}>All Advertisers</option>
-                                            <option value="third_party_advertiser" {{ request()->type == "third_party_advertiser" ? "selected" : "" }}>
-                                                Third-Party Advertisers</option>
-                                            <option value="managed_by_linksCircle" {{ request()->type == "managed_by_linksCircle" ? "selected" : "" }}>Managed
-                                                by LinksCircle</option>
-                                        </select>
+
+                                <!-- Advertiser Type Filter -->
+                                <div class="mb-4 pb-3 border-bottom">
+                                    <h6 class="mb-3 fw-semibold d-flex align-items-center">
+                                        <i class="fas fa-users me-2 text-muted"></i> Advertiser Type
+                                    </h6>
+                                    <div class="form-check form-check-inline d-block mb-2">
+                                        <input class="form-check-input" type="radio" name="advertiserType"
+                                            id="advertiserAll" value="all" {{ request()->type == "third_party_advertiser" || empty(request()->type) ? "checked" : "" }}>
+                                        <label class="form-check-label" for="advertiserAll">
+                                            <i class="fas fa-layer-group me-1 text-primary"></i> All Advertisers
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline d-block mb-2">
+                                        <input class="form-check-input" type="radio" name="advertiserType"
+                                            id="advertiserThirdParty" value="third_party_advertiser" {{ request()->type == "third_party_advertiser" ? "checked" : "" }}>
+                                        <label class="form-check-label" for="advertiserThirdParty">
+                                            <i class="fas fa-user-friends me-1 text-warning"></i> Third-Party Advertisers
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline d-block">
+                                        <input class="form-check-input" type="radio" name="advertiserType"
+                                            id="advertiserManaged" value="managed_by_linksCircle" {{ request()->type == "managed_by_linksCircle" ? "checked" : "" }}>
+                                        <label class="form-check-label" for="advertiserManaged">
+                                            <i class="fas fa-cog me-1 text-success"></i> Managed by LinksCircle
+                                        </label>
                                     </div>
                                 </div>
-                                <!-- Body -->
-                            </aside>
-                            <!-- End: Aside -->
-                            <!-- Start: Aside -->
-                            {{-- <aside class="product-sidebar-widget mb-30" id="advertiserWrapper">--}}
-                                {{-- @if(count($advertiserType))--}}
-                                {{-- @include("template.publisher.advertisers.advertiser_checkbox", ['heading' => 'Third
-                                Party Advertiser', 'advertisers' => $advertiserType])--}}
-                                {{-- @endif--}}
-                                {{-- </aside>--}}
-                            <!-- End: Aside -->
-                            <!-- Start: Aside -->
-                            <aside class="product-sidebar-widget mb-30">
-                                <!-- Title -->
-                                <div class="widget_title mb-20">
-                                    <h6 class="float-left">Categories</h6>
-                                    <a href="javascript:void(0)" id="clearSearchByCategory"
-                                        onclick="clearFilter('clearSearchByCategory')"
-                                        class="float-right {{ request()->search_by_category ? null : "display-hidden" }}"><small>Clear</small></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!-- Title -->
-                                <!-- Body -->
-                                <div class="card border-0">
-                                    <div class="project-category__select">
-                                        <select id="SearchByCategory" class="form-control" multiple>
+
+                                <!-- Categories Filter -->
+                                <div class="mb-4 pb-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="mb-0 fw-semibold d-flex align-items-center">
+                                            <i class="fas fa-tags me-2 text-muted"></i> Categories
+                                        </h6>
+                                        <a href="javascript:void(0)" id="clearSearchByCategory"
+                                            onclick="clearFilter('clearSearchByCategory')"
+                                            class="text-danger {{ request()->search_by_category ? '' : 'd-none' }}">
+                                            <i class="fas fa-times me-1"></i> Clear
+                                        </a>
+                                    </div>
+                                    <div class="form-group">
+                                        <select id="SearchByCategory" class="form-select form-select-sm" multiple size="4">
                                             <?php
     $categoryArr = [];
     if (str_contains(request()->search_by_category, ',')) {
@@ -504,32 +715,33 @@
     } else {
         $categoryArr = [request()->search_by_category];
     }
-                                                            ?>
+                                            ?>
                                             @foreach($categories as $category)
                                                 <option @if(in_array($category['id'], $categoryArr)) selected @endif
-                                                    value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                                                    value="{{ $category['id'] }}">
+                                                    <i class="fas fa-folder me-1"></i> {{ $category['name'] }}
+                                                </option>
                                             @endforeach
                                         </select>
+                                        <small class="text-muted mt-1 d-block">Hold Ctrl/Cmd to select multiple</small>
                                     </div>
                                 </div>
-                                <!-- Body -->
-                            </aside>
-                            <!-- End: Aside -->
-                            <!-- Start: Aside -->
-                            <aside class="product-sidebar-widget mb-30">
-                                <!-- Title -->
-                                <div class="widget_title mb-20">
-                                    <h6 class="float-left">Promotional Methods</h6>
-                                    <a href="javascript:void(0)" id="clearSearchByPromotionalMethod"
-                                        onclick="clearFilter('clearSearchByPromotionalMethod')"
-                                        class="float-right {{ request()->search_by_promotional_method ? null : "display-hidden" }}"><small>Clear</small></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!-- Title -->
-                                <!-- Body -->
-                                <div class="card border-0">
-                                    <div class="project-category__select">
-                                        <select id="SearchByPromotionalMethod" class="form-control" multiple>
+
+                                <!-- Promotional Methods Filter -->
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="mb-0 fw-semibold d-flex align-items-center">
+                                            <i class="fas fa-bullhorn me-2 text-muted"></i> Promotional Methods
+                                        </h6>
+                                        <a href="javascript:void(0)" id="clearSearchByPromotionalMethod"
+                                            onclick="clearFilter('clearSearchByPromotionalMethod')"
+                                            class="text-danger {{ request()->search_by_promotional_method ? '' : 'd-none' }}">
+                                            <i class="fas fa-times me-1"></i> Clear
+                                        </a>
+                                    </div>
+                                    <div class="form-group">
+                                        <select id="SearchByPromotionalMethod" class="form-select form-select-sm" multiple
+                                            size="4">
                                             <?php
     $promotionalArr = [];
     if (str_contains(request()->search_by_promotional_method, ',')) {
@@ -537,103 +749,126 @@
     } else {
         $promotionalArr = [request()->search_by_promotional_method];
     }
-                                                            ?>
+                                            ?>
                                             @foreach($methods as $method)
                                                 <option @if(in_array($method['id'], $promotionalArr)) selected @endif
-                                                    value="{{ $method['id'] }}">{{ $method['name'] }}</option>
+                                                    value="{{ $method['id'] }}">
+                                                    <i class="fas fa-rocket me-1"></i> {{ $method['name'] }}
+                                                </option>
                                             @endforeach
                                         </select>
-                                    </div>
-                                </div>
-                                <!-- Body -->
-                            </aside>
-                            <!-- End: Aside -->
-                        </div>
-                    </div><!-- End: .widget -->
-                </div><!-- End: .columns-1 -->
-                <div class="col-lg-10 col-md-7 col-sm-8">
-                    <!-- Start: Top Bar -->
-                    <div class="shop_products_top_filter">
-                        <div class="project-top-wrapper d-flex flex-wrap align-items-center">
-
-                            <div class="project-top-right d-flex flex-wrap align-items-center">
-                                <div class="project-category flex-wrap d-flex align-items-center">
-                                    <div class="project-tap b-light">
-                                        <ul class="nav" id="ap-tab" role="tablist">
-                                            @if(request()->route()->getName() != "publisher.own-advertisers")
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ !request()->section || request()->section == "all" ? "active" : null }}"
-                                                        data-section="all" href="javascript:void(0)" id="allBrands">All
-                                                        Brands</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ request()->section == "new" ? "active" : null }}"
-                                                        data-section="new" href="javascript:void(0)" id="newBrands">New</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ request()->section == "not-joined" ? "active" : null }}"
-                                                        data-section="not-joined" href="javascript:void(0)"
-                                                        id="notJoinedBrands">Not Joined</a>
-                                                </li>
-                                            @endif
-                                            @if(request()->route()->getName() != "publisher.own-advertisers")
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ request()->section == "pending" ? "active" : null }}"
-                                                        data-section="pending" href="javascript:void(0)"
-                                                        id="pendingBrands">Pending</a>
-                                                </li>
-                                            @endif
-                                            @if(request()->route()->getName() == "publisher.own-advertisers")
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ request()->section == "joined" || (request()->route()->getName() == "publisher.own-advertisers" && empty(request()->section)) ? "active" : null }}"
-                                                        data-section="joined" href="javascript:void(0)"
-                                                        id="joinedBrands">Joined</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ request()->section == "hold" ? "active" : null }}"
-                                                        data-section="hold" href="javascript:void(0)" id="holdBrands">Hold</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link {{ request()->section == "rejected" ? "active" : null }}"
-                                                        data-section="rejected" href="javascript:void(0)"
-                                                        id="rejectedBrands">Rejected</a>
-                                                </li>
-                                            @endif
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="project-icon-selected content-center mt-lg-0 mt-25">
-                                    <div class="listing-social-link pb-lg-0 pb-xs-2">
-                                        <div class="icon-list-social d-flex">
-                                            <a class="icon-list-social__link rounded-circle icon-list-social__style justify-content-center {{ $view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW ? "active" : null }} ml-xl-20 mr-20"
-                                                href="javascript:void(0)"
-                                                onclick="view('{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW }}')">
-                                                <span class="fa fa-box"></span></a>
-                                            <a class="icon-list-social__link rounded-circle icon-list-social__style justify-content-center {{ $view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW ? "active" : null }} "
-                                                href="javascript:void(0)"
-                                                onclick="view('{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW }}')">
-                                                <span class="fa fa-list"></span></a>
-                                        </div>
+                                        <small class="text-muted mt-1 d-block">Hold Ctrl/Cmd to select multiple</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- End: Top Bar -->
-                    @include("partial.admin.alert")
-                    <div class="tab-content mt-25" id="ap-tabContent">
-                        @include("template.publisher.widgets.loader-3")
-                        <div class="tab-pane fade show active" id="ap-overview" role="tabpanel"
-                            aria-labelledby="ap-overview-tab">
-                            {{--@if($view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW)
-                            @include("template.publisher.advertisers.advertiser-list", compact('advertisers'))
-                            @elseif($view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW)
-                            @include("template.publisher.advertisers.advertiser-grid", compact('advertisers'))
-                            @endif--}}
+                    <div class="col-lg-9 col-md-4 col-sm-12">
+                        <!-- Start: Top Bar -->
+
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 py-3">
+                            <!-- Brand Status Tabs -->
+                            <div class="brand-tabs-container">
+                                <div class="d-flex align-items-center">
+                                    @if(request()->route()->getName() != "publisher.own-advertisers")
+                                        <div class="border-end pe-3 me-3">
+                                            <h6 class="mb-0 text-muted fw-semibold small">Brand Status:</h6>
+                                        </div>
+                                    @endif
+
+                                    <div class="nav-tabs-wrapper">
+                                        <ul class="nav nav-tabs border-0" id="brandTabs" role="tablist">
+                                            @if(request()->route()->getName() != "publisher.own-advertisers")
+                                                <li class="nav-item me-1" role="presentation">
+                                                    <button class="nav-link {{ !request()->section || request()->section == "all" ? "active" : "" }} px-3 py-2" data-section="all" id="allBrands">
+
+                                                            All Brands
+
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item me-1" role="presentation">
+                                                    <button class="nav-link {{ request()->section == "new" ? "active" : "" }} px-3 py-2" data-section="new" id="newBrands">
+                                                            New
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item me-1" role="presentation">
+                                                    <button class="nav-link {{ request()->section == "not-joined" ? "active" : "" }} px-3 py-2" data-section="not-joined" id="notJoinedBrands">
+                                                            Not Joined
+                                                    </button>
+                                                </li>
+                                            @endif
+
+                                            @if(request()->route()->getName() != "publisher.own-advertisers")
+                                                <li class="nav-item me-1" role="presentation">
+                                                    <button class="nav-link {{ request()->section == "pending" ? "active" : "" }} px-3 py-2" data-section="pending" id="pendingBrands">
+                                                            Pending
+                                                    </button>
+                                                </li>
+                                            @endif
+
+                                            @if(request()->route()->getName() == "publisher.own-advertisers")
+                                                <li class="nav-item me-1" role="presentation">
+                                                    <button class="nav-link {{ request()->section == "joined" || (request()->route()->getName() == "publisher.own-advertisers" && empty(request()->section)) ? "active" : "" }} px-3 py-2" data-section="joined" id="joinedBrands">
+                                                            Joined
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item me-1" role="presentation">
+                                                    <button class="nav-link {{ request()->section == "hold" ? "active" : "" }} px-3 py-2" data-section="hold" id="holdBrands">
+                                                            Hold
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link {{ request()->section == "rejected" ? "active" : "" }} px-3 py-2" data-section="rejected" id="rejectedBrands">
+                                                            Rejected
+                                                    </button>
+                                                </li>
+                                            @endif
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- View Toggle -->
+                            <div class="view-toggle-container">
+                                <div class="d-flex align-items-center">
+                                    <span class="me-2 fw-medium text-muted small">View:</span>
+                                    <div class="btn-group view-tabs" role="group" style="border-bottom: none;">
+                                        <input type="radio" class="btn-check" name="viewOption" id="viewCard"
+                                            value="{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW }}"
+                                            {{ $view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW ? 'checked' : '' }}>
+                                        <label class="btn btn-sm py-2 mb-0 d-flex align-items-center" for="viewCard"
+                                            onclick="view('{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW }}')">
+                                            <i class="fas fa-th-large me-2"></i>
+                                            <span>Card</span>
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="viewOption" id="viewList"
+                                            value="{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW }}"
+                                            {{ $view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW ? 'checked' : '' }}>
+                                        <label class="btn btn-sm py-2 mb-0 d-flex align-items-center" for="viewList"
+                                            onclick="view('{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW }}')">
+                                            <i class="fas fa-list me-2"></i>
+                                            <span>List</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div><!-- End: .columns-2 -->
-            </div>
+                        <!-- End: Top Bar -->
+                        @include("partial.admin.alert")
+                        <div class="tab-content mt-25" id="ap-tabContent">
+                            @include("template.publisher.widgets.loader-3")
+                            <div class="tab-pane fade show active" id="ap-overview" role="tabpanel"
+                                aria-labelledby="ap-overview-tab">
+                                {{--@if($view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW)
+                                @include("template.publisher.advertisers.advertiser-list", compact('advertisers'))
+                                @elseif($view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW)
+                                @include("template.publisher.advertisers.advertiser-grid", compact('advertisers'))
+                                @endif--}}
+                            </div>
+                        </div>
+                    </div><!-- End: .columns-2 -->
+                </div>
             </div>
         </div>
 

@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('d0b122f5-67c7-4ef5-a696-282a8d2f45b6')): $__env->markAsRenderedOnce('d0b122f5-67c7-4ef5-a696-282a8d2f45b6');
+<?php if (! $__env->hasRenderedOnce('e77e0f14-c422-4e4b-adf4-c1ff481f59c9')): $__env->markAsRenderedOnce('e77e0f14-c422-4e4b-adf4-c1ff481f59c9');
 $__env->startPush('styles'); ?>
     <style>
         .user-member__form .form-control {
@@ -7,7 +7,7 @@ $__env->startPush('styles'); ?>
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('ca77429a-b553-4e1a-b59b-82848230c5f0')): $__env->markAsRenderedOnce('ca77429a-b553-4e1a-b59b-82848230c5f0');
+<?php if (! $__env->hasRenderedOnce('41b05f86-b13e-473c-b224-4654dc7561e0')): $__env->markAsRenderedOnce('41b05f86-b13e-473c-b224-4654dc7561e0');
 $__env->startPush('scripts'); ?>
     <script>
         function changeLimit()
@@ -199,10 +199,7 @@ $__env->startPush('scripts'); ?>
                 </div><!-- End: .col -->
             </div>
         </div>
-
     </div>
-
 <?php $__env->stopSection(); ?>
-
 
 <?php echo $__env->make("layouts.publisher.publisher_panel", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\lenovo\Downloads\application\resources\views/template/publisher/creatives/coupons/list.blade.php ENDPATH**/ ?>

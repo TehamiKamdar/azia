@@ -272,7 +272,7 @@
                                 <span>Leading provider of enterprise software solutions with global presence.</span>
                             </div> --}}
                             <div class="mt-3">
-                                <a href="#" class="contact-btn">
+                                <a href="{{ route("publisher.view-advertiser", ['sid' => $advertiser->sid]) }}" class="contact-btn">
                                     <i class="fas fa-arrow-right me-1"></i> Show More
                                 </a>
                             </div>

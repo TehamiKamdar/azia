@@ -1,14 +1,19 @@
-<nav class="atbd-page mt-3">
-    <ul class="atbd-pagination d-flex" id="publisherPagination">
+<style>li{list-style:none}</style>
+<nav class="atbd-page mt-4">
+    <ul class="atbd-pagination d-flex align-items-center" id="publisherPagination">
         <?php if($paginator->hasPages()): ?>
             
             <?php if($paginator->onFirstPage()): ?>
-                <li class="atbd-pagination__item disabled" aria-disabled="true" aria-label="<?php echo app('translator')->get('pagination.previous'); ?>">
-                    <span class="atbd-pagination__link pagination-control" aria-hidden="true">&lsaquo;</span>
+                <li class="page-item disabled" aria-disabled="true" aria-label="<?php echo app('translator')->get('pagination.previous'); ?>">
+                    <span class="page-link" aria-hidden="true">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
                 </li>
             <?php else: ?>
-                <li class="atbd-pagination__item">
-                    <a class="atbd-pagination__link pagination-control" href="<?php echo e($paginator->previousPageUrl()); ?>" rel="prev" aria-label="<?php echo app('translator')->get('pagination.previous'); ?>">&lsaquo;</a>
+                <li class="page-item">
+                    <a class="page-link" href="<?php echo e($paginator->previousPageUrl()); ?>" rel="prev" aria-label="<?php echo app('translator')->get('pagination.previous'); ?>">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
                 </li>
             <?php endif; ?>
 
@@ -16,16 +21,22 @@
             <?php $__currentLoopData = $elements; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $element): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 
                 <?php if(is_string($element)): ?>
-                    <li class="atbd-pagination__item disabled" aria-disabled="true"><span class="atbd-pagination__link"><?php echo e($element); ?></span></li>
+                    <li class="page-item disabled" aria-disabled="true">
+                        <span class="page-link"><?php echo e($element); ?></span>
+                    </li>
                 <?php endif; ?>
 
                 
                 <?php if(is_array($element)): ?>
                     <?php $__currentLoopData = $element; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page => $url): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($page == $paginator->currentPage()): ?>
-                            <li class="atbd-pagination__item" aria-current="page"><span class="atbd-pagination__link active"><?php echo e($page); ?></span></li>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link"><?php echo e($page); ?></span>
+                            </li>
                         <?php else: ?>
-                            <li class="atbd-pagination__item"><a class="atbd-pagination__link" href="<?php echo e($url); ?>"><?php echo e($page); ?></a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="<?php echo e($url); ?>"><?php echo e($page); ?></a>
+                            </li>
                         <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endif; ?>
@@ -33,15 +44,20 @@
 
             
             <?php if($paginator->hasMorePages()): ?>
-                <li class="atbd-pagination__item">
-                    <a class="atbd-pagination__link" href="<?php echo e($paginator->nextPageUrl()); ?>" rel="next" aria-label="<?php echo app('translator')->get('pagination.next'); ?>">&rsaquo;</a>
+                <li class="page-item">
+                    <a class="page-link" href="<?php echo e($paginator->nextPageUrl()); ?>" rel="next" aria-label="<?php echo app('translator')->get('pagination.next'); ?>">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                 </li>
             <?php else: ?>
-                <li class="atbd-pagination__item disabled" aria-disabled="true" aria-label="<?php echo app('translator')->get('pagination.next'); ?>">
-                    <span class="atbd-pagination__link" aria-hidden="true">&rsaquo;</span>
+                <li class="page-item disabled" aria-disabled="true" aria-label="<?php echo app('translator')->get('pagination.next'); ?>">
+                    <span class="page-link" aria-hidden="true">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
                 </li>
             <?php endif; ?>
         <?php endif; ?>
+
         <?php if(
             request()->route()->getName() == "publisher.reports.transactions.list"
             || request()->route()->getName() == "publisher.find-advertisers"
@@ -51,8 +67,7 @@
             || request()->route()->getName() == "publisher.creatives.coupons.list"
             || request()->route()->getName() == "publisher.creatives.text-links.list"
         ): ?>
-
-            <li class="ml-2 atbd-pagination__item">
+            <li class="ms-2">
                 <div class="paging-option">
                     <?php if(request()->route()->getName() == "publisher.find-advertisers" || request()->route()->getName() == "publisher.own-advertisers"): ?>
                         <?php
@@ -97,7 +112,7 @@
                             }
                         ?>
                     <?php endif; ?>
-                    <select name="limit" id="limit" class="page-selection">
+                    <select name="limit" id="limit" class="form-select form-select-sm page-selection" style="width: auto;">
                         <option value="10" <?php if($limit == "10"): ?> selected <?php endif; ?>>10/page</option>
                         <option value="20" <?php if($limit == "20"): ?> selected <?php endif; ?>>20/page</option>
                         <option value="40" <?php if($limit == "40"): ?> selected <?php endif; ?>>40/page</option>
