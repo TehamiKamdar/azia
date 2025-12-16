@@ -7,11 +7,11 @@
 @if($websites)
     <!-- Profile files Bio -->
     <form action="javascript:void(0)" id="advertiserDeeplinkForm">
-        <div class="card" id="deeplinkWrapper">
-            <div class="card-body" id="mainDeeplinkBody">
+        <div id="deeplinkWrapper">
+            <div id="mainDeeplinkBody">
                 <div class="files-area d-flex justify-content-between align-items-center">
-                    <div class="files-area__left d-flex align-items-center">
-                        <div class="files-area__title">
+                    <div class="az-dashboard-one-title">
+                        <div>
                             @if(isset($title))
                                 <h3 class="az-dashboard-title">{{ $title }}</h3>
                             @else

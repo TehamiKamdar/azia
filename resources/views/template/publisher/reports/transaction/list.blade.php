@@ -307,13 +307,13 @@
                 <div class="az-dashboard-one-title">
                     <div>
                         <h2 class="az-dashboard-title">Transactions</h2>
-                        <p class="az-dashboard-text">Total Results: {{ $total }} </p>
+                        <p class="az-dashboard-text">Total Results: <strong>{{ $total }}</strong> </p>
                     </div>
                     @include("partial.publisher.transaction_alert")
                 </div>
                 <div class="az-dashboard-nav">
                     <nav class="nav">
-                        <a class="nav-link active" data-toggle="tab" href="#">Our Brands</a>
+                        <a class="nav-link active" data-toggle="tab" href="#">Transactions</a>
                     </nav>
 
                     <nav class="nav">

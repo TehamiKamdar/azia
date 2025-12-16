@@ -1,9 +1,9 @@
-<?php if (! $__env->hasRenderedOnce('034b337b-f0f0-45ce-a551-d842e9253816')): $__env->markAsRenderedOnce('034b337b-f0f0-45ce-a551-d842e9253816');
+<?php if (! $__env->hasRenderedOnce('47cd8331-79d9-41ed-b9a7-3b887e3c0de8')): $__env->markAsRenderedOnce('47cd8331-79d9-41ed-b9a7-3b887e3c0de8');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/daterangepicker.css")); ?>">
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('d6016803-9f1b-4397-8e2f-0b327ff729c7')): $__env->markAsRenderedOnce('d6016803-9f1b-4397-8e2f-0b327ff729c7');
+<?php if (! $__env->hasRenderedOnce('3c4d862e-aee2-4b86-8770-cfdeb59f081b')): $__env->markAsRenderedOnce('3c4d862e-aee2-4b86-8770-cfdeb59f081b');
 $__env->startPush('scripts'); ?>
 
     <?php
@@ -265,34 +265,26 @@ $__env->startPush('scripts'); ?>
 
 <?php $__env->startSection("content"); ?>
 
-    <div class="contents">
-
+    <div class="az-content az-content-dashboard">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="shop-breadcrumb">
-
-                        <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Payments</h4>
-                        </div>
-
+            <div class="az-content-body">
+                <div class="az-dashboard-one-title">
+                    <div>
+                        <h2 class="az-dashboard-title">Payments</h2>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="userDatatable orderDatatable global-shadow border py-30 px-sm-30 px-20 bg-white radius-xl w-100 mb-30">
+                <div class="az-dashboard-nav">
+                    <nav class="nav">
+                        <a class="nav-link active" data-toggle="tab" href="#">Payments (Record)</a>
+                    </nav>
+                </div>
+                <div class="col-12 px-0">
+                    <?php echo $__env->make("partial.admin.alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-                        <?php echo $__env->make("partial.admin.alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-                        <div id="ap-overview">
-                            <?php echo $__env->make("template.publisher.payments.list_view", compact('payments'), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                        </div>
-
-                    </div><!-- End: .userDatatable -->
-                </div><!-- End: .col -->
+                    <div id="ap-overview">
+                        <?php echo $__env->make("template.publisher.payments.list_view", compact('payments'), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    </div>
+                </div>
             </div>
         </div>
 

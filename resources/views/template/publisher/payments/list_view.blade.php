@@ -2,7 +2,7 @@
 
     <!-- Start Table Responsive -->
     <div class="table-responsive">
-        <table class="table mb-0 table-hover table-borderless border-0">
+        <table class="table mb-0 table-hover table-primary border-0">
             <thead>
                 <tr class="userDatatable-header">
                     <th>
@@ -35,8 +35,6 @@
                     <th>
                         <span class="userDatatable-title">Status</span>
                     </th>
-                    <th>
-                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -68,7 +66,7 @@
                                     @if($website)
                                     {{$website->name  }}
                                     @endif
-                                    
+
                                 </div>
                             </td>
                             <td>
@@ -141,8 +139,8 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="9">
-                            <h6 class="text-center mt-5">Transaction Data Not Exist</h6>
+                        <td colspan="10">
+                            <h6 class="text-center my-2">Transaction Data Not Exist</h6>
                         </td>
                     </tr>
                 @endif

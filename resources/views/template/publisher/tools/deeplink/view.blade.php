@@ -14,15 +14,11 @@
 
         <div class="container-fluid">
             <div class="az-content-body">
-                <div class="col-lg-12">
-
-                        @php
-                            $title = "Deep Link Generator";
-                            $description = "Create a Link with our super fast deep link generator tool and promote any brand easily.";
-                        @endphp
-                        @include("template.publisher.widgets.deeplink")
-
-                </div><!-- End: .col -->
+                @php
+                    $title = "Deep Link Generator";
+                    $description = "Create a Link with our super fast deep link generator tool and promote any brand easily.";
+                @endphp
+                @include("template.publisher.widgets.deeplink")
             </div>
         </div>
 

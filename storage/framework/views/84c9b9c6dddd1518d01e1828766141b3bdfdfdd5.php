@@ -46,6 +46,8 @@
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
+            min-width: 115px;
+            text-align: center;
         }
         .premium-badge{
             background-color: #e6e6e6;

@@ -565,9 +565,10 @@
 
 @section("content")
 
-    <div class="az-content az-content-dashboard">
+    <div class="contents">
+
         <div class="container-fluid">
-            <div class="az-content-body">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
@@ -610,15 +611,15 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12" id="performanceOverview">
+            <div class="row">
+                <div class="col-lg-12" id="performanceOverview">
 
-                @include("template.publisher.widgets.section_performance_overview", compact('performanceOverview'))
+                    @include("template.publisher.widgets.section_performance_overview", compact('performanceOverview'))
+                </div>
             </div>
         </div>
         <div class="container-fluid">
-            <div id="listingContentWrapper">
+            <div class="row" id="listingContentWrapper">
                 <div class="col-lg-12">
                     <div class="orderDatatable global-shadow border py-30 px-sm-30 px-20 bg-white radius-xl w-100 mb-30">
                         <div class="project-top-wrapper d-flex justify-content-between flex-wrap mb-25 mt-n10">

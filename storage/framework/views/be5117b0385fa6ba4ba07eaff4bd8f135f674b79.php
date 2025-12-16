@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('5246881d-3b1b-4194-99c6-dddd80790a54')): $__env->markAsRenderedOnce('5246881d-3b1b-4194-99c6-dddd80790a54');
+<?php if (! $__env->hasRenderedOnce('c0ddbeab-a69a-4c11-98c4-9f608de2414a')): $__env->markAsRenderedOnce('c0ddbeab-a69a-4c11-98c4-9f608de2414a');
 $__env->startPush('styles'); ?>
 
 <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/select2.min.css")); ?>" />
@@ -243,7 +243,7 @@ $__env->startPush('styles'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('8874a262-99f7-4fc5-b52e-729b503bbca1')): $__env->markAsRenderedOnce('8874a262-99f7-4fc5-b52e-729b503bbca1');
+<?php if (! $__env->hasRenderedOnce('16e3da69-c4bd-4a11-851e-efd680d5644d')): $__env->markAsRenderedOnce('16e3da69-c4bd-4a11-851e-efd680d5644d');
 $__env->startPush('scripts'); ?>
 <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/select2.full.min.js")); ?>"></script>
 <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/drawer.js")); ?>"></script>
@@ -836,15 +836,6 @@ $__env->startPush('scripts'); ?>
                                 <div class="d-flex align-items-center">
                                     <span class="me-2 fw-medium text-muted small">View:</span>
                                     <div class="btn-group view-tabs" role="group" style="border-bottom: none;">
-                                        <input type="radio" class="btn-check" name="viewOption" id="viewCard"
-                                            value="<?php echo e(\App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW); ?>"
-                                            <?php echo e($view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW ? 'checked' : ''); ?>>
-                                        <label class="btn btn-sm py-2 mb-0 d-flex align-items-center" for="viewCard"
-                                            onclick="view('<?php echo e(\App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW); ?>')">
-                                            <i class="fas fa-th-large me-2"></i>
-                                            <span>Card</span>
-                                        </label>
-
                                         <input type="radio" class="btn-check" name="viewOption" id="viewList"
                                             value="<?php echo e(\App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW); ?>"
                                             <?php echo e($view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW ? 'checked' : ''); ?>>

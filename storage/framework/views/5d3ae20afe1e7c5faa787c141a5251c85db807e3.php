@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('68c5cab8-4e12-4fc3-9301-af78c842f484')): $__env->markAsRenderedOnce('68c5cab8-4e12-4fc3-9301-af78c842f484');
+<?php if (! $__env->hasRenderedOnce('fe042bb7-a172-4827-8409-62a40d000f37')): $__env->markAsRenderedOnce('fe042bb7-a172-4827-8409-62a40d000f37');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/daterangepicker.css")); ?>">
     <style>
@@ -9,7 +9,7 @@ $__env->startPush('styles'); ?>
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('5b4ed852-3e57-462a-80dc-a77ed9ae634b')): $__env->markAsRenderedOnce('5b4ed852-3e57-462a-80dc-a77ed9ae634b');
+<?php if (! $__env->hasRenderedOnce('52cf5bcc-db95-4d8e-bb4f-bc72461a98d3')): $__env->markAsRenderedOnce('52cf5bcc-db95-4d8e-bb4f-bc72461a98d3');
 $__env->startPush('scripts'); ?>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/moment/moment.min.js")); ?>"></script>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/daterangepicker.js")); ?>"></script>
@@ -565,9 +565,10 @@ $__env->startPush('scripts'); ?>
 
 <?php $__env->startSection("content"); ?>
 
-    <div class="az-content az-content-dashboard">
+    <div class="contents">
+
         <div class="container-fluid">
-            <div class="az-content-body">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
@@ -610,15 +611,15 @@ $__env->startPush('scripts'); ?>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12" id="performanceOverview">
+            <div class="row">
+                <div class="col-lg-12" id="performanceOverview">
 
-                <?php echo $__env->make("template.publisher.widgets.section_performance_overview", compact('performanceOverview'), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <?php echo $__env->make("template.publisher.widgets.section_performance_overview", compact('performanceOverview'), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                </div>
             </div>
         </div>
         <div class="container-fluid">
-            <div id="listingContentWrapper">
+            <div class="row" id="listingContentWrapper">
                 <div class="col-lg-12">
                     <div class="orderDatatable global-shadow border py-30 px-sm-30 px-20 bg-white radius-xl w-100 mb-30">
                         <div class="project-top-wrapper d-flex justify-content-between flex-wrap mb-25 mt-n10">

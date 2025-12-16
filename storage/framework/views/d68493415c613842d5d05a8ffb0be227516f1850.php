@@ -1,9 +1,9 @@
-<?php if (! $__env->hasRenderedOnce('e3093b35-89be-42ea-96a6-f7e564767067')): $__env->markAsRenderedOnce('e3093b35-89be-42ea-96a6-f7e564767067');
+<?php if (! $__env->hasRenderedOnce('24061d3e-a86c-4209-a63c-8a6ee15d4d25')): $__env->markAsRenderedOnce('24061d3e-a86c-4209-a63c-8a6ee15d4d25');
 $__env->startPush('styles'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('0edc7bdd-8851-4435-b679-a43531e20db8')): $__env->markAsRenderedOnce('0edc7bdd-8851-4435-b679-a43531e20db8');
+<?php if (! $__env->hasRenderedOnce('285bfc1e-d3fc-45f1-94a8-17d8de5de05b')): $__env->markAsRenderedOnce('285bfc1e-d3fc-45f1-94a8-17d8de5de05b');
 $__env->startPush('scripts'); ?>
 
 <?php $__env->stopPush(); endif; ?>
@@ -14,15 +14,11 @@ $__env->startPush('scripts'); ?>
 
         <div class="container-fluid">
             <div class="az-content-body">
-                <div class="col-lg-12">
-
-                        <?php
-                            $title = "Deep Link Generator";
-                            $description = "Create a Link with our super fast deep link generator tool and promote any brand easily.";
-                        ?>
-                        <?php echo $__env->make("template.publisher.widgets.deeplink", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-                </div><!-- End: .col -->
+                <?php
+                    $title = "Deep Link Generator";
+                    $description = "Create a Link with our super fast deep link generator tool and promote any brand easily.";
+                ?>
+                <?php echo $__env->make("template.publisher.widgets.deeplink", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
         </div>
 

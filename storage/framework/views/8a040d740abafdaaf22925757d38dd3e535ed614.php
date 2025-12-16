@@ -7,11 +7,11 @@
 <?php if($websites): ?>
     <!-- Profile files Bio -->
     <form action="javascript:void(0)" id="advertiserDeeplinkForm">
-        <div class="card" id="deeplinkWrapper">
-            <div class="card-body" id="mainDeeplinkBody">
+        <div id="deeplinkWrapper">
+            <div id="mainDeeplinkBody">
                 <div class="files-area d-flex justify-content-between align-items-center">
-                    <div class="files-area__left d-flex align-items-center">
-                        <div class="files-area__title">
+                    <div class="az-dashboard-one-title">
+                        <div>
                             <?php if(isset($title)): ?>
                                 <h3 class="az-dashboard-title"><?php echo e($title); ?></h3>
                             <?php else: ?>
@@ -182,7 +182,7 @@
                         $("#deepLinkContent").html(`
                             <div class="pt-1" style="color: green;">
                                 <i class="fas fa-check-circle"></i>
-                                <span class="icon-text ml-1">Deep Link Enable!</span>
+                                <span class="icon-text ml-1">Deep Link Enable!  </span>
                             </div>
                         `);
                         $("#landing_url").show();
@@ -190,7 +190,7 @@
                         $("#deepLinkContent").html(`
                             <div class="pt-1" style="color: red;">
                                 <i class="fas fa-times-circle"></i>
-                                <span class="icon-text ml-1">Deep Link Disable!</span>
+                                <span class="icon-text ml-1">Deep Link Disable! </span>
                             </div>
                         `);
                         $("#landing_url").hide();

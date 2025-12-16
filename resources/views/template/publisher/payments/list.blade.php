@@ -265,34 +265,26 @@
 
 @section("content")
 
-    <div class="contents">
-
+    <div class="az-content az-content-dashboard">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="shop-breadcrumb">
-
-                        <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Payments</h4>
-                        </div>
-
+            <div class="az-content-body">
+                <div class="az-dashboard-one-title">
+                    <div>
+                        <h2 class="az-dashboard-title">Payments</h2>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="userDatatable orderDatatable global-shadow border py-30 px-sm-30 px-20 bg-white radius-xl w-100 mb-30">
+                <div class="az-dashboard-nav">
+                    <nav class="nav">
+                        <a class="nav-link active" data-toggle="tab" href="#">Payments (Record)</a>
+                    </nav>
+                </div>
+                <div class="col-12 px-0">
+                    @include("partial.admin.alert")
 
-                        @include("partial.admin.alert")
-
-                        <div id="ap-overview">
-                            @include("template.publisher.payments.list_view", compact('payments'))
-                        </div>
-
-                    </div><!-- End: .userDatatable -->
-                </div><!-- End: .col -->
+                    <div id="ap-overview">
+                        @include("template.publisher.payments.list_view", compact('payments'))
+                    </div>
+                </div>
             </div>
         </div>
 

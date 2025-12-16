@@ -10,11 +10,11 @@
             <a href="" class="close">&times;</a>
           </div><!-- az-header-menu-header -->
           <ul class="nav">
-            <li class="nav-item active show">
-              <a href="{{ route("dashboard", ["type" => "publisher"]) }}" class="nav-link {{ \App\Helper\PublisherData::isDashboardActive() }}"><i class="typcn typcn-chart-area-outline"></i> Dashboard</a>
+            <li class="nav-item {{ Route::is("dashboard", ["type" => "publisher"]) ? "active" : "" }}">
+              <a href="{{ route("dashboard", ["type" => "publisher"]) }}" class="nav-link"><i class="typcn typcn-chart-area-outline"></i> Dashboard</a>
             </li>
-            <li class="nav-item">
-              <a href="" class="nav-link with-sub {{ \App\Helper\PublisherData::isAdvertiserActive() }}"><i class="typcn typcn-shopping-cart"></i>Brands</a>
+            <li class="nav-item {{ Route::is("publisher.find-advertisers") || Route::is("publisher.own-advertisers") ? "active" : "" }}">
+              <a href="" class="nav-link with-sub"><i class="typcn typcn-shopping-cart"></i>Brands</a>
               <nav class="az-menu-sub">
                 <a href="page-signin.html" class="nav-link">Brand Insights</a>
                 <a href="{{ route("publisher.find-advertisers") }}" class="nav-link">All Brands</a>
@@ -26,8 +26,8 @@
 
 
 
-             <li class="nav-item">
-              <a href="" class="nav-link with-sub {{ \App\Helper\PublisherData::isCreativeActive() }}"><i class="typcn typcn-link-outline"></i>Campaign Materials</a>
+             <li class="nav-item {{ Route::is("publisher.creatives.coupons.list") || Route::is("publisher.creatives.text-links.list") || Route::is("publisher.tools.deep-links.generate") ? "active" : "" }}">
+              <a href="" class="nav-link with-sub"><i class="typcn typcn-link-outline"></i>Campaign Materials</a>
               <nav class="az-menu-sub">
                 <a href="{{ route("publisher.creatives.coupons.list") }}" class="nav-link">Special Offers</a>
                 <a href="{{ route("publisher.creatives.text-links.list") }}" class="nav-link">Affiliate Links</a>
@@ -35,8 +35,8 @@
               </nav>
             </li>
 
-             <li class="nav-item">
-              <a href="" class="nav-link with-sub {{ \App\Helper\PublisherData::isReportActive() }}"><i class="typcn typcn-chart-pie"></i>Analytics</a>
+             <li class="nav-item {{ Route::is("publisher.reports.performance-by-transactions.list") || Route::is("publisherpublisher.reports.transactions.list") ? "active" : "" }}">
+              <a href="" class="nav-link with-sub"><i class="typcn typcn-chart-pie"></i>Analytics</a>
               <nav class="az-menu-sub">
                 <a href="{{ route("publisher.reports.performance-by-transactions.list") }}" class="nav-link">Analytical Report</a>
                 <a href="{{ route("publisher.reports.transactions.list") }}" class="nav-link">All Conversions</a>
@@ -44,7 +44,7 @@
               </nav>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item {{ Route::is("publisher.payments.index") ? "active" : "" }}">
               <a href="{{ route("publisher.payments.index") }}" class="nav-link"><i class="typcn typcn-input-checked-outline"></i>Payouts</a>
             </li>
           </ul>

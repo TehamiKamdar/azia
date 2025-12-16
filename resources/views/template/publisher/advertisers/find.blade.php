@@ -833,15 +833,6 @@
                                 <div class="d-flex align-items-center">
                                     <span class="me-2 fw-medium text-muted small">View:</span>
                                     <div class="btn-group view-tabs" role="group" style="border-bottom: none;">
-                                        <input type="radio" class="btn-check" name="viewOption" id="viewCard"
-                                            value="{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW }}"
-                                            {{ $view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW ? 'checked' : '' }}>
-                                        <label class="btn btn-sm py-2 mb-0 d-flex align-items-center" for="viewCard"
-                                            onclick="view('{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_BOX_VIEW }}')">
-                                            <i class="fas fa-th-large me-2"></i>
-                                            <span>Card</span>
-                                        </label>
-
                                         <input type="radio" class="btn-check" name="viewOption" id="viewList"
                                             value="{{ \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW }}"
                                             {{ $view == \App\Helper\Static\Vars::PUBLISHER_ADVERTISER_LIST_VIEW ? 'checked' : '' }}>
