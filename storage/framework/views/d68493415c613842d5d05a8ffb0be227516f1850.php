@@ -1,29 +1,26 @@
-<?php if (! $__env->hasRenderedOnce('67818f15-837e-4535-a8e7-0b45906c9c35')): $__env->markAsRenderedOnce('67818f15-837e-4535-a8e7-0b45906c9c35');
+<?php if (! $__env->hasRenderedOnce('e3093b35-89be-42ea-96a6-f7e564767067')): $__env->markAsRenderedOnce('e3093b35-89be-42ea-96a6-f7e564767067');
 $__env->startPush('styles'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('ca6d3901-05e1-432f-b821-15bf7134df75')): $__env->markAsRenderedOnce('ca6d3901-05e1-432f-b821-15bf7134df75');
+<?php if (! $__env->hasRenderedOnce('0edc7bdd-8851-4435-b679-a43531e20db8')): $__env->markAsRenderedOnce('0edc7bdd-8851-4435-b679-a43531e20db8');
 $__env->startPush('scripts'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
 <?php $__env->startSection("content"); ?>
 
-    <div class="contents">
+    <div class="az-content az-content-dashboard">
 
         <div class="container-fluid">
-            <div class="row">
+            <div class="az-content-body">
                 <div class="col-lg-12">
-
-                    <div class="col-xxl-6 col-lg-6 offset-3 col-sm-12 m-bottom-50 m-top-50">
 
                         <?php
                             $title = "Deep Link Generator";
                             $description = "Create a Link with our super fast deep link generator tool and promote any brand easily.";
                         ?>
                         <?php echo $__env->make("template.publisher.widgets.deeplink", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    </div>
 
                 </div><!-- End: .col -->
             </div>

@@ -9002,9 +9002,6 @@ body {
 .az-body,
 .az-dashboard {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   position: relative; }
 
 .az-body::before {

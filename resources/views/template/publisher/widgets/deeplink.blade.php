@@ -13,14 +13,14 @@
                     <div class="files-area__left d-flex align-items-center">
                         <div class="files-area__title">
                             @if(isset($title))
-                                <h3 class="mb-10 fw-500 color-dark text-capitalize">{{ $title }}</h3>
+                                <h3 class="az-dashboard-title">{{ $title }}</h3>
                             @else
-                                <p class="mb-0 fs-14 fw-500 color-dark text-capitalize">Create A Link</p>
+                                <p class="az-dashboard-title">Create A Link</p>
                             @endif
                             @if(isset($description))
-                                <span class="color-light fs-14 d-flex mb-10">{{ $description }}</span>
+                                <span class="az-dashboard-text">{{ $description }}</span>
                             @else
-                                <span class="color-light fs-12 d-flex ">Promote any brand with a simple link.</span>
+                                <span class="az-dashboard-text">Promote any brand with a simple link.</span>
                             @endif
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="landing_url" name="landing_url" placeholder="Enter a Landing Page Optional" @if(isset($advertiser->deeplink_enabled) && !$advertiser->deeplink_enabled) style="display: none;" @endif>
+                            <input type="text" class="form-control" id="landing_url" name="landing_url" placeholder="Enter a Landing Page Optional" @if(isset($advertiser->deeplink_enabled) && !$advertiser->deeplink_enabled) @endif style="display: none;">
                         </div>
                         <div class="form-group display-hidden" id="subIDContent">
                             <input type="text" class="form-control" id="sub_id" name="sub_id" placeholder="Enter a Sud ID Optional">
@@ -182,7 +182,7 @@
                         $("#deepLinkContent").html(`
                             <div class="pt-1" style="color: green;">
                                 <i class="fas fa-check-circle"></i>
-                                <span class="icon-text ml-1">Deep Link</span>
+                                <span class="icon-text ml-1">Deep Link Enable!  </span>
                             </div>
                         `);
                         $("#landing_url").show();
@@ -190,7 +190,7 @@
                         $("#deepLinkContent").html(`
                             <div class="pt-1" style="color: red;">
                                 <i class="fas fa-times-circle"></i>
-                                <span class="icon-text ml-1">Deep Link</span>
+                                <span class="icon-text ml-1">Deep Link Disable! </span>
                             </div>
                         `);
                         $("#landing_url").hide();

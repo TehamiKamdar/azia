@@ -36,10 +36,10 @@
 
 
         @include("partial.publisher.new_header")
-        <main class="main-content">
+        <main class="az-dashboard">
             @yield("content")
-            @include("partial.publisher.footer")
         </main>
+        @include("partial.publisher.footer")
 
 
 

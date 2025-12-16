@@ -2,7 +2,7 @@
 
     <!-- Start Table Responsive -->
     <div class="table-responsive">
-        <table class="table mb-0 table-hover table-borderless border-0">
+        <table class="table mb-0 table-hover table-primary border-0">
             <thead>
                 <tr class="userDatatable-header">
                     <th>
@@ -40,14 +40,17 @@
                     </th>
                     <th>
                     </th>
-                    <th>
-                        <span class="userDatatable-title font-weight-bold text-black">@if(count($transactions)){{ implode(', ', array_unique($transactions->pluck("sale_amount_currency")->toArray())) }} {{ number_format($totalSaleAmount, 2) }} @else - @endif</span>
+                    <th class="text-center">
+                        <span class="userDatatable-title font-weight-bold text-black">@if(count($transactions)){{ implode(', ', array_unique($transactions->pluck("sale_amount_currency")->toArray())) }} {{ number_format($totalSaleAmount, 2) }} @else $0 @endif</span>
+                    </th>
+                    <th class="text-center">
+                        <span class="userDatatable-title font-weight-bold text-black">@if(count($transactions)){{ implode(', ', array_unique($transactions->pluck("commission_amount_currency")->toArray())) }} {{ number_format($totalCommissionAmount, 2) }} @else $0 @endif</span>
                     </th>
                     <th>
-                        <span class="userDatatable-title font-weight-bold text-black">@if(count($transactions)){{ implode(', ', array_unique($transactions->pluck("commission_amount_currency")->toArray())) }} {{ number_format($totalCommissionAmount, 2) }} @else - @endif</span>
+
                     </th>
                     <th>
-                        
+
                     </th>
                 </tr>
 
@@ -128,8 +131,8 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="6">
-                            <h6 class="text-center mt-5">Transaction Data Not Exist</h6>
+                        <td colspan="7">
+                            <h6 class="text-center my-2">Transaction Data Not Exist</h6>
                         </td>
                     </tr>
                 @endif

@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('1247d9f8-4d7f-481c-9021-b44acb829917')): $__env->markAsRenderedOnce('1247d9f8-4d7f-481c-9021-b44acb829917');
+<?php if (! $__env->hasRenderedOnce('5246881d-3b1b-4194-99c6-dddd80790a54')): $__env->markAsRenderedOnce('5246881d-3b1b-4194-99c6-dddd80790a54');
 $__env->startPush('styles'); ?>
 
 <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/select2.min.css")); ?>" />
@@ -243,7 +243,7 @@ $__env->startPush('styles'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('c0d08091-9e02-4838-9fd1-666e2d8a007e')): $__env->markAsRenderedOnce('c0d08091-9e02-4838-9fd1-666e2d8a007e');
+<?php if (! $__env->hasRenderedOnce('8874a262-99f7-4fc5-b52e-729b503bbca1')): $__env->markAsRenderedOnce('8874a262-99f7-4fc5-b52e-729b503bbca1');
 $__env->startPush('scripts'); ?>
 <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/select2.full.min.js")); ?>"></script>
 <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/drawer.js")); ?>"></script>
@@ -595,8 +595,8 @@ $__env->startPush('scripts'); ?>
                     </nav>
 
                     <nav class="nav">
-                        <a class="nav-link" href="#"><i class="far fa-save"></i> Save Report</a>
-                        <a class="nav-link" href="#"><i class="far fa-file-excel"></i> Export to CSV</a>
+                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
                 </div>

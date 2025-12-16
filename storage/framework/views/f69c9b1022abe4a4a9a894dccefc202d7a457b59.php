@@ -1,9 +1,9 @@
-<?php if (! $__env->hasRenderedOnce('ec4c5df1-4fe5-43dd-9d2e-70fc815d3569')): $__env->markAsRenderedOnce('ec4c5df1-4fe5-43dd-9d2e-70fc815d3569');
+<?php if (! $__env->hasRenderedOnce('c14e15ea-984d-41e7-ad0f-7d566f618a43')): $__env->markAsRenderedOnce('c14e15ea-984d-41e7-ad0f-7d566f618a43');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/daterangepicker.css")); ?>">
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('8ae8586d-61d1-4161-937e-c1cc2ed0ae40')): $__env->markAsRenderedOnce('8ae8586d-61d1-4161-937e-c1cc2ed0ae40');
+<?php if (! $__env->hasRenderedOnce('244b5627-5ac7-413a-892c-6c50ac85fb67')): $__env->markAsRenderedOnce('244b5627-5ac7-413a-892c-6c50ac85fb67');
 $__env->startPush('scripts'); ?>
 
     <?php
@@ -299,138 +299,154 @@ $__env->startPush('scripts'); ?>
 
 <?php $__env->startSection("content"); ?>
 
-    <div class="contents">
+    <div class="az-content az-content-dashboard">
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="shop-breadcrumb">
+            <div class="az-content-body">
 
-                        <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Transactions</h4>
+                <div class="az-dashboard-one-title">
+                    <div>
+                        <h2 class="az-dashboard-title">Transactions</h2>
+                        <p class="az-dashboard-text">Total Results: <?php echo e($total); ?> </p>
+                    </div>
+                    <?php echo $__env->make("partial.publisher.transaction_alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                </div>
+                <div class="az-dashboard-nav">
+                    <nav class="nav">
+                        <a class="nav-link active" data-toggle="tab" href="#">Our Brands</a>
+                    </nav>
 
-                            <?php echo $__env->make("partial.publisher.transaction_alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <nav class="nav">
+                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
+                    </nav>
+                    
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top">
+                            <!-- Header -->
+                            <div class="card-header bg-primary text-white py-3 px-4">
+                                <h5 class="mb-0 d-flex align-items-center fw-semibold">
+                                    <i class="fas fa-sliders-h me-2"></i> Filters
+                                </h5>
+                            </div>
 
-                            <div class="breadcrumb-action justify-content-center flex-wrap">
-                                <?php if(!request()->payment_id): ?>
-                                    <div class="action-btn">
-                                        <div class="form-group mb-0">
-                                            <div class="input-container icon-left position-relative">
-                                                <span class="input-icon icon-left">
-                                                    <span data-feather="calendar"></span>
-                                                </span>
-                                                <input type="text" class="form-control form-control-default date-ranger"
-                                                       name="date-ranger"
-                                                       placeholder="Jan 01, <?php echo e(now()->format("Y")); ?> - <?php echo e(now()->format("M d, Y")); ?>"/>
+                            <!-- Body -->
+                            <div class="card-body p-4">
+
+                                <!-- Search Filter -->
+                                <div class="mb-4 pb-3 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="mb-0 fw-semibold d-flex align-items-center">
+                                            <i class="fas fa-search me-2 text-muted"></i> Search
+                                        </h6>
+                                        <a href="javascript:void(0)" id="clearSearchByName"
+                                            onclick="clearFilter('clearSearchByName')"
+                                            class="text-danger <?php echo e(request()->search_by_name ? '' : 'd-none'); ?>">
+                                            <i class="fas fa-times me-1"></i> Clear
+                                        </a>
+                                    </div>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text bg-light border-end-0">
+                                            <i class="fas fa-search text-muted"></i>
+                                        </span>
+                                        <input type="text" class="form-control border-start-0" id="SearchByName"
+                                            placeholder="Search by name..." value="<?php echo e(request()->search_by_name); ?>">
+                                    </div>
+                                </div>
+
+                                <div class="mb-4 pb-3 border-bottom">
+                                    <?php if(!request()->payment_id): ?>
+                                        <div class="action-btn">
+                                            <div class="form-group mb-0">
+                                                <div class="input-container icon-left position-relative">
+                                                    <span class="input-icon icon-left">
+                                                        <span data-feather="calendar"></span>
+                                                    </span>
+                                                    <input type="text" class="form-control form-control-default date-ranger" name="date-ranger" placeholder="Jan 01, <?php echo e(now()->format("Y")); ?> - <?php echo e(now()->format("M d, Y")); ?>"/>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                <?php endif; ?>
-                                <div class="dropdown action-btn">
-                                    <button class="btn btn-sm btn-default btn-white dropdown-toggle" type="button"
-                                            id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        <i class="la la-download"></i> Export
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <span class="dropdown-item">Export With</span>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="<?php echo e($xslx); ?>"
-                                           id="exportXLSX" class="dropdown-item">
-                                            <i class="la la-file-excel"></i> Excel (XLSX)</a>
-                                        <a href="<?php echo e($csv); ?>"
-                                           id="exportCSV" class="dropdown-item">
-                                            <i class="la la-file-csv"></i> CSV</a>
-                                    </div>
+                                    <?php endif; ?>
                                 </div>
+
+                                <?php if(!request()->payment_id): ?>
+
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold mb-2">Status</label>
+
+                                        <ul class="nav nav-pills flex-wrap gap-2" id="transactionStatus">
+                                            <li class="nav-item">
+                                                <a class="nav-link <?php echo e(!request()->section || request()->section == 'all' ? 'active' : ''); ?>" data-section="all" href="javascript:void(0)" id="allTransactions">
+                                                    All
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link <?php echo e(request()->section == 'pending' ? 'active' : ''); ?>" data-section="pending" href="javascript:void(0)" id="pendingTransactions">
+                                                    Pending
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link <?php echo e(request()->section == 'hold' ? 'active' : ''); ?>" data-section="hold" href="javascript:void(0)" id="holdTransactions">
+                                                    Hold
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link <?php echo e(request()->section == 'approved' ? 'active' : ''); ?>" data-section="approved" href="javascript:void(0)" id="approvedTransactions">
+                                                    Approved
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link <?php echo e(request()->section == 'declined' ? 'active' : ''); ?>" data-section="declined" href="javascript:void(0)" id="declinedTransactions">
+                                                    Declined
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link <?php echo e(request()->section == 'paid' ? 'active' : ''); ?>" data-section="paid" href="javascript:void(0)" id="paidTransactions">
+                                                    Paid
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="region" class="form-label fw-semibold">Region</label>
+
+                                        <select class="form-select" id="region">
+                                            <option value="all" <?php echo e(request()->region == 'all' || empty(request()->region) ? 'selected' : ''); ?>>
+                                                All Regions
+                                            </option>
+
+                                            <?php $__currentLoopData = $countries ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php if($country->advertiser_country): ?>
+                                                    <option value="<?php echo e($country->advertiser_country); ?>"
+                                                        <?php echo e(request()->region == $country->advertiser_country ? 'selected' : ''); ?>>
+                                                        <?php echo e($country->advertiser_country); ?>
+
+                                                    </option>
+                                                <?php endif; ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                                            <option value="unknown" <?php echo e(request()->region == 'unknown' ? 'selected' : ''); ?>>
+                                                Unknown
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                <?php endif; ?>
+
+                                <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0 mr-10 font-weight-bold text-black"><strong id="totalResults"></strong></p>
                             </div>
                         </div>
-
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="userDatatable orderDatatable global-shadow border py-30 px-sm-30 px-20 bg-white radius-xl w-100 mb-30">
-                        <div class="project-top-wrapper d-flex justify-content-between flex-wrap mb-25 mt-n10">
-
-                            <div class="d-flex align-items-center flex-wrap justify-content-center">
-                                <div class="project-search order-search  global-shadow mt-10">
-                                    <div class="order-search__form">
-                                        <span data-feather="search"></span>
-                                        <input class="form-control mr-sm-2 border-0 box-shadow-none" type="text"
-                                               placeholder="Filter by name, id etc..." aria-label="Search"
-                                               id="SearchByName" value="<?php echo e(request()->search_by_name); ?>">
-                                    </div>
-                                </div><!-- End: .project-search -->
-                                <div class="project-category d-flex align-items-center mt-xl-10 mt-15">
-                                    <a href="javascript:void(0)" id="clearSearchByName"
-                                       onclick="clearFilter('clearSearchByName')"
-                                       class="margin-left-minus-50px <?php echo e(request()->search_by_name ? null : "display-hidden"); ?>">
-                                        <small>Clear</small>
-                                    </a>
-                                </div>
-                                <?php if(!request()->payment_id): ?>
-                                    <div class="project-category d-flex align-items-center ml-md-30 mt-xl-10 mt-15">
-                                        <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0 mr-10 font-weight-bold text-black">Status :</p>
-                                        <div class="project-tap order-project-tap global-shadow">
-                                            <ul class="nav px-1" id="ap-tab" role="tablist">
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?php echo e(!request()->section || request()->section == "all" ? "active" : null); ?>"
-                                                       data-section="all" id="allTransactions"
-                                                       href="javascript:void(0)">All</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?php echo e(request()->section == "pending" ? "active" : null); ?>"
-                                                       data-section="pending" id="pendingTransactions"
-                                                       href="javascript:void(0)">Pending</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?php echo e(request()->section == "hold" ? "active" : null); ?>"
-                                                       data-section="hold" id="holdTransactions" href="javascript:void(0)">Hold</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?php echo e(request()->section == "approved" ? "active" : null); ?>"
-                                                       data-section="approved" id="approvedTransactions"
-                                                       href="javascript:void(0)">Approved</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?php echo e(request()->section == "declined" ? "active" : null); ?>"
-                                                       data-section="declined" id="declinedTransactions"
-                                                       href="javascript:void(0)">Declined</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?php echo e(request()->section == "paid" ? "active" : null); ?>"
-                                                       data-section="paid" id="paidTransactions" href="javascript:void(0)">Paid</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- End: .project-category -->
-                                    <div class="project-category d-flex align-items-center ml-md-30 mt-xl-10 mt-15">
-                                        <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0 mr-10 font-weight-bold text-black">Region :</p>
-                                        <div class="project-category__select global-shadow ">
-                                            <select class="js-example-basic-single js-states form-control" id="region">
-                                                <option <?php echo e(request()->region == "all" || empty(request()->region) ? "selected" : ""); ?> value="all">All Regions</option>
-                                                <?php if($countries && count($countries)): ?>
-                                                    <?php $__currentLoopData = $countries; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <?php if($country->advertiser_country): ?>
-                                                            <option <?php echo e(request()->region == $country->advertiser_country ? "selected" : ""); ?> value="<?php echo e($country->advertiser_country); ?>"><?php echo e($country->advertiser_country); ?></option>
-                                                        <?php endif; ?>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                <?php endif; ?>
-                                                <option <?php echo e(request()->region == "unknown" ? "selected" : ""); ?> value="unknown">Unknown</option>
-                                            </select>
-                                        </div>
-                                    </div><!-- End: .project-category -->
-                                <?php endif; ?>
-                            </div><!-- End: .d-flex -->
-                            <div class="content-center mt-10">
-                                <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0 mr-10 font-weight-bold text-black">Total
-                                    Results: <strong id="totalResults"><?php echo e($total); ?></strong></p>
-                            </div><!-- End: .content-center -->
-                        </div><!-- End: .project-top-wrapper -->
+                    <div class="col-lg-9 col-md-4 col-sm-12">
 
                         <?php echo $__env->make("partial.admin.alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         <div id="ap-overview">

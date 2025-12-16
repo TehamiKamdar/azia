@@ -40,10 +40,10 @@
 
 
         <?php echo $__env->make("partial.publisher.new_header", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        <main class="main-content">
+        <main class="az-dashboard">
             <?php echo $__env->yieldContent("content"); ?>
-            <?php echo $__env->make("partial.publisher.footer", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </main>
+        <?php echo $__env->make("partial.publisher.footer", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 
