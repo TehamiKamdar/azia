@@ -16,7 +16,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         @stack('styles')
         @stack('extended_styles')
-        <link href="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/fontawesome-free/css/all.min.css") }}" rel="stylesheet">
         <link href="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/ionicons/css/ionicons.min.css") }}" rel="stylesheet">
         <link href="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/typicons.font/typicons.css") }}" rel="stylesheet">
         <link href="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/flag-icon-css/css/flag-icon.min.css") }}" rel="stylesheet">
@@ -29,6 +28,71 @@
 
 
     </head>
+
+    <style>
+        /* Dim background when loader is active */
+.zero-point-one-opacity {
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Loader container */
+.spin-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Adjustment for top spacing */
+.top-minus-25px {
+    margin-top: -25px;
+}
+
+/* Spinner wrapper */
+.atbd-spin-dots {
+    display: flex;
+    gap: 6px;
+}
+
+/* Individual dots */
+.atbd-spin-dots .spin-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #5b47fb;
+    animation: spinDots 1.2s infinite ease-in-out;
+}
+
+.display-hidden{
+    display: none;
+}
+
+/* Animation delay for each dot */
+.atbd-spin-dots .spin-dot:nth-child(1) { animation-delay: 0s; }
+.atbd-spin-dots .spin-dot:nth-child(2) { animation-delay: 0.15s; }
+.atbd-spin-dots .spin-dot:nth-child(3) { animation-delay: 0.3s; }
+.atbd-spin-dots .spin-dot:nth-child(4) { animation-delay: 0.45s; }
+
+/* Dot animation */
+@keyframes spinDots {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+    </style>
 
     <body class="layout-light top-menu overlayScroll">
 
@@ -44,7 +108,7 @@
 
 
 
-<script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/jquery/jquery.min.js") }}"></script>
+    <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/jquery/jquery.min.js") }}"></script>
     <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
     <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/ionicons/ionicons.js") }}"></script>
     <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/lib/jquery.flot/jquery.flot.js") }}"></script>
@@ -55,7 +119,7 @@
     <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/js/azia.js") }}"></script>
     <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/js/chart.flot.sampledata.js") }}"></script>
     <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/js/dashboard.sampledata.js") }}"></script>
-    <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/js/jquery.cookie.js") }}" type="text/javascript"></script>
+    <script src="{{ \App\Helper\Static\Methods::staticAsset("publisher_dashboard/js/cookie.js") }}" type="text/javascript"></script>
 
         @stack('scripts')
         @stack('extended_scripts')
@@ -246,9 +310,6 @@
                 });
 
                 document.querySelector('body').classList.add("loaded")
-
-                /* feather icon */
-                feather.replace();
 
                 /* sidebar collapse  */
                 const sidebarToggle = document.querySelector(".sidebar-toggle");

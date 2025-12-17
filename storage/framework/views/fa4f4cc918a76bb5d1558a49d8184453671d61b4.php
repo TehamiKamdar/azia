@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('094e2cae-0e9c-4b6c-8117-d776ae9ffe89')): $__env->markAsRenderedOnce('094e2cae-0e9c-4b6c-8117-d776ae9ffe89');
+<?php if (! $__env->hasRenderedOnce('5f47e42e-46a8-4e0e-833d-23ab23d12c18')): $__env->markAsRenderedOnce('5f47e42e-46a8-4e0e-833d-23ab23d12c18');
 $__env->startPush('styles'); ?>
     <style>
         .user-member__form .form-control {
@@ -7,7 +7,7 @@ $__env->startPush('styles'); ?>
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('b27aec94-36bc-4b85-9f0f-72cb7175f577')): $__env->markAsRenderedOnce('b27aec94-36bc-4b85-9f0f-72cb7175f577');
+<?php if (! $__env->hasRenderedOnce('58317e6e-ba2d-48fc-ad33-2a31c6111cb4')): $__env->markAsRenderedOnce('58317e6e-ba2d-48fc-ad33-2a31c6111cb4');
 $__env->startPush('scripts'); ?>
     <script>
         function changeLimit()
@@ -162,7 +162,7 @@ $__env->startPush('scripts'); ?>
                 </div>
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4 col-sm-12">
-                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top" style="top: 20px;">
+                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top">
                             <!-- Header -->
                             <div class="card-header bg-primary text-white py-3 px-4">
                                 <h5 class="mb-0 d-flex align-items-center fw-semibold">

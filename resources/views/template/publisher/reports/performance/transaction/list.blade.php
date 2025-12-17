@@ -99,11 +99,16 @@
             let commission = response?.commission;
             let labels = response?.extra?.labels;
             $("#commission-tab").html(`
-                <div class="performance-stats__down">
-                    <span>Total Commissions</span>
-                    <strong>
-                        ${commission.count}
-                    </strong>
+                <div class="d-flex align-items-center">
+                    <div class="performance-icon bg-primary bg-opacity-10 text-primary rounded-2 p-1 me-2">
+                        <i class="fa-solid fa-money-bill-1-wave text-white"></i>
+                    </div>
+                    <div class="text-start">
+                        <div class="performance-label text-muted x-small">Total Commissions</div>
+                        <div class="performance-value fw-bold fs-6">
+                            ${commission.count}
+                        </div>
+                    </div>
                 </div>
             `);
             $("#commissionChart").remove();
@@ -119,7 +124,7 @@
             );
             $("#commissionPeriodContent").html(`
                     <li class="custom-label">
-                        <span style="background-color: rgb(95, 99, 242);"></span>Custom Period
+                        <span style="background-color: rgb(95, 99, 242);"></span>Current Period
                     </li>
                 `)
         }
@@ -130,11 +135,16 @@
             let commission = response?.approved;
             let labels = response?.extra?.labels;
             $("#approved-commission-tab").html(`
-                <div class="performance-stats__down">
-                    <span>Total Approved Commissions</span>
-                    <strong>
-                        ${commission.count}
-                    </strong>
+                <div class="d-flex align-items-center">
+                    <div class="performance-icon bg-info bg-opacity-10 text-info rounded-2 p-1 me-2">
+                        <i class="fa-solid text-white fa-check-circle"></i>
+                    </div>
+                    <div class="text-start">
+                        <div class="performance-label text-muted x-small">Approved Commissions</div>
+                        <div class="performance-value fw-bold fs-6">
+                            ${commission.count}
+                        </div>
+                    </div>
                 </div>
             `);
             $("#approvedcommissionChart").remove();
@@ -150,7 +160,7 @@
             );
             $("#approvedcommissionPeriodContent").html(`
                     <li class="custom-label">
-                        <span style="background-color: rgb(95, 99, 242);"></span>Custom Period
+                        <span style="background-color: rgb(95, 99, 242);"></span>Current Period
                     </li>
                 `)
         }
@@ -161,11 +171,16 @@
             let commission = response?.declined;
             let labels = response?.extra?.labels;
             $("#declined-commission-tab").html(`
-                <div class="performance-stats__down">
-                    <span>Total Declined Commissions</span>
-                    <strong>
-                        ${commission.count}
-                    </strong>
+                <div class="d-flex align-items-center">
+                    <div class="performance-icon bg-danger bg-opacity-10 text-danger rounded-2 p-1 me-2">
+                        <i class="fa-solid text-white fa-times-circle"></i>
+                    </div>
+                    <div class="text-start">
+                        <div class="performance-label text-muted x-small">Declined Commissions</div>
+                        <div class="performance-value fw-bold fs-6">
+                            ${commission.count}
+                        </div>
+                    </div>
                 </div>
             `);
             $("#declinedcommissionChart").remove();
@@ -181,7 +196,7 @@
             );
             $("#declinedcommissionPeriodContent").html(`
                     <li class="custom-label">
-                        <span style="background-color: rgb(95, 99, 242);"></span>Custom Period
+                        <span style="background-color: rgb(95, 99, 242);"></span>Current Period
                     </li>
                 `)
         }
@@ -192,11 +207,16 @@
             let commission = response?.pending;
             let labels = response?.extra?.labels;
             $("#pending-commission-tab").html(`
-                <div class="performance-stats__down">
-                    <span>Total Pending Commissions</span>
-                    <strong>
-                        ${commission.count}
-                    </strong>
+                <div class="d-flex align-items-center">
+                    <div class="performance-icon bg-warning bg-opacity-10 text-warning rounded-2 p-1 me-2">
+                        <i class="fa-solid text-white fa-clock"></i>
+                    </div>
+                    <div class="text-start">
+                        <div class="performance-label text-muted x-small">Pending Commissions</div>
+                        <div class="performance-value fw-bold fs-6">
+                            ${commission.count}
+                        </div>
+                    </div>
                 </div>
             `);
             $("#pendingcommissionChart").remove();
@@ -212,10 +232,11 @@
             );
             $("#pendingcommissionPeriodContent").html(`
                     <li class="custom-label">
-                        <span style="background-color: rgb(95, 99, 242);"></span>Custom Period
+                        <span style="background-color: rgb(95, 99, 242);"></span>Current Period
                     </li>
                 `)
         }
+
 
 
         function createTransactionGraph(response)
@@ -223,11 +244,16 @@
             let transaction = response?.transaction;
             let labels = response?.extra?.labels;
             $("#transaction-tab").html(`
-                <div class="performance-stats__down">
-                    <span>Total Transactions</span>
-                    <strong>
-                        ${transaction.count}
-                    </strong>
+                <div class="d-flex align-items-center">
+                    <div class="performance-icon bg-purple bg-opacity-10 text-purple rounded-2 p-1 me-2">
+                        <i class="fa-solid text-white fa-exchange-alt"></i>
+                    </div>
+                    <div class="text-start">
+                        <div class="performance-label text-muted x-small">Total Transactions</div>
+                        <div class="performance-value fw-bold fs-6">
+                            ${transaction.count}
+                        </div>
+                    </div>
                 </div>
             `);
             $("#transactionChart").remove();
@@ -243,7 +269,7 @@
             );
             $("#transactionPeriodContent").html(`
                     <li class="custom-label">
-                        <span style="background-color: rgb(95, 99, 242);"></span>Custom Period
+                        <span style="background-color: rgb(95, 99, 242);"></span>Current Period
                     </li>
                 `);
         }
@@ -253,11 +279,16 @@
             let sale = response?.sale;
             let labels = response?.extra?.labels;
             $("#sale-tab").html(`
-                <div class="performance-stats__down">
-                    <span>Total Sales</span>
-                    <strong>
-                        ${sale.count}
-                    </strong>
+                <div class="d-flex align-items-center">
+                    <div class="performance-icon bg-orange bg-opacity-10 text-orange rounded-2 p-1 me-2">
+                        <i class="fa-solid text-white fa-shopping-cart"></i>
+                    </div>
+                    <div class="text-start">
+                        <div class="performance-label text-muted x-small">Total Sales</div>
+                        <div class="performance-value fw-bold fs-6">
+                            ${sale.count}
+                        </div>
+                    </div>
                 </div>
             `);
             $("#saleChart").remove();
@@ -273,7 +304,7 @@
             );
             $("#salePeriodContent").html(`
                     <li class="custom-label">
-                        <span style="background-color: rgb(95, 99, 242);"></span>Custom Period
+                        <span style="background-color: rgb(95, 99, 242);"></span>Current Period
                     </li>
                 `);
         }
@@ -303,7 +334,7 @@
             );
             $("#clickPeriodContent").html(`
                     <li class="custom-label">
-                        <span style="background-color: rgb(95, 99, 242);"></span>Custom Period
+                        <span style="background-color: rgb(95, 99, 242);"></span>Current Period
                     </li>
                 `);
         }

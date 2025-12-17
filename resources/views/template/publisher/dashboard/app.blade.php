@@ -435,8 +435,7 @@
 
                             </div><!-- card-body-top -->
                             <div class="flot-chart-wrapper">
-                                <div id="flotChart" class="flot-chart"
-                                    style="padding: 0px;position: relative;margin-top: 20px;height: 350px;"></div>
+                                <div id="flotChart" class="flot-chart" style="padding: 0px;position: relative;margin-top: 20px;height: 350px;"></div>
                             </div><!-- flot-chart-wrapper -->
                         </div><!-- card-body -->
                     </div><!-- card -->
