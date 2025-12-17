@@ -1,5 +1,61 @@
 @extends("layouts.panel_guest")
 
+@push('styles')
+    <style>
+        .auth-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f6f6fb, #ecebff);
+}
+
+.auth-card {
+    border-radius: 14px;
+}
+
+.btn-icon {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.auth-header {
+    background: #5b47fb;
+    color: #fff;
+    border-top-left-radius: 14px;
+    padding: 8px 24px !important;
+    border-top-right-radius: 14px;
+}
+
+.auth-btn {
+    display: block !important;
+    width: 100% !important;
+    padding: 8px !important;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: #5b47fb;
+}
+
+.auth-btn:hover {
+    background-color: #4a39e3;
+    border-color: #4a39e3;
+}
+
+.field-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+    </style>
+@endpush
+
 @push("scripts")
     <script>
         $("#loginForm").validate({
@@ -27,95 +83,100 @@
 @endpush
 
 @section("content")
-    <div class="signUP-admin" style="background-color: #f6f6fb;">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-7 col-md-7 col-sm-8">
-                    <div class="signUp-admin-right signIn-admin-right  p-md-40 p-10">
-                        @include("partial.admin.alert")
+<div class="auth-wrapper d-flex align-items-center justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-12">
 
-                        <div class="row justify-content-center">
-                            <div class="col-xl-7 col-lg-8 col-md-12">
-                                <div class="logo-div text-center">
-                                    <a href="https://www.linkscircle.com/"><img src="{{ \App\Helper\Static\Methods::staticAsset("img/logo.png") }}" alt="LinksCircle Affiliate Network" width="200px" class="img-fluid"></a>
+                @include("partial.admin.alert")
+
+                <div class="text-center mb-4">
+                    <a href="https://www.linkscircle.com/">
+                        <img src="{{ \App\Helper\Static\Methods::staticAsset('img/logo.png') }}"
+                             alt="LinksCircle Affiliate Network"
+                             class="img-fluid"
+                             style="max-width: 180px;">
+                    </a>
+                </div>
+
+                <div class="card auth-card shadow-sm border-0">
+                    <div class="card-header auth-header text-center py-3">
+                        @if($type == $advertiser)
+                            <h5 class="mb-0 fw-semibold text-white">Sign in as Advertiser</h5>
+                        @elseif($type == $publisher)
+                            <h5 class="mb-0 fw-semibold text-white">Sign in as Publisher</h5>
+                        @endif
+                    </div>
+
+                    <div class="card-body p-4">
+
+                        <form method="POST" action="{{ route('login', ['type' => $type]) }}" id="loginForm">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    Email Address <span class="text-danger">*</span>
+                                </label>
+                                <input type="email"
+                                       id="email"
+                                       name="email"
+                                       class="form-control"
+                                       value="{{ old('email') }}"
+                                       placeholder="Enter your email"
+                                       autofocus>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">
+                                    Password <span class="text-danger">*</span>
+                                </label>
+                                <div class="position-relative">
+                                    <input type="password"
+                                           id="password"
+                                           name="password"
+                                           class="form-control"
+                                           placeholder="Enter your password"
+                                           autocomplete="current-password">
+                                    <i class="fa fa-eye-slash field-icon text-muted"
+                                       id="password-icon"
+                                       onclick="showPassword('password')"></i>
                                 </div>
-                                <div class="edit-profile mt-md-25 mt-0">
-                                    <div class="card border-0">
-                                        <div class="card-header border-0  pb-md-15 pb-10 pt-md-20 pt-10 ">
-                                            <div class="edit-profile__title">
-                                                @if($type == $advertiser)
-                                                    <h6>Sign in as <span class='color-primary'>Advertiser</span></h6>
-                                                @elseif($type == $publisher)
-                                                    <h6>Sign in as <span class='color-primary'>Publisher</span></h6>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="edit-profile__body">
+                            </div>
 
-                                                <div class="btn-group atbd-button-group btn-group-normal nav mb-20">
-                                                    <a class="btn btn-sm btn-outline-light nav-link @if($type == $advertiser) active text-white @endif" href="{{ route("login", ["type" => $advertiser]) }}">Advertiser</a>
-                                                    <a class="btn btn-sm btn-outline-light nav-link @if($type == $publisher) active text-white @endif" href="{{ route("login", ["type" => $publisher]) }}">Publisher</a>
-                                                </div>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
 
-                                                <form method="POST" action="{{ route('login', ["type" => $type]) }}" id="loginForm">
-                                                    @csrf
-                                                    <div class="form-group mb-20">
-                                                        <label for="email">{{ __('Email Address')}}<span class="text-danger">*</span></label>
-                                                        <input id="email" class="form-control" type="email" name="email"
-                                                               value="{{ old('email') }}" autofocus
-                                                               placeholder="Please Enter Email Address">
-                                                    </div>
-                                                    <div class="form-group mb-15">
-                                                        <label for="password">Password<span class="text-danger">*</span></label>
-                                                        <div class="position-relative">
-                                                            <input id="password" class="form-control"
-                                                                   type="password"
-                                                                   name="password"
-                                                                   autocomplete="current-password"
-                                                                   placeholder="Please Enter Password">
-                                                            <div class="fa fa-fw fa-eye-slash text-light fs-16 field-icon" id="password-icon" onclick="showPassword('password')"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="signUp-condition signIn-condition">
-                                                        <div class="checkbox-theme-default custom-checkbox ">
-                                                            <input class="checkbox" type="checkbox" id="remember" name="remember" value="1">
-                                                            <label for="remember">
-                                                                <span class="checkbox-text">{{ __('Remember me') }}</span>
-                                                            </label>
-                                                        </div>
-                                                        <a href="{{ route("password.request") }}">forget password</a>
-                                                    </div>
-                                                    <div
-                                                        class="button-group d-flex pt-1 justify-content-md-start justify-content-center">
-                                                        <button
-                                                            class="btn btn-primary btn-default btn-block btn-squared text-capitalize lh-normal px-50 py-15 signIn-createBtn">
-                                                            sign in
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div><!-- End: .card-body -->
-                                    </div><!-- End: .card -->
-                                </div><!-- End: .edit-profile -->
+                                <a href="{{ route('password.request') }}"
+                                   class="text-decoration-none text-muted">
+                                    Forgot password?
+                                </a>
+                            </div>
 
-                                @if($admin != $type)
-                                    <div
-                                        class="signUp-topbar d-flex align-items-center justify-content-center mt-20">
-                                        <p class="mb-0">
-                                            Don't have an account?
-                                            <a href="{{ route("register", ["type" => $type]) }}" class="color-primary">
-                                                Sign up
-                                            </a>
-                                        </p>
-                                    </div><!-- End: .signUp-topbar  -->
-                                @endif
+                            <div class="d-grid">
+                                <button type="submit" class="btn auth-btn text-white fw-semibold py-0 px-0">
+                                    Sign In
+                                    <i class="fas fa-arrow-right btn-icon"></i>
+                                </button>
+                            </div>
 
-                            </div><!-- End: .col-xl-5 -->
-                        </div>
-                    </div><!-- End: .signUp-admin-right  -->
-                </div><!-- End: .col-xl-8  -->
+                        </form>
+                    </div>
+                </div>
+
+                @if($admin != $type)
+                    <div class="text-center mt-4">
+                        <p class="mb-0">
+                            Don’t have an account?
+                            <a href="{{ route('register', ['type' => $type]) }}"
+                               class="fw-semibold text-decoration-none"
+                               style="color:#5b47fb;">
+                                Sign up
+                            </a>
+                        </p>
+                    </div>
+                @endif
+
             </div>
         </div>
-    </div><!-- End: .signUP-admin  -->
+    </div>
+</div>
+
 @endsection

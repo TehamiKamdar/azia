@@ -403,7 +403,7 @@
 
                 <nav class="nav">
                     <a class="nav-link" href="#"><i class="far fa-save"></i> Save Report</a>
-                    <a class="nav-link" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
+                    <a class="nav-link text-danger" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
                     <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                 </nav>
             </div>

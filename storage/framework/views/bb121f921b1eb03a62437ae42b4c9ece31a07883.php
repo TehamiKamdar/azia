@@ -5,13 +5,11 @@
 
         <!-- Start Table Responsive -->
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-hover table-primary">
                 <thead>
                     <tr>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col" colspan="3">
-                            <h5 class="font-weight-bold">Earnings</h5>
+                        <th scope="col" colspan="6" class="text-center">
+                            <h5 class="fw-bold">Earnings</h5>
                         </th>
                     </tr>
                 </thead>
@@ -62,8 +60,8 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="7">
-                            <h6 class="my-5 text-center">Performance Overview Data Not Exist</h6>
+                        <td colspan="6">
+                            <h6 class="my-2 text-center">Performance Overview Data Not Exist</h6>
                         </td>
                     </tr>
                 <?php endif; ?>

@@ -24,7 +24,7 @@
     $approved = number_format($approved, 2);
 ?>
 
-<?php if (! $__env->hasRenderedOnce('8d302c40-6ece-447b-814a-a748d7c4c65c')): $__env->markAsRenderedOnce('8d302c40-6ece-447b-814a-a748d7c4c65c');
+<?php if (! $__env->hasRenderedOnce('77d13c85-38f8-4219-abd4-eb8c81d3388a')): $__env->markAsRenderedOnce('77d13c85-38f8-4219-abd4-eb8c81d3388a');
 $__env->startPush('styles'); ?>
 <style>
     .legend div {
@@ -38,7 +38,7 @@ $__env->startPush('styles'); ?>
 <?php $__env->stopPush(); endif; ?>
 
 
-<?php if (! $__env->hasRenderedOnce('caedb0b4-75c1-4cf9-a61f-cc739ef5919b')): $__env->markAsRenderedOnce('caedb0b4-75c1-4cf9-a61f-cc739ef5919b');
+<?php if (! $__env->hasRenderedOnce('2ceac832-49e6-4b9e-98c3-bc4dd43a9050')): $__env->markAsRenderedOnce('2ceac832-49e6-4b9e-98c3-bc4dd43a9050');
 $__env->startPush('scripts'); ?>
 <script>
     $(function () {
@@ -405,7 +405,7 @@ $__env->startPush('scripts'); ?>
 
                 <nav class="nav">
                     <a class="nav-link" href="#"><i class="far fa-save"></i> Save Report</a>
-                    <a class="nav-link" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
+                    <a class="nav-link text-danger" href="#"><i class="far fa-file-pdf"></i> Export to PDF</a>
                     <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                 </nav>
             </div>
