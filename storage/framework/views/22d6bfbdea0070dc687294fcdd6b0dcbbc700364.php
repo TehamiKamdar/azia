@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('908c23d2-6219-42df-b2c5-0524231cbe29')): $__env->markAsRenderedOnce('908c23d2-6219-42df-b2c5-0524231cbe29');
+<?php if (! $__env->hasRenderedOnce('96111313-15e7-4038-b82b-ef35b6d4efe7')): $__env->markAsRenderedOnce('96111313-15e7-4038-b82b-ef35b6d4efe7');
 $__env->startPush('styles'); ?>
 
 <style>
@@ -195,10 +195,38 @@ $__env->startPush('styles'); ?>
             border-top: 1px solid var(--border-color);
             margin-top: 30px;
         }
+
+        #loading h6 {
+            animation: pulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%   { opacity: 0.4; }
+            50%  { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        .loading-text {
+            font-weight: 500;
+        }
+
+        .dots::after {
+            content: "";
+            animation: dots 1.5s steps(3, end) infinite;
+        }
+
+        @keyframes dots {
+            0%   { content: ""; }
+            33%  { content: "."; }
+            66%  { content: ".."; }
+            100% { content: "..."; }
+        }
+
+
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('2e7fc675-8722-4aff-bd99-6cfdd9013893')): $__env->markAsRenderedOnce('2e7fc675-8722-4aff-bd99-6cfdd9013893');
+<?php if (! $__env->hasRenderedOnce('9acaafb4-b801-4af5-a8bd-96b1e80a1f00')): $__env->markAsRenderedOnce('9acaafb4-b801-4af5-a8bd-96b1e80a1f00');
 $__env->startPush('scripts'); ?>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/drawer.js")); ?>"></script>
     <script>
@@ -249,6 +277,8 @@ $__env->startPush('scripts'); ?>
                     $("#limit").change(function () {
                         changeLimit();
                     });
+                    $("#loading").removeClass('d-flex', true);
+                    $("#loading").addClass('d-none');
                 },
                 error: function (response) {
 
@@ -263,6 +293,7 @@ $__env->startPush('scripts'); ?>
             });
             $("#coupons-tab").one( "click", function () {
                 fetch_data();
+
             });
             $("#applyAdvertiser").submit(function () {
                 $("#applyAdvertiserBttn").prop('disabled', true);
@@ -321,7 +352,6 @@ $__env->startPush('scripts'); ?>
                     </div>
                     <div class="col-md-3 col-sm-12 text-center">
                         <div class="image-wrapper">
-                            
                             <?php if(!empty($advertiser->fetch_logo_url)): ?>
                             <img loading="lazy" class="profile-image"
                                 src="<?php echo e($advertiser->fetch_logo_url); ?>" alt="<?php echo e($advertiser->name); ?>">
@@ -355,23 +385,33 @@ $__env->startPush('scripts'); ?>
             <!-- Navigation Tabs -->
             <ul class="nav nav-tabs" id="profileTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro" type="button">Intro</button>
+                    <button class="nav-link active" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro" type="button">Intro</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="commission-tab" data-bs-toggle="tab" data-bs-target="#commission" type="button">Commission Rates</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="terms-tab" data-bs-toggle="tab" data-bs-target="#terms" type="button">Terms</button>
+                    <button class="nav-link" id="terms-tab" data-bs-toggle="tab" data-bs-target="#terms" type="button">Terms</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button">Rules</button>
                 </li>
+                <?php if(isset($advertiser->advertiser_applies->status) && $advertiser->advertiser_applies->status == \App\Models\AdvertiserApply::STATUS_ACTIVE): ?>
+                    <li class="nav-item">
+                        <button class="nav-link" id="links-tab" data-bs-toggle="tab" data-bs-target="#links" role="tab" aria-controls="links" aria-selected="false">Links</button>
+                    </li>
+                <?php endif; ?>
+                <?php if(isset($advertiser->advertiser_applies->status) && $advertiser->advertiser_applies->status == \App\Models\AdvertiserApply::STATUS_ACTIVE): ?>
+                    <li class="nav-item">
+                        <button class="nav-link" id="coupons-tab" data-bs-toggle="tab" data-bs-target="#coupons" role="tab" aria-controls="coupons" aria-selected="false">Offers</button>
+                    </li>
+                <?php endif; ?>
             </ul>
 
             <!-- Tab Content -->
             <div class="tab-content" id="profileTabContent">
                 <!-- Intro Tab -->
-                <div class="tab-pane fade" id="intro" role="tabpanel">
+                <div class="tab-pane fade show active" id="intro" role="tabpanel">
                     <div>
                         <h4 class="az-dashboard-title mb-2">About <?php echo e($advertiser->name); ?></h4>
                         <?php if($advertiser->short_description): ?>
@@ -474,7 +514,7 @@ $__env->startPush('scripts'); ?>
                 </div>
 
                 <!-- Terms Tab -->
-                <div class="tab-pane fade show active" id="terms" role="tabpanel">
+                <div class="tab-pane fade" id="terms" role="tabpanel">
                     <h4 class="az-dashboard-title mb-2">Program Terms</h4>
 
                     <div class="terms-item">
@@ -519,6 +559,100 @@ $__env->startPush('scripts'); ?>
                     </div>
 
                 </div>
+
+                <?php if(isset($advertiser->advertiser_applies->status) && $advertiser->advertiser_applies->status == \App\Models\AdvertiserApply::STATUS_ACTIVE): ?>
+                    <div class="tab-pane fade" id="links" role="tabpanel" aria-labelledby="links-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Tracking Link Card -->
+                                <div class="mb-4 border-bottom">
+                                    <h2 class="az-dashboard-title mb-2">Tracking Link</h2>
+                                    <?php if(isset($advertiser->advertiser_applies->is_tracking_generate) && isset($advertiser->advertiser_applies->tracking_url) && $advertiser->advertiser_applies->is_tracking_generate == 1): ?>
+                                        <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 mb-3">
+                                            <div class="text-break">
+                                                <a href="<?php echo e($advertiser->advertiser_applies->tracking_url_long ?? $advertiser->advertiser_applies->tracking_url); ?>"
+                                                target="_blank"
+                                                id="trackingURL"
+                                                class="text-decoration-none text-primary">
+                                                    <?php echo e($advertiser->advertiser_applies->tracking_url_long ?? $advertiser->advertiser_applies->tracking_url); ?>
+
+                                                </a>
+                                            </div>
+                                            <button onclick="clickToCopy('trackingURL', 'Tracking URL Successfully Copied.')"
+                                                    class="btn btn-copy">
+                                                Copy Tracking Link
+                                            </button>
+                                        </div>
+                                    <?php elseif(isset($advertiser->advertiser_applies->is_tracking_generate) && $advertiser->advertiser_applies->is_tracking_generate == 2): ?>
+                                        <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 mb-3">
+                                            <div>
+                                                <span class="text-muted">
+                                                    <i class="fas fa-spinner fa-spin me-2"></i>
+                                                    Generating tracking links...
+                                                </span>
+                                            </div>
+                                            <button class="btn btn-outline-secondary btn-sm" disabled>
+                                                Copy Tracking Link
+                                            </button>
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="text-center py-3">
+                                            <span class="text-muted">-</span>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+
+                                <!-- Short Tracking Link Card -->
+                                <div>
+                                        <h5 class="az-dashboard-title mb-2">Short Tracking Link</h5>
+                                        <?php if(isset($advertiser->advertiser_applies->is_tracking_generate) && isset($advertiser->advertiser_applies->tracking_url_short) && $advertiser->advertiser_applies->is_tracking_generate == 1): ?>
+                                            <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
+                                                <div class="text-break">
+                                                    <a href="<?php echo e($advertiser->advertiser_applies->tracking_url_short); ?>"
+                                                    id="trackingShortURL"
+                                                    target="_blank"
+                                                    class="text-decoration-none text-primary">
+                                                        <?php echo e($advertiser->advertiser_applies->tracking_url_short); ?>
+
+                                                    </a>
+                                                </div>
+                                                <button onclick="clickToCopy('trackingShortURL', 'Tracking Short URL Successfully Copied.')"
+                                                        class="btn btn-copy">
+                                                    Copy Short Tracking Link
+                                                </button>
+                                            </div>
+                                        <?php elseif(isset($advertiser->advertiser_applies->is_tracking_generate) && $advertiser->advertiser_applies->is_tracking_generate == 2): ?>
+                                            <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
+                                                <div>
+                                                    <span class="text-muted">
+                                                        <i class="fas fa-spinner fa-spin me-2"></i>
+                                                        Generating short tracking links...
+                                                    </span>
+                                                </div>
+                                                <button class="btn btn-outline-secondary btn-sm" disabled>
+                                                    Copy Short Tracking Link
+                                                </button>
+                                            </div>
+                                        <?php else: ?>
+                                            <div class="text-center py-3">
+                                                <span class="text-muted">-</span>
+                                            </div>
+                                        <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <?php if(isset($advertiser->advertiser_applies->status) && $advertiser->advertiser_applies->status == \App\Models\AdvertiserApply::STATUS_ACTIVE): ?>
+                    <div class="tab-pane fade" id="coupons" role="tabpanel" aria-labelledby="coupons-tab">
+                        <div id="loading" class="d-flex justify-content-center align-items-center">
+                            <h6 class="loading-text">Loading Offers <span class="dots"></span></h6>
+                        </div>
+                        <div class="ap-post-content">
+                            <div class="orderDatatable global-shadow border py-30 px-sm-30 px-20 bg-white radius-xl w-100 mb-30" id="ap-overview"></div>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
         </div>

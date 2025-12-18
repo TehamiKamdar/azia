@@ -215,6 +215,7 @@
                                 @php
                                     $fetch = \App\Models\Advertiser::find($advertiser->id);
                                 @endphp
+
                                 @if (!empty($fetch->fetch_logo_url))
                                 <img loading="lazy" class="ap-img__main h-auto mr-10" src="{{ $fetch->fetch_logo_url }}" alt="{{ $advertiser->name }}" style="width: 60px">
                                 @elseif (!empty($advertiser->logo))

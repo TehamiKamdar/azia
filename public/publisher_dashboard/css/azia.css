@@ -1865,6 +1865,13 @@ textarea.form-control {
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer; }
 
+
+    .btn-copy{
+        padding: 2px 12px !important;
+        box-shadow: 1px 1px 3px #000;
+        border: 1px solid #acacac;
+        min-height: 20px !important;
+    }
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none; }

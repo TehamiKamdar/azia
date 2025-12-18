@@ -65,7 +65,7 @@
         <div class="alert-content">
             <p><?php echo Session::get('error'); ?></p>
             <button type="button" class="close text-capitalize" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">close now</span>
+                <span aria-hidden="true">X</span>
             </button>
         </div>
     </div>

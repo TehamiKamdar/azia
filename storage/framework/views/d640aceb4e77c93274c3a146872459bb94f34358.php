@@ -155,13 +155,6 @@
         color: white;
     }
 
-    .btn-copy{
-        padding: 2px 12px !important;
-        box-shadow: 1px 1px 3px #000;
-        border: 1px solid #acacac;
-        min-height: 20px;
-    }
-
     @media (max-width: 768px) {
         .advertiser-attributes {
             gap: 15px;
@@ -200,7 +193,7 @@
                         <div class="advertiser-details">
                             <div class="advertiser-logo">
                                 <?php
-                                    $fetch = \App\Models\Advertiser::find($link->sid);
+                                    $fetch = \App\Models\Advertiser::find($link->id);
                                 ?>
                                 <?php if(!empty($fetch->fetch_logo_url)): ?>
 
