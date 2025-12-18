@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('68080763-eece-4daf-8e6a-de12a7450c44')): $__env->markAsRenderedOnce('68080763-eece-4daf-8e6a-de12a7450c44');
+<?php if (! $__env->hasRenderedOnce('00149cc9-9f4c-440c-964e-f6eecdc55fa7')): $__env->markAsRenderedOnce('00149cc9-9f4c-440c-964e-f6eecdc55fa7');
 $__env->startPush('styles'); ?>
     <script>
         function changeLimit()
@@ -123,7 +123,7 @@ $__env->startPush('styles'); ?>
     </script>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('2126f122-e409-4ff4-8866-74062773ac93')): $__env->markAsRenderedOnce('2126f122-e409-4ff4-8866-74062773ac93');
+<?php if (! $__env->hasRenderedOnce('8b1f0800-b137-4663-83ce-a61e4972d015')): $__env->markAsRenderedOnce('8b1f0800-b137-4663-83ce-a61e4972d015');
 $__env->startPush('scripts'); ?>
 
 <?php $__env->stopPush(); endif; ?>
@@ -149,10 +149,14 @@ $__env->startPush('scripts'); ?>
                     </nav>
 
                     <nav class="nav">
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        <?php
+                            $queryParams = request()->all();
+                        ?>
+                        <a class="nav-link text-success" href="<?php echo e(route("publisher.creatives.text-links.export", array_merge(['type' => 'xlsx'], $queryParams))); ?>" id="exportXLSX"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="<?php echo e(route("publisher.creatives.text-links.export", array_merge(['type' => 'csv'], $queryParams))); ?>" id="exportCSV"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
+                    
                 </div>
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4 col-sm-12">
