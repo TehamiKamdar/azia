@@ -602,7 +602,7 @@
                 </div>
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4 col-sm-12">
-                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top" style="top: 20px;">
+                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top" style="top: 10px;">
                             <!-- Header -->
                             <div class="card-header bg-primary text-white py-3 px-4">
                                 <h5 class="mb-0 d-flex align-items-center fw-semibold">

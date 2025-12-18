@@ -274,7 +274,7 @@
                     </div>
                 </div>
                 <div class="az-dashboard-nav">
-                    <nav class="nav">
+                    <nav class="nav" style="width: 600px;">
                         <a class="nav-link active" data-toggle="tab" href="#">Payments (Record)</a>
                     </nav>
                 </div>

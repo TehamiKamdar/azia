@@ -47,7 +47,7 @@
                                             @if(!request()->start_date && !request()->end_date && isset($performanceOverview['commission']['percentage']))
                                                 <span class="performance-change x-small ms-1 @if($performanceOverview['commission']['growth'] == "up") text-success @else text-danger @endif">
                                                     <i class="fa-solid text-white @if($performanceOverview['commission']['growth'] == "up") fa-arrow-up @else fa-arrow-down @endif"></i>
-                                                    {{ $performanceOverview['commission']['percentage'] ?? 0 }}%
+                                                    {{ $performanceOverview['commission']['percentage'] ?? 0 }}
                                                 </span>
                                             @endif
                                         </div>
@@ -70,7 +70,7 @@
                                             @if(!request()->start_date && !request()->end_date && isset($performanceOverview['commission']['percentage']))
                                                 <span class="performance-change x-small ms-1 @if($performanceOverview['commission']['growth'] == "up") text-success @else text-danger @endif">
                                                     <i class="fa-solid text-white @if($performanceOverview['commission']['growth'] == "up") fa-arrow-up @else fa-arrow-down @endif"></i>
-                                                    {{ $performanceOverview['commission']['percentage'] ?? 0 }}%
+                                                    {{ $performanceOverview['commission']['percentage'] ?? 0 }}
                                                 </span>
                                             @endif
                                         </div>
@@ -93,7 +93,7 @@
                                             @if(!request()->start_date && !request()->end_date && isset($performanceOverview['approved']['percentage']))
                                                 <span class="performance-change x-small ms-1 @if($performanceOverview['approved']['growth'] == "up") text-success @else text-danger @endif">
                                                     <i class="fa-solid text-white @if($performanceOverview['approved']['growth'] == "up") fa-arrow-up @else fa-arrow-down @endif"></i>
-                                                    {{ $performanceOverview['approved']['percentage'] ?? 0 }}%
+                                                    {{ $performanceOverview['approved']['percentage'] ?? 0 }}
                                                 </span>
                                             @endif
                                         </div>
@@ -116,7 +116,7 @@
                                             @if(!request()->start_date && !request()->end_date && isset($performanceOverview['pending']['percentage']))
                                                 <span class="performance-change x-small ms-1 @if($performanceOverview['pending']['growth'] == "up") text-success @else text-danger @endif">
                                                     <i class="fa-solid text-white @if($performanceOverview['pending']['growth'] == "up") fa-arrow-up @else fa-arrow-down @endif"></i>
-                                                    {{ $performanceOverview['pending']['percentage'] ?? 0 }}%
+                                                    {{ $performanceOverview['pending']['percentage'] ?? 0 }}
                                                 </span>
                                             @endif
                                         </div>
@@ -139,7 +139,7 @@
                                             @if(!request()->start_date && !request()->end_date && isset($performanceOverview['declined']['percentage']))
                                                 <span class="performance-change x-small ms-1 @if($performanceOverview['declined']['growth'] == "up") text-success @else text-danger @endif">
                                                     <i class="fa-solid text-white @if($performanceOverview['declined']['growth'] == "up") fa-arrow-up @else fa-arrow-down @endif"></i>
-                                                    {{ $performanceOverview['declined']['percentage'] ?? 0 }}%
+                                                    {{ $performanceOverview['declined']['percentage'] ?? 0 }}
                                                 </span>
                                             @endif
                                         </div>
@@ -162,7 +162,7 @@
                                             @if(!request()->start_date && !request()->end_date && isset($performanceOverview['transaction']['percentage']))
                                                 <span class="performance-change x-small ms-1 @if($performanceOverview['transaction']['growth'] == "up") text-success @else text-danger @endif">
                                                     <i class="fa-solid text-white @if($performanceOverview['transaction']['growth'] == "up") fa-arrow-up @else fa-arrow-down @endif"></i>
-                                                    {{ $performanceOverview['transaction']['percentage'] ?? 0 }}%
+                                                    {{ $performanceOverview['transaction']['percentage'] ?? 0 }}
                                                 </span>
                                             @endif
                                         </div>
@@ -185,7 +185,7 @@
                                             @if(!request()->start_date && !request()->end_date && isset($performanceOverview['sale']['percentage']))
                                                 <span class="performance-change x-small ms-1 @if($performanceOverview['sale']['growth'] == "up") text-success @else text-danger @endif">
                                                     <i class="fa-solid text-white @if($performanceOverview['sale']['growth'] == "up") fa-arrow-up @else fa-arrow-down @endif"></i>
-                                                    {{ $performanceOverview['sale']['percentage'] ?? 0 }}%
+                                                    {{ $performanceOverview['sale']['percentage'] ?? 0 }}
                                                 </span>
                                             @endif
                                         </div>
@@ -420,9 +420,6 @@
                             <ul class="legend-static" id="commissionPeriodContent">
                                 <li class="custom-label">
                                     <span style="background-color: rgb(91, 71, 251);"></span>Current Period
-                                </li>
-                                <li class="custom-label">
-                                    <span style="background-color: #C6D0DC"></span>Previous Period
                                 </li>
                             </ul>
                         </div>

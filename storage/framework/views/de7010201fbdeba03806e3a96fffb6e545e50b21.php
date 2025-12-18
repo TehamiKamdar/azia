@@ -24,7 +24,7 @@
     $approved = number_format($approved, 2);
 ?>
 
-<?php if (! $__env->hasRenderedOnce('77d13c85-38f8-4219-abd4-eb8c81d3388a')): $__env->markAsRenderedOnce('77d13c85-38f8-4219-abd4-eb8c81d3388a');
+<?php if (! $__env->hasRenderedOnce('3d5548b6-f127-4001-8b10-43ec90b95b89')): $__env->markAsRenderedOnce('3d5548b6-f127-4001-8b10-43ec90b95b89');
 $__env->startPush('styles'); ?>
 <style>
     .legend div {
@@ -38,7 +38,7 @@ $__env->startPush('styles'); ?>
 <?php $__env->stopPush(); endif; ?>
 
 
-<?php if (! $__env->hasRenderedOnce('2ceac832-49e6-4b9e-98c3-bc4dd43a9050')): $__env->markAsRenderedOnce('2ceac832-49e6-4b9e-98c3-bc4dd43a9050');
+<?php if (! $__env->hasRenderedOnce('8a563725-6d6e-475e-a241-2d2754f0cdb9')): $__env->markAsRenderedOnce('8a563725-6d6e-475e-a241-2d2754f0cdb9');
 $__env->startPush('scripts'); ?>
 <script>
     $(function () {
@@ -437,8 +437,7 @@ $__env->startPush('scripts'); ?>
 
                             </div><!-- card-body-top -->
                             <div class="flot-chart-wrapper">
-                                <div id="flotChart" class="flot-chart"
-                                    style="padding: 0px;position: relative;margin-top: 20px;height: 350px;"></div>
+                                <div id="flotChart" class="flot-chart" style="padding: 0px;position: relative;margin-top: 20px;height: 350px;"></div>
                             </div><!-- flot-chart-wrapper -->
                         </div><!-- card-body -->
                     </div><!-- card -->

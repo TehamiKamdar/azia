@@ -48,7 +48,8 @@
                                             <?php if(!request()->start_date && !request()->end_date && isset($performanceOverview['commission']['percentage'])): ?>
                                                 <span class="performance-change x-small ms-1 <?php if($performanceOverview['commission']['growth'] == "up"): ?> text-success <?php else: ?> text-danger <?php endif; ?>">
                                                     <i class="fa-solid text-white <?php if($performanceOverview['commission']['growth'] == "up"): ?> fa-arrow-up <?php else: ?> fa-arrow-down <?php endif; ?>"></i>
-                                                    <?php echo e($performanceOverview['commission']['percentage'] ?? 0); ?>%
+                                                    <?php echo e($performanceOverview['commission']['percentage'] ?? 0); ?>
+
                                                 </span>
                                             <?php endif; ?>
                                         </div>
@@ -72,7 +73,8 @@
                                             <?php if(!request()->start_date && !request()->end_date && isset($performanceOverview['commission']['percentage'])): ?>
                                                 <span class="performance-change x-small ms-1 <?php if($performanceOverview['commission']['growth'] == "up"): ?> text-success <?php else: ?> text-danger <?php endif; ?>">
                                                     <i class="fa-solid text-white <?php if($performanceOverview['commission']['growth'] == "up"): ?> fa-arrow-up <?php else: ?> fa-arrow-down <?php endif; ?>"></i>
-                                                    <?php echo e($performanceOverview['commission']['percentage'] ?? 0); ?>%
+                                                    <?php echo e($performanceOverview['commission']['percentage'] ?? 0); ?>
+
                                                 </span>
                                             <?php endif; ?>
                                         </div>
@@ -96,7 +98,8 @@
                                             <?php if(!request()->start_date && !request()->end_date && isset($performanceOverview['approved']['percentage'])): ?>
                                                 <span class="performance-change x-small ms-1 <?php if($performanceOverview['approved']['growth'] == "up"): ?> text-success <?php else: ?> text-danger <?php endif; ?>">
                                                     <i class="fa-solid text-white <?php if($performanceOverview['approved']['growth'] == "up"): ?> fa-arrow-up <?php else: ?> fa-arrow-down <?php endif; ?>"></i>
-                                                    <?php echo e($performanceOverview['approved']['percentage'] ?? 0); ?>%
+                                                    <?php echo e($performanceOverview['approved']['percentage'] ?? 0); ?>
+
                                                 </span>
                                             <?php endif; ?>
                                         </div>
@@ -120,7 +123,8 @@
                                             <?php if(!request()->start_date && !request()->end_date && isset($performanceOverview['pending']['percentage'])): ?>
                                                 <span class="performance-change x-small ms-1 <?php if($performanceOverview['pending']['growth'] == "up"): ?> text-success <?php else: ?> text-danger <?php endif; ?>">
                                                     <i class="fa-solid text-white <?php if($performanceOverview['pending']['growth'] == "up"): ?> fa-arrow-up <?php else: ?> fa-arrow-down <?php endif; ?>"></i>
-                                                    <?php echo e($performanceOverview['pending']['percentage'] ?? 0); ?>%
+                                                    <?php echo e($performanceOverview['pending']['percentage'] ?? 0); ?>
+
                                                 </span>
                                             <?php endif; ?>
                                         </div>
@@ -144,7 +148,8 @@
                                             <?php if(!request()->start_date && !request()->end_date && isset($performanceOverview['declined']['percentage'])): ?>
                                                 <span class="performance-change x-small ms-1 <?php if($performanceOverview['declined']['growth'] == "up"): ?> text-success <?php else: ?> text-danger <?php endif; ?>">
                                                     <i class="fa-solid text-white <?php if($performanceOverview['declined']['growth'] == "up"): ?> fa-arrow-up <?php else: ?> fa-arrow-down <?php endif; ?>"></i>
-                                                    <?php echo e($performanceOverview['declined']['percentage'] ?? 0); ?>%
+                                                    <?php echo e($performanceOverview['declined']['percentage'] ?? 0); ?>
+
                                                 </span>
                                             <?php endif; ?>
                                         </div>
@@ -168,7 +173,8 @@
                                             <?php if(!request()->start_date && !request()->end_date && isset($performanceOverview['transaction']['percentage'])): ?>
                                                 <span class="performance-change x-small ms-1 <?php if($performanceOverview['transaction']['growth'] == "up"): ?> text-success <?php else: ?> text-danger <?php endif; ?>">
                                                     <i class="fa-solid text-white <?php if($performanceOverview['transaction']['growth'] == "up"): ?> fa-arrow-up <?php else: ?> fa-arrow-down <?php endif; ?>"></i>
-                                                    <?php echo e($performanceOverview['transaction']['percentage'] ?? 0); ?>%
+                                                    <?php echo e($performanceOverview['transaction']['percentage'] ?? 0); ?>
+
                                                 </span>
                                             <?php endif; ?>
                                         </div>
@@ -192,7 +198,8 @@
                                             <?php if(!request()->start_date && !request()->end_date && isset($performanceOverview['sale']['percentage'])): ?>
                                                 <span class="performance-change x-small ms-1 <?php if($performanceOverview['sale']['growth'] == "up"): ?> text-success <?php else: ?> text-danger <?php endif; ?>">
                                                     <i class="fa-solid text-white <?php if($performanceOverview['sale']['growth'] == "up"): ?> fa-arrow-up <?php else: ?> fa-arrow-down <?php endif; ?>"></i>
-                                                    <?php echo e($performanceOverview['sale']['percentage'] ?? 0); ?>%
+                                                    <?php echo e($performanceOverview['sale']['percentage'] ?? 0); ?>
+
                                                 </span>
                                             <?php endif; ?>
                                         </div>
@@ -427,9 +434,6 @@
                             <ul class="legend-static" id="commissionPeriodContent">
                                 <li class="custom-label">
                                     <span style="background-color: rgb(91, 71, 251);"></span>Current Period
-                                </li>
-                                <li class="custom-label">
-                                    <span style="background-color: #C6D0DC"></span>Previous Period
                                 </li>
                             </ul>
                         </div>

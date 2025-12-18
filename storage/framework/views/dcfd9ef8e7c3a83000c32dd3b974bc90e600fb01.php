@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('08822f06-a8aa-4e7a-9ce7-5f137ebcd119')): $__env->markAsRenderedOnce('08822f06-a8aa-4e7a-9ce7-5f137ebcd119');
+<?php if (! $__env->hasRenderedOnce('68080763-eece-4daf-8e6a-de12a7450c44')): $__env->markAsRenderedOnce('68080763-eece-4daf-8e6a-de12a7450c44');
 $__env->startPush('styles'); ?>
     <script>
         function changeLimit()
@@ -123,7 +123,7 @@ $__env->startPush('styles'); ?>
     </script>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('90836bb3-9bfe-4a16-8933-7184515a5b2c')): $__env->markAsRenderedOnce('90836bb3-9bfe-4a16-8933-7184515a5b2c');
+<?php if (! $__env->hasRenderedOnce('2126f122-e409-4ff4-8866-74062773ac93')): $__env->markAsRenderedOnce('2126f122-e409-4ff4-8866-74062773ac93');
 $__env->startPush('scripts'); ?>
 
 <?php $__env->stopPush(); endif; ?>
@@ -156,7 +156,7 @@ $__env->startPush('scripts'); ?>
                 </div>
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4 col-sm-12">
-                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top" style="top: 20px;">
+                        <div class="card shadow-sm border-0 rounded-3 sticky-lg-top">
                             <!-- Header -->
                             <div class="card-header bg-primary text-white py-3 px-4">
                                 <h5 class="mb-0 d-flex align-items-center fw-semibold">
