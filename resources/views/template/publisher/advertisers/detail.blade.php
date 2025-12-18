@@ -2,10 +2,201 @@
 
 @pushonce('styles')
 
-    <style>
-        .friends-widget .card-body .labelLine, .friends-widget .card-body .trackerHeading {max-width: 100%!important;}.friends-widget .card-body .trackerMinimize {display:none!important;}
-    </style>
+<style>
+        :root {
+            --primary: #5b47fb;
+            --primary-dark: #4a3ac9;
+            --light-bg: #f8f9fe;
+            --dark-text: #2a2a3c;
+            --light-text: #6c757d;
+            --border-color: #e0e0ed;
+        }
 
+        .bg-primary{
+            background-color: var(--primary) !important;
+        }
+
+        .profile-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .profile-header {
+            padding: 30px;
+            background: linear-gradient(to right, #ffffff 0%, var(--light-bg) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .li-none{
+            margin-left: 8px;
+            margin-bottom: 4px;
+            list-style: none;
+        }
+
+        .profile-name {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--dark-text);
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+
+        .profile-title {
+            color: var(--light-text);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .image-wrapper{
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            width: auto;
+            height: 80px;
+            border: 2px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-tabs {
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 30px;
+        }
+
+        .nav-tabs .nav-link {
+            color: var(--light-text);
+            font-weight: 600;
+            padding: 15px 20px;
+            border: none;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary) !important;
+            background: transparent;
+            border-bottom: 3px solid var(--primary) !important;
+        }
+
+        .tab-content {
+            padding: 30px;
+        }
+
+        .info-box {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .info-value.highlight {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .contact-info {
+            background-color: var(--light-bg);
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 30px;
+            color: var(--primary);
+        }
+
+        .commission-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .commission-item:last-child {
+            border-bottom: none;
+        }
+
+        .commission-category {
+            font-weight: 600;
+        }
+
+        .commission-rate {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .terms-item {
+            margin-bottom: 4px;
+        }
+
+        .terms-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .terms-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--light-text);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+        }
+    </style>
 @endpushonce
 
 @pushonce('scripts')
@@ -81,8 +272,254 @@
 @endpushonce
 
 @section("content")
+<div class="az-content az-content-dashboard">
+    <div class="container-fluid">
+        <div class="az-content-body">
+            <div class="profile-card">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="row align-items-center">
+                    <div class="col-md-9 col-sm-12">
+                        <h1 class="profile-name">{{ $advertiser->name }}</h1>
+                        <p class="profile-title">ID: {{ $advertiser->sid }}</p>
 
-    <div class="contents">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="info-box">
+                                    <div class="info-label">Commission Rate</div>
+                                    <div class="info-value highlight">{{ $advertiser->commission }} {{ $advertiser->commission_type == "percentage" ? "%" : $advertiser->commission_type }}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="info-box">
+                                    <div class="info-label">Payout Days</div>
+                                    <div class="info-value">{{ $advertiser->average_payment_time ?? "30" }} <span class="fs-12">days</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="info-box">
+                                    <div class="info-label">Region</div>
+                                    <div class="info-value">
+                                        @php
+                                            $regions = $advertiser->primary_regions ?? [];
+                                            if(count($regions) > 1) {
+                                                $regions = "Multi";
+                                            } elseif (count($regions) == 1 && $regions[0] == "00") {
+                                                $regions = "All";
+                                            } elseif (count($regions) == 1) {
+                                                $regions = $regions[0]." Region ";
+                                            } else {
+                                                $regions = "Region Data is not available";
+                                            }
+                                        @endphp
+                                        {{ $regions }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <div class="image-wrapper">
+                            {{-- <p>{{ $advertiser->fetch_logo_url }}</p> --}}
+                            @if (!empty($advertiser->fetch_logo_url))
+                            <img loading="lazy" class="profile-image"
+                                src="{{ $advertiser->fetch_logo_url }}" alt="{{ $advertiser->name }}">
+                            @elseif (!empty($advertiser->logo))
+                                <img src="{{ \App\Helper\Static\Methods::staticAsset("$advertiser->logo") }}"
+                                    alt="{{ $advertiser->name }}" class="profile-image">
+                            @else
+                                <img loading="lazy" class="profile-image"
+                                    src="{{ \App\Helper\Static\Methods::isImageShowable($advertiser->logo) }}"
+                                    alt="{{ $advertiser->name }}">
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="row mt-3">
+                    <div class="col-md-6 mb-2">
+                        <button class="btn btn-primary w-100" id="applyBtn">
+                            <i class="fas fa-paper-plane me-2"></i> Apply to Promote
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-outline-primary w-100" id="messageBtn">
+                            <i class="fas fa-envelope me-2"></i> Send Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <ul class="nav nav-tabs" id="profileTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro" type="button">Intro</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="commission-tab" data-bs-toggle="tab" data-bs-target="#commission" type="button">Commission Rates</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="terms-tab" data-bs-toggle="tab" data-bs-target="#terms" type="button">Terms</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="rules-tab" data-bs-toggle="tab" data-bs-target="#rules" type="button">Rules</button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="profileTabContent">
+                <!-- Intro Tab -->
+                <div class="tab-pane fade" id="intro" role="tabpanel">
+                    <div>
+                        <h4 class="az-dashboard-title mb-2">About {{ $advertiser->name }}</h4>
+                        @if($advertiser->short_description)
+                        <p class="az-dashboard-text m-0">
+                            {!! \Illuminate\Support\Str::limit($advertiser->short_description, 1000) !!}
+                        </p>
+                        @else
+                        <p class="az-dashboard-text m-0">
+                            {!! \Illuminate\Support\Str::limit($advertiser->description, limit: 1000) !!}
+                        </p>
+                        @endif
+                    </div>
+                    <div class="">
+                        <h4 class="az-dashboard-title mb-2">Categories</h4>
+                        @if($advertiser->categories)
+                            @foreach(\App\Helper\PublisherData::getMixNames($advertiser->categories) as $category)
+                                <li class="li-none badge rounded-pill bg-primary p-2" style="font-size: 90%;">
+                                    {{ $category ?? "-" }}
+                                </li>
+                            @endforeach
+                        @else
+                            <li class="li-none badge rounded-pill bg-danger p-2" style="font-size: 90%;">
+                                No Categories to show
+                            </li>
+                        @endif
+                    </div>
+                    <div class="contact-info">
+                        <h5><i class="fas fa-address-card me-2"></i> Contact Information</h5>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email:</strong> {{ $advertiser->user->email ?? "-" }}
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <strong>Website:</strong> {!! $url !!}
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong>Response Time:</strong> Within 24-48 hours
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commission Rates Tab -->
+                <div class="tab-pane fade" id="commission" role="tabpanel">
+                    <h4 class="az-dashboard-title mb-2">Commission Structure</h4>
+                    <p class="az-dashboard-text mb-3">Our commission rates vary based on product category and performance tiers.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-primary table-hover">
+                            <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Condition</th>
+                                <th class="text-center">Commission Rate</th>
+                                <th>Additional info</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @if(count($advertiser->commissions))
+                                    @foreach($advertiser->commissions as $commission)
+                                        <tr>
+                                            @if(empty($commission->date))
+                                                <td>{{ now()->format("Y-m-d") }}</td>
+                                            @else
+                                                <td>{{ $commission->date }}</td>
+                                            @endif
+                                            <td>{{ $commission->condition ?? "-" }}</td>
+                                            <td class="text-center">{{ $commission->rate ?? "-" }}{{ $commission->type == "amount" ? $advertiser->currency_code : "%" }}</td>
+                                            <td>{{ $commission->info ?? "-" }}</td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <tr class="border-0">
+                                        <td class="text-center" colspan="4">
+                                            <small>No Commission Rates Exist</small>
+                                        </td>
+                                    </tr>
+                                @endif
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Terms Tab -->
+                <div class="tab-pane fade show active" id="terms" role="tabpanel">
+                    <h4 class="az-dashboard-title mb-2">Program Terms</h4>
+
+                    <div class="terms-item">
+                        <p>{!! $advertiser->program_policies ?? "-" !!}</p>
+                    </div>
+                </div>
+
+                <!-- Rules Tab -->
+                <div class="tab-pane fade" id="rules" role="tabpanel">
+
+
+                    <div class="border-bottom">
+                        <div class="mb-4">
+                            <h4 class="az-dashboard-title mb-2">Preferred Promotional Methods</h4>
+                            <p class="az-dashboard-text">Promotional Traffic from these sources is allowed:</p>
+                        </div>
+                        @forelse(\App\Helper\PublisherData::getMixNames($advertiser->promotional_methods ?? []) as $method)
+                            <div class="terms-item">
+                                <p> > {{ $method }}</p>
+                            </div>
+                        @empty
+                            <div class="terms-item">
+                                <p>No Method Found.</p>
+                            </div>
+                        @endforelse
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="mb-4">
+                            <h4 class="az-dashboard-title mb-2">Restricted Promotional Methods</h4>
+                            <p class="az-dashboard-text">Promotional Traffic from these sources are strictly not allowed:</p>
+                        </div>
+                        @forelse(\App\Helper\PublisherData::getMixNames($advertiser->program_restrictions ?? []) as $method)
+                            <div class="terms-item">
+                                <p>{{ $method }}</p>
+                            </div>
+                        @empty
+                            <div class="terms-item">
+                                <p>No Method Found.</p>
+                            </div>
+                        @endforelse
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+    {{-- <div class="contents">
 
         <div class="container-fluid">
             <div class="profile-content mb-50">
@@ -104,17 +541,17 @@
                                     <div class="account-profile">
                                     <div class="ap-img w-100 d-flex justify-content-center">
                                             <!-- Profile picture image-->
-                                          @if (!empty($advertiser->fetch_logo_url) && $advertiser->is_fetchable_logo)
-    <img loading="lazy" class="ap-img__main w-auto h-40 mb-3 d-flex"
-         src="{{ $advertiser->fetch_logo_url }}" alt="{{ $advertiser->name }}">
-@elseif (!empty($advertiser->logo))
-    <img src="{{ \App\Helper\Static\Methods::staticAsset("$advertiser->logo") }}"
-         alt="{{ $advertiser->name }}" class="mw-50px mw-lg-75px">
-@else
-    <img loading="lazy" class="ap-img__main w-auto h-40 mb-3 d-flex"
-         src="{{ \App\Helper\Static\Methods::isImageShowable($advertiser->logo) }}"
-         alt="{{ $advertiser->name }}">
-@endif
+                                            @if (!empty($advertiser->fetch_logo_url) && $advertiser->is_fetchable_logo)
+                                                <img loading="lazy" class="ap-img__main w-auto h-40 mb-3 d-flex"
+                                                    src="{{ $advertiser->fetch_logo_url }}" alt="{{ $advertiser->name }}">
+                                            @elseif (!empty($advertiser->logo))
+                                                <img src="{{ \App\Helper\Static\Methods::staticAsset("$advertiser->logo") }}"
+                                                    alt="{{ $advertiser->name }}" class="mw-50px mw-lg-75px">
+                                            @else
+                                                <img loading="lazy" class="ap-img__main w-auto h-40 mb-3 d-flex"
+                                                    src="{{ \App\Helper\Static\Methods::isImageShowable($advertiser->logo) }}"
+                                                    alt="{{ $advertiser->name }}">
+                                            @endif
 
                                         </div>
                                         <div class="ap-nameAddress pb-3 pt-1">
@@ -314,89 +751,8 @@
                                         </ul>
                                     </div>
                                 </div>
-{{--                                <div class="db-social border-bottom">--}}
-{{--                                    <div class="card-header border-bottom-0 pt-sm-25 pb-sm-0  px-md-25 px-3">--}}
-{{--                                        <div class="profile-header-title">--}}
-{{--                                            Social Profiles--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="card-body pt-md-1 pt-0">--}}
-{{--                                        <ul class="db-social-parent mb-0">--}}
-{{--                                            <li class="db-social-parent__item">--}}
-{{--                                                <a class="color-facebook hover-facebook wh-44 fs-22" href="#">--}}
-{{--                                                    <i class="lab la-facebook-f"></i>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="db-social-parent__item">--}}
-{{--                                                <a class="color-twitter hover-twitter wh-44 fs-22" href="#">--}}
-{{--                                                    <i class="lab la-twitter"></i>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="db-social-parent__item">--}}
-{{--                                                <a class="color-ruby hover-ruby  wh-44 fs-22" href="#">--}}
-{{--                                                    <i class="las la-basketball-ball"></i>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="db-social-parent__item">--}}
-{{--                                                <a class="color-instagram hover-instagram wh-44 fs-22" href="#">--}}
-{{--                                                    <i class="lab la-instagram"></i>--}}
-{{--                                                </a>--}}
-{{--                                            </li>--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                             </div>
                             <!-- Profile User Bio End -->
-{{--                            <!-- Profile files Bio -->--}}
-{{--                            <div class="card mb-25">--}}
-{{--                                <div class="card-header py-20  px-sm-25 px-3 ">--}}
-{{--                                    <h6>files</h6>--}}
-{{--                                </div>--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <div class="mb-20">--}}
-
-{{--                                        <div class="files-area d-flex justify-content-between align-items-center">--}}
-{{--                                            <div class="files-area__left d-flex align-items-center">--}}
-{{--                                                <div class="files-area__img">--}}
-{{--                                                    <img src="{{ $advertiser->logo }}" alt="img" class="wh-42">--}}
-{{--                                                </div>--}}
-{{--                                                <div class="files-area__title">--}}
-{{--                                                    <p class="mb-0 fs-14 fw-500 color-dark text-capitalize">Main-admin-design.zip</p>--}}
-{{--                                                    <span class="color-light fs-12 d-flex ">7.05 MB</span>--}}
-{{--                                                    <div class="d-flex text-capitalize">--}}
-{{--                                                        <a href="#" class="fs-12 fw-500 color-primary ">download</a>--}}
-{{--                                                        <a href="#" class="fs-12 fw-500 color-primary ml-10"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-{{--                                    </div>--}}
-{{--                                    <div class="mb-0">--}}
-
-{{--                                        <div class="files-area d-flex justify-content-between align-items-center">--}}
-{{--                                            <div class="files-area__left d-flex align-items-center">--}}
-{{--                                                <div class="files-area__img">--}}
-{{--                                                    <img src="{{ $advertiser->logo }}" alt="img" class="wh-42">--}}
-{{--                                                </div>--}}
-{{--                                                <div class="files-area__title">--}}
-{{--                                                    <p class="mb-0 fs-14 fw-500 color-dark text-capitalize">Product-guidelines.pdf</p>--}}
-{{--                                                    <span class="color-light fs-12 d-flex ">5.07 KB</span>--}}
-{{--                                                    <div class="d-flex text-capitalize">--}}
-{{--                                                        <a href="#" class="fs-12 fw-500 color-primary ">view</a>--}}
-{{--                                                        <a href="#" class="fs-12 fw-500 color-primary ml-10">download</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!-- Profile files End -->--}}
                         </aside>
                     </div>
 
@@ -713,6 +1069,6 @@
         <div class="overlay-dark-l2"></div>
         <!-- ends: .atbd-drawer -->
 
-    </div>
+    </div> --}}
 
 @endsection

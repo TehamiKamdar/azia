@@ -51,6 +51,7 @@ class OwnService extends BaseController
 
                 $advertisers = Advertiser::
                                 select([
+                                    'advertisers.id',
                                     'advertisers.sid',
                                     'advertisers.logo',
                                     'advertisers.name',

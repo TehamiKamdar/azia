@@ -5516,3 +5516,363 @@
 #63 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\lenovo...')
 #64 {main}
 "} 
+[2025-12-18 15:08:37] local.ERROR: htmlspecialchars(): Argument #1 ($string) must be of type string, array given {"view":{"view":"C:\\Users\\lenovo\\Downloads\\application\\resources\\views\\template\\publisher\\advertisers\\detail.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-867596359 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#437</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-867596359\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","advertiser":"<pre class=sf-dump id=sf-dump-391553232 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\Advertiser</span> {<a class=sf-dump-ref>#536</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">advertisers</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:52</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str title=\"36 characters\">144c1ac7-bcee-427c-9fd8-b67b35859a5a</span>\"
+    \"<span class=sf-dump-key>user_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>network_source_id</span>\" => \"<span class=sf-dump-str title=\"7 characters\">3383175</span>\"
+    \"<span class=sf-dump-key>advertiser_id</span>\" => <span class=sf-dump-num>345004</span>
+    \"<span class=sf-dump-key>api_advertiser_id</span>\" => \"<span class=sf-dump-str title=\"36 characters\">ac3ff0e5-9e3a-4df7-9802-9bfb0b058152</span>\"
+    \"<span class=sf-dump-key>sid</span>\" => <span class=sf-dump-num>31512754</span>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"18 characters\"> Mirabello Carrara</span>\"
+    \"<span class=sf-dump-key>currency_code</span>\" => \"<span class=sf-dump-str title=\"3 characters\">EUR</span>\"
+    \"<span class=sf-dump-key>average_payment_time</span>\" => \"<span class=sf-dump-str title=\"2 characters\">23</span>\"
+    \"<span class=sf-dump-key>validation_days</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>epc</span>\" => \"<span class=sf-dump-str>0</span>\"
+    \"<span class=sf-dump-key>tags</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>offer_type</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>source</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Tradedoubler</span>\"
+    \"<span class=sf-dump-key>logo</span>\" => \"<span class=sf-dump-str title=\"31 characters\">storage/logos/684823c790450.png</span>\"
+    \"<span class=sf-dump-key>fetch_logo_url</span>\" => \"<span class=sf-dump-str title=\"17 characters\">http://nomedem.it</span>\"
+    \"<span class=sf-dump-key>is_fetchable_logo</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>fetch_logo_error</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>status</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>provider_status</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>company_name</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>phone_number</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>address</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>city</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>state</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>country</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>commission</span>\" => \"<span class=sf-dump-str>9</span>\"
+    \"<span class=sf-dump-key>commission_type</span>\" => \"<span class=sf-dump-str>%</span>\"
+    \"<span class=sf-dump-key>goto_cookie_lifetime</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>deeplink_enabled</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>exclusive</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>is_available</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>country_full_name</span>\" => \"<span class=sf-dump-str title=\"9 characters\">[&quot;Italy&quot;]</span>\"
+    \"<span class=sf-dump-key>categories</span>\" => \"<span class=sf-dump-str title=\"2 characters\">[]</span>\"
+    \"<span class=sf-dump-key>primary_regions</span>\" => \"<span class=sf-dump-str title=\"6 characters\">[&quot;IT&quot;]</span>\"
+    \"<span class=sf-dump-key>supported_regions</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>program_restrictions</span>\" => \"<span class=sf-dump-str title=\"79 characters\">[&quot;03a19a29-de49-446d-8784-0a34b5a439f7&quot;,&quot;9eda6354-1642-45a7-a578-620ff605e68b&quot;]</span>\"
+    \"<span class=sf-dump-key>promotional_methods</span>\" => \"<span class=sf-dump-str title=\"274 characters\">[&quot;e1d64319-82d8-41dd-9fc8-b56661d06e88&quot;,&quot;e17e5c96-41f3-4a08-9be4-8292660ef924&quot;,&quot;b13216d8-3d94-4284-aa6d-8b2d5f577681&quot;,&quot;b21e73c6-abef-48f9-a8cd-41fb0a9574b5&quot;,&quot;720e659d-c64a-4c74-bb58-484e7f39b18f&quot;,&quot;ed4a5ff0-657d-489a-8a1b-c05ecc6922ee&quot;,&quot;de50e3f4-b45d-4ef0-b03b-637cf5e76d1c&quot;]</span>\"
+    \"<span class=sf-dump-key>valid_domains</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>short_description</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>description</span>\" => \"<span class=sf-dump-str title=\"4057 characters\">&lt;p&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Passi nella storia&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;La storia di Mirabello Carrara &#232; un intreccio che si dirama dalla met&#224; del &#8216;900 fino ad oggi, e che vede come protagonisti marchi storici e pi&#249; recenti che hanno portato al brand tutta l&#8217;esperienze dell&#8217;alta sartoria italiana.&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;1948&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Anno di fondazione di Carrara, che si distinguer&#224; per le sofisticate collezioni in spugna.&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;1978&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Inaugurazione del negozio Mirabello in Brera, specializzato in biancheria per la casa.&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;2012&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Fusione delle due storiche maison italiane, Mirabello e Carrara S.p.A.&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Fino ad oggi&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Acquisizione delle licenze per brand internazionali: Roberto Cavalli, Trussardi, Diesel.&lt;/span&gt;&lt;/p&gt;</span>\"
+    \"<span class=sf-dump-key>program_policies</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>url</span>\" => \"<span class=sf-dump-str title=\"78 characters\">https://www.mirabellocarrara.it/?utm_source=Tradedoubler&amp;utm_medium=Affiliates</span>\"
+    \"<span class=sf-dump-key>click_through_url</span>\" => \"<span class=sf-dump-str title=\"53 characters\">https://clk.tradedoubler.com/click?p=345004&amp;a=3383175</span>\"
+    \"<span class=sf-dump-key>type</span>\" => \"<span class=sf-dump-str title=\"3 characters\">api</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2025-03-22 19:38:22</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2025-09-15 23:52:20</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>is_request__process</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>is_active</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>custom_domain</span>\" => \"<span class=sf-dump-str title=\"19 characters\">mirabellocarrara.it</span>\"
+    \"<span class=sf-dump-key>is_show</span>\" => <span class=sf-dump-num>1</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:52</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str title=\"36 characters\">144c1ac7-bcee-427c-9fd8-b67b35859a5a</span>\"
+    \"<span class=sf-dump-key>user_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>network_source_id</span>\" => \"<span class=sf-dump-str title=\"7 characters\">3383175</span>\"
+    \"<span class=sf-dump-key>advertiser_id</span>\" => <span class=sf-dump-num>345004</span>
+    \"<span class=sf-dump-key>api_advertiser_id</span>\" => \"<span class=sf-dump-str title=\"36 characters\">ac3ff0e5-9e3a-4df7-9802-9bfb0b058152</span>\"
+    \"<span class=sf-dump-key>sid</span>\" => <span class=sf-dump-num>31512754</span>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"18 characters\"> Mirabello Carrara</span>\"
+    \"<span class=sf-dump-key>currency_code</span>\" => \"<span class=sf-dump-str title=\"3 characters\">EUR</span>\"
+    \"<span class=sf-dump-key>average_payment_time</span>\" => \"<span class=sf-dump-str title=\"2 characters\">23</span>\"
+    \"<span class=sf-dump-key>validation_days</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>epc</span>\" => \"<span class=sf-dump-str>0</span>\"
+    \"<span class=sf-dump-key>tags</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>offer_type</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>source</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Tradedoubler</span>\"
+    \"<span class=sf-dump-key>logo</span>\" => \"<span class=sf-dump-str title=\"31 characters\">storage/logos/684823c790450.png</span>\"
+    \"<span class=sf-dump-key>fetch_logo_url</span>\" => \"<span class=sf-dump-str title=\"17 characters\">http://nomedem.it</span>\"
+    \"<span class=sf-dump-key>is_fetchable_logo</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>fetch_logo_error</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>status</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>provider_status</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>company_name</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>phone_number</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>address</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>city</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>state</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>country</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>commission</span>\" => \"<span class=sf-dump-str>9</span>\"
+    \"<span class=sf-dump-key>commission_type</span>\" => \"<span class=sf-dump-str>%</span>\"
+    \"<span class=sf-dump-key>goto_cookie_lifetime</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>deeplink_enabled</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>exclusive</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>is_available</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>country_full_name</span>\" => \"<span class=sf-dump-str title=\"9 characters\">[&quot;Italy&quot;]</span>\"
+    \"<span class=sf-dump-key>categories</span>\" => \"<span class=sf-dump-str title=\"2 characters\">[]</span>\"
+    \"<span class=sf-dump-key>primary_regions</span>\" => \"<span class=sf-dump-str title=\"6 characters\">[&quot;IT&quot;]</span>\"
+    \"<span class=sf-dump-key>supported_regions</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>program_restrictions</span>\" => \"<span class=sf-dump-str title=\"79 characters\">[&quot;03a19a29-de49-446d-8784-0a34b5a439f7&quot;,&quot;9eda6354-1642-45a7-a578-620ff605e68b&quot;]</span>\"
+    \"<span class=sf-dump-key>promotional_methods</span>\" => \"<span class=sf-dump-str title=\"274 characters\">[&quot;e1d64319-82d8-41dd-9fc8-b56661d06e88&quot;,&quot;e17e5c96-41f3-4a08-9be4-8292660ef924&quot;,&quot;b13216d8-3d94-4284-aa6d-8b2d5f577681&quot;,&quot;b21e73c6-abef-48f9-a8cd-41fb0a9574b5&quot;,&quot;720e659d-c64a-4c74-bb58-484e7f39b18f&quot;,&quot;ed4a5ff0-657d-489a-8a1b-c05ecc6922ee&quot;,&quot;de50e3f4-b45d-4ef0-b03b-637cf5e76d1c&quot;]</span>\"
+    \"<span class=sf-dump-key>valid_domains</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>short_description</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>description</span>\" => \"<span class=sf-dump-str title=\"4057 characters\">&lt;p&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Passi nella storia&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;La storia di Mirabello Carrara &#232; un intreccio che si dirama dalla met&#224; del &#8216;900 fino ad oggi, e che vede come protagonisti marchi storici e pi&#249; recenti che hanno portato al brand tutta l&#8217;esperienze dell&#8217;alta sartoria italiana.&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;1948&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Anno di fondazione di Carrara, che si distinguer&#224; per le sofisticate collezioni in spugna.&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;1978&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Inaugurazione del negozio Mirabello in Brera, specializzato in biancheria per la casa.&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;2012&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Fusione delle due storiche maison italiane, Mirabello e Carrara S.p.A.&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Fino ad oggi&lt;/span&gt;&lt;br style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;&lt;span style=&quot;color: rgb(65, 99, 117); font-family: &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Arial; background-color: rgb(240, 244, 247);&quot;&gt;Acquisizione delle licenze per brand internazionali: Roberto Cavalli, Trussardi, Diesel.&lt;/span&gt;&lt;/p&gt;</span>\"
+    \"<span class=sf-dump-key>program_policies</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>url</span>\" => \"<span class=sf-dump-str title=\"78 characters\">https://www.mirabellocarrara.it/?utm_source=Tradedoubler&amp;utm_medium=Affiliates</span>\"
+    \"<span class=sf-dump-key>click_through_url</span>\" => \"<span class=sf-dump-str title=\"53 characters\">https://clk.tradedoubler.com/click?p=345004&amp;a=3383175</span>\"
+    \"<span class=sf-dump-key>type</span>\" => \"<span class=sf-dump-str title=\"3 characters\">api</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2025-03-22 19:38:22</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2025-09-15 23:52:20</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>is_request__process</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>is_active</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>custom_domain</span>\" => \"<span class=sf-dump-str title=\"19 characters\">mirabellocarrara.it</span>\"
+    \"<span class=sf-dump-key>is_show</span>\" => <span class=sf-dump-num>1</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:9</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>categories</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>valid_domains</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>primary_regions</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>supported_regions</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>country_full_name</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>commission_range</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>promotional_methods</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>program_restrictions</span>\" => \"<span class=sf-dump-str title=\"5 characters\">array</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dates</span>: <span class=sf-dump-note>array:3</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"10 characters\">updated_at</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"10 characters\">created_at</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"10 characters\">deleted_at</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:3</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>advertiser_applies</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>user</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>commissions</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Collection</span></span> {<a class=sf-dump-ref>#667</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">items</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:49</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"3 characters\">sid</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"13 characters\">advertiser_id</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"17 characters\">api_advertiser_id</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"7 characters\">user_id</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"17 characters\">network_source_id</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"7 characters\">is_show</span>\"
+    <span class=sf-dump-index>6</span> => \"<span class=sf-dump-str title=\"12 characters\">company_name</span>\"
+    <span class=sf-dump-index>7</span> => \"<span class=sf-dump-str title=\"12 characters\">phone_number</span>\"
+    <span class=sf-dump-index>8</span> => \"<span class=sf-dump-str title=\"7 characters\">address</span>\"
+    <span class=sf-dump-index>9</span> => \"<span class=sf-dump-str title=\"4 characters\">city</span>\"
+    <span class=sf-dump-index>10</span> => \"<span class=sf-dump-str title=\"5 characters\">state</span>\"
+    <span class=sf-dump-index>11</span> => \"<span class=sf-dump-str title=\"7 characters\">country</span>\"
+    <span class=sf-dump-index>12</span> => \"<span class=sf-dump-str title=\"17 characters\">country_full_name</span>\"
+    <span class=sf-dump-index>13</span> => \"<span class=sf-dump-str title=\"4 characters\">name</span>\"
+    <span class=sf-dump-index>14</span> => \"<span class=sf-dump-str title=\"3 characters\">url</span>\"
+    <span class=sf-dump-index>15</span> => \"<span class=sf-dump-str title=\"13 characters\">custom_domain</span>\"
+    <span class=sf-dump-index>16</span> => \"<span class=sf-dump-str title=\"15 characters\">primary_regions</span>\"
+    <span class=sf-dump-index>17</span> => \"<span class=sf-dump-str title=\"13 characters\">currency_code</span>\"
+    <span class=sf-dump-index>18</span> => \"<span class=sf-dump-str title=\"20 characters\">average_payment_time</span>\"
+    <span class=sf-dump-index>19</span> => \"<span class=sf-dump-str title=\"13 characters\">valid_domains</span>\"
+    <span class=sf-dump-index>20</span> => \"<span class=sf-dump-str title=\"15 characters\">validation_days</span>\"
+    <span class=sf-dump-index>21</span> => \"<span class=sf-dump-str title=\"3 characters\">epc</span>\"
+    <span class=sf-dump-index>22</span> => \"<span class=sf-dump-str title=\"17 characters\">click_through_url</span>\"
+    <span class=sf-dump-index>23</span> => \"<span class=sf-dump-str title=\"16 characters\">deeplink_enabled</span>\"
+    <span class=sf-dump-index>24</span> => \"<span class=sf-dump-str title=\"10 characters\">categories</span>\"
+    <span class=sf-dump-index>25</span> => \"<span class=sf-dump-str title=\"4 characters\">tags</span>\"
+    <span class=sf-dump-index>26</span> => \"<span class=sf-dump-str title=\"10 characters\">offer_type</span>\"
+    <span class=sf-dump-index>27</span> => \"<span class=sf-dump-str title=\"17 characters\">supported_regions</span>\"
+    <span class=sf-dump-index>28</span> => \"<span class=sf-dump-str title=\"4 characters\">logo</span>\"
+    <span class=sf-dump-index>29</span> => \"<span class=sf-dump-str title=\"14 characters\">fetch_logo_url</span>\"
+    <span class=sf-dump-index>30</span> => \"<span class=sf-dump-str title=\"20 characters\">program_restrictions</span>\"
+    <span class=sf-dump-index>31</span> => \"<span class=sf-dump-str title=\"19 characters\">promotional_methods</span>\"
+    <span class=sf-dump-index>32</span> => \"<span class=sf-dump-str title=\"11 characters\">description</span>\"
+    <span class=sf-dump-index>33</span> => \"<span class=sf-dump-str title=\"17 characters\">short_description</span>\"
+    <span class=sf-dump-index>34</span> => \"<span class=sf-dump-str title=\"16 characters\">program_policies</span>\"
+    <span class=sf-dump-index>35</span> => \"<span class=sf-dump-str title=\"6 characters\">source</span>\"
+    <span class=sf-dump-index>36</span> => \"<span class=sf-dump-str title=\"4 characters\">type</span>\"
+    <span class=sf-dump-index>37</span> => \"<span class=sf-dump-str title=\"6 characters\">status</span>\"
+    <span class=sf-dump-index>38</span> => \"<span class=sf-dump-str title=\"15 characters\">provider_status</span>\"
+    <span class=sf-dump-index>39</span> => \"<span class=sf-dump-str title=\"10 characters\">commission</span>\"
+    <span class=sf-dump-index>40</span> => \"<span class=sf-dump-str title=\"15 characters\">commission_type</span>\"
+    <span class=sf-dump-index>41</span> => \"<span class=sf-dump-str title=\"20 characters\">goto_cookie_lifetime</span>\"
+    <span class=sf-dump-index>42</span> => \"<span class=sf-dump-str title=\"9 characters\">exclusive</span>\"
+    <span class=sf-dump-index>43</span> => \"<span class=sf-dump-str title=\"12 characters\">is_available</span>\"
+    <span class=sf-dump-index>44</span> => \"<span class=sf-dump-str title=\"19 characters\">is_request__process</span>\"
+    <span class=sf-dump-index>45</span> => \"<span class=sf-dump-str title=\"9 characters\">is_active</span>\"
+    <span class=sf-dump-index>46</span> => \"<span class=sf-dump-str title=\"13 characters\">custom_domain</span>\"
+    <span class=sf-dump-index>47</span> => \"<span class=sf-dump-str title=\"17 characters\">is_fetchable_logo</span>\"
+    <span class=sf-dump-index>48</span> => \"<span class=sf-dump-str title=\"16 characters\">fetch_logo_error</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-391553232\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","url":"<pre class=sf-dump id=sf-dump-684492289 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\HtmlString</span> {<a class=sf-dump-ref>#525</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">html</span>: \"<span class=sf-dump-str title=\"122 characters\">&lt;a href=&#039;http://127.0.0.1:8000/redirect?url=https%3A%2F%2Fwww.mirabellocarrara.it%2F&#039;&gt;https://www.mirabellocarrara.it/&lt;/a&gt;</span>\"
+</samp>}
+</pre><script>Sfdump(\"sf-dump-684492289\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","href":"<pre class=sf-dump id=sf-dump-268687436 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"75 characters\">http://127.0.0.1:8000/redirect?url=https%3A%2F%2Fwww.mirabellocarrara.it%2F</span>\"
+</pre><script>Sfdump(\"sf-dump-268687436\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":"fbfbdfcb-6da4-4c68-941d-b91ca88aa098","exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): htmlspecialchars(): Argument #1 ($string) must be of type string, array given at C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php:123)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(123): htmlspecialchars(Array, 3, 'UTF-8', true)
+#1 C:\\Users\\lenovo\\Downloads\\application\\resources\\views\\template\\publisher\\advertisers\\detail.blade.php(524): e(Array)
+#2 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\Users\\\\lenovo...')
+#3 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\lenovo...', Array)
+#5 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\lenovo...', Array)
+#6 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\Users\\\\lenovo...', Array)
+#7 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#10 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\lenovo\\Downloads\\application\\app\\Http\\Middleware\\PublisherStatus.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\PublisherStatus->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\EnsureEmailIsVerified.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Auth\\Middleware\\EnsureEmailIsVerified->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\lenovo\\Downloads\\application\\app\\Http\\Middleware\\SetLocale.php(24): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetLocale->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\lenovo\\Downloads\\application\\app\\Http\\Middleware\\AuthGates.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AuthGates->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#33 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#40 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#42 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#44 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#61 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#62 C:\\Users\\lenovo\\Downloads\\application\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#63 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\lenovo...')
+#64 {main}
+
+[previous exception] [object] (TypeError(code: 0): htmlspecialchars(): Argument #1 ($string) must be of type string, array given at C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php:123)
+[stacktrace]
+#0 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(123): htmlspecialchars(Array, 3, 'UTF-8', true)
+#1 C:\\Users\\lenovo\\Downloads\\application\\storage\\framework\\views\\22d6bfbdea0070dc687294fcdd6b0dcbbc700364.php(530): e(Array)
+#2 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\Users\\\\lenovo...')
+#3 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\lenovo...', Array)
+#5 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\lenovo...', Array)
+#6 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\Users\\\\lenovo...', Array)
+#7 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#10 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\lenovo\\Downloads\\application\\app\\Http\\Middleware\\PublisherStatus.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\PublisherStatus->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\EnsureEmailIsVerified.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Auth\\Middleware\\EnsureEmailIsVerified->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\lenovo\\Downloads\\application\\app\\Http\\Middleware\\SetLocale.php(24): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\SetLocale->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\lenovo\\Downloads\\application\\app\\Http\\Middleware\\AuthGates.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AuthGates->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(44): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#33 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#40 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#42 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#44 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#61 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#62 C:\\Users\\lenovo\\Downloads\\application\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#63 C:\\Users\\lenovo\\Downloads\\application\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\lenovo...')
+#64 {main}
+"} 

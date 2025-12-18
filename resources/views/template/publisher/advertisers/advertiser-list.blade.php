@@ -212,17 +212,16 @@
                 <div class="accordion-body">
                     <div class="advertiser-details">
                         <div class="advertiser-logo">
-                            @php
+                                @php
                                     $fetch = \App\Models\Advertiser::find($advertiser->id);
                                 @endphp
-                                   @if (!empty($fetch->fetch_logo_url))
-
-                                    <img loading="lazy" class="ap-img__main h-auto mr-10" src="{{ $fetch->fetch_logo_url }}" alt="{{ $advertiser->name }}" style="width: 60px">
-                                    @elseif (!empty($advertiser->logo))
-                                  <img loading="lazy" class="ap-img__main h-auto mr-10" src="{{ \App\Helper\Static\Methods::staticAsset("$advertiser->logo") }}" alt="{{ $advertiser->name }}" style="width: 60px">
-                                    @else
-                                    <img loading="lazy" class="ap-img__main h-auto mr-10" src="{{ \App\Helper\Static\Methods::isImageShowable($advertiser->logo) }}" alt="{{ $advertiser->name }}" style="width: 60px">
-                                    @endif
+                                @if (!empty($fetch->fetch_logo_url))
+                                <img loading="lazy" class="ap-img__main h-auto mr-10" src="{{ $fetch->fetch_logo_url }}" alt="{{ $advertiser->name }}" style="width: 60px">
+                                @elseif (!empty($advertiser->logo))
+                                <img loading="lazy" class="ap-img__main h-auto mr-10" src="{{ \App\Helper\Static\Methods::staticAsset("$advertiser->logo") }}" alt="{{ $advertiser->name }}" style="width: 60px">
+                                @else
+                                <img loading="lazy" class="ap-img__main h-auto mr-10" src="{{ \App\Helper\Static\Methods::isImageShowable($advertiser->logo) }}" alt="{{ $advertiser->name }}" style="width: 60px">
+                                @endif
                         </div>
                         <div>
                             {{-- <div class="detail-item">

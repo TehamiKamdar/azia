@@ -214,23 +214,26 @@
                 <div class="accordion-body">
                     <div class="advertiser-details">
                         <div class="advertiser-logo">
-                            <?php
+                                <?php
                                     $fetch = \App\Models\Advertiser::find($advertiser->id);
                                 ?>
-                                   <?php if(!empty($fetch->fetch_logo_url)): ?>
-
-                                    <img loading="lazy" class="ap-img__main h-auto mr-10" src="<?php echo e($fetch->fetch_logo_url); ?>" alt="<?php echo e($advertiser->name); ?>" style="width: 60px">
-                                    <?php elseif(!empty($advertiser->logo)): ?>
-                                  <img loading="lazy" class="ap-img__main h-auto mr-10" src="<?php echo e(\App\Helper\Static\Methods::staticAsset("$advertiser->logo")); ?>" alt="<?php echo e($advertiser->name); ?>" style="width: 60px">
-                                    <?php else: ?>
-                                    <img loading="lazy" class="ap-img__main h-auto mr-10" src="<?php echo e(\App\Helper\Static\Methods::isImageShowable($advertiser->logo)); ?>" alt="<?php echo e($advertiser->name); ?>" style="width: 60px">
-                                    <?php endif; ?>
+                                <?php if(!empty($fetch->fetch_logo_url)): ?>
+                                <img loading="lazy" class="ap-img__main h-auto mr-10" src="<?php echo e($fetch->fetch_logo_url); ?>" alt="<?php echo e($advertiser->name); ?>" style="width: 60px">
+                                <?php elseif(!empty($advertiser->logo)): ?>
+                                <img loading="lazy" class="ap-img__main h-auto mr-10" src="<?php echo e(\App\Helper\Static\Methods::staticAsset("$advertiser->logo")); ?>" alt="<?php echo e($advertiser->name); ?>" style="width: 60px">
+                                <?php else: ?>
+                                <img loading="lazy" class="ap-img__main h-auto mr-10" src="<?php echo e(\App\Helper\Static\Methods::isImageShowable($advertiser->logo)); ?>" alt="<?php echo e($advertiser->name); ?>" style="width: 60px">
+                                <?php endif; ?>
                         </div>
                         <div>
                             
                             <div class="detail-item">
                                 <span class="detail-label">Website:</span>
                                 <a href="<?php echo e($advertiser->url); ?>" class="website-link"><?php echo e($advertiser->url); ?></a>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Website:</span>
+                                <div href="<?php echo e($advertiser->url); ?>" class="website-link"><?php echo e($advertiser->id); ?></p></div>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">APC Days:</span>
