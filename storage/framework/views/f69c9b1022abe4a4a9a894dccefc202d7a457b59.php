@@ -1,9 +1,9 @@
-<?php if (! $__env->hasRenderedOnce('7b766b25-2ac2-41eb-80be-42a22ae28b2f')): $__env->markAsRenderedOnce('7b766b25-2ac2-41eb-80be-42a22ae28b2f');
+<?php if (! $__env->hasRenderedOnce('dbc8301b-795f-4cdb-91f5-b1ffdcb1f8cf')): $__env->markAsRenderedOnce('dbc8301b-795f-4cdb-91f5-b1ffdcb1f8cf');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/daterangepicker.css")); ?>">
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('8df800f4-a6c8-43c0-bdf0-961719ac8e79')): $__env->markAsRenderedOnce('8df800f4-a6c8-43c0-bdf0-961719ac8e79');
+<?php if (! $__env->hasRenderedOnce('2f1dafe1-18ea-4cb6-8c7d-862240a98e42')): $__env->markAsRenderedOnce('2f1dafe1-18ea-4cb6-8c7d-862240a98e42');
 $__env->startPush('scripts'); ?>
 
     <?php
@@ -317,8 +317,8 @@ $__env->startPush('scripts'); ?>
                     </nav>
 
                     <nav class="nav">
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        <a class="nav-link text-success" href="<?php echo e($xslx); ?>" id="exportXLSX"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="<?php echo e($csv); ?>" id="exportCSV"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
                     
