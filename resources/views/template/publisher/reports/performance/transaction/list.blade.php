@@ -612,8 +612,8 @@
                     </nav>
 
                     <nav class="nav">
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        <a class="nav-link text-success" href="{{ route("publisher.reports.performance-by-transactions.export", ['type' => 'xlsx', 'start_date' => request()->start_date ?? now()->format("Y-m-01 00:00:00"), 'end_date' => request()->end_date ?? now()->format("Y-m-t 23:59:59")]) }}" id="exportXLSX"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="{{ route("publisher.reports.performance-by-transactions.export", ['type' => 'csv', 'start_date' => request()->start_date ?? now()->format("Y-m-01 00:00:00"), 'end_date' => request()->end_date ?? now()->format("Y-m-t 23:59:59")]) }}" id="exportCSV"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
                     {{-- <div class="dropdown action-btn">

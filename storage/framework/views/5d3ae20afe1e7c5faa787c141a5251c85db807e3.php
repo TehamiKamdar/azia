@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('7f0f6543-0af1-4c27-b28d-e8a8d350bdd9')): $__env->markAsRenderedOnce('7f0f6543-0af1-4c27-b28d-e8a8d350bdd9');
+<?php if (! $__env->hasRenderedOnce('32b205fc-5f41-40ec-ae05-cd5ae345cf42')): $__env->markAsRenderedOnce('32b205fc-5f41-40ec-ae05-cd5ae345cf42');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/daterangepicker.css")); ?>">
     <style>
@@ -9,7 +9,7 @@ $__env->startPush('styles'); ?>
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('1f8e9729-7633-4a69-a6c8-eb53f388d337')): $__env->markAsRenderedOnce('1f8e9729-7633-4a69-a6c8-eb53f388d337');
+<?php if (! $__env->hasRenderedOnce('443a21e5-110b-4cfd-bb10-0ec68a2d198c')): $__env->markAsRenderedOnce('443a21e5-110b-4cfd-bb10-0ec68a2d198c');
 $__env->startPush('scripts'); ?>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/moment/moment.min.js")); ?>"></script>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/daterangepicker.js")); ?>"></script>
@@ -612,8 +612,8 @@ $__env->startPush('scripts'); ?>
                     </nav>
 
                     <nav class="nav">
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        <a class="nav-link text-success" href="<?php echo e(route("publisher.reports.performance-by-transactions.export", ['type' => 'xlsx', 'start_date' => request()->start_date ?? now()->format("Y-m-01 00:00:00"), 'end_date' => request()->end_date ?? now()->format("Y-m-t 23:59:59")])); ?>" id="exportXLSX"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="<?php echo e(route("publisher.reports.performance-by-transactions.export", ['type' => 'csv', 'start_date' => request()->start_date ?? now()->format("Y-m-01 00:00:00"), 'end_date' => request()->end_date ?? now()->format("Y-m-t 23:59:59")])); ?>" id="exportCSV"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
                     
