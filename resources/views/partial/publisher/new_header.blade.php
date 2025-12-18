@@ -13,7 +13,7 @@
             <li class="nav-item {{ Route::is("dashboard", ["type" => "publisher"]) ? "active" : "" }}">
               <a href="{{ route("dashboard", ["type" => "publisher"]) }}" class="nav-link"><i class="typcn typcn-chart-area-outline"></i> Dashboard</a>
             </li>
-            <li class="nav-item {{ Route::is("publisher.find-advertisers") || Route::is("publisher.own-advertisers") ? "active" : "" }}">
+            <li class="nav-item {{ Route::is("publisher.find-advertisers") || Route::is("publisher.own-advertisers") || Route::is('publisher.view-advertiser') ? "active" : "" }}">
               <a href="" class="nav-link with-sub"><i class="typcn typcn-shopping-cart"></i>Brands</a>
               <nav class="az-menu-sub">
                 <a href="page-signin.html" class="nav-link">Brand Insights</a>

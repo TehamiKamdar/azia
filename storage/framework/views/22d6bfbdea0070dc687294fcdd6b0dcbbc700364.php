@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('96111313-15e7-4038-b82b-ef35b6d4efe7')): $__env->markAsRenderedOnce('96111313-15e7-4038-b82b-ef35b6d4efe7');
+<?php if (! $__env->hasRenderedOnce('713edd5f-eb29-4f1b-8f62-7f422854e00a')): $__env->markAsRenderedOnce('713edd5f-eb29-4f1b-8f62-7f422854e00a');
 $__env->startPush('styles'); ?>
 
 <style>
@@ -222,11 +222,13 @@ $__env->startPush('styles'); ?>
             100% { content: "..."; }
         }
 
-
+        [class*=btn-outline-]:focus {
+            color: var(--primary) !important;
+        }
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('9acaafb4-b801-4af5-a8bd-96b1e80a1f00')): $__env->markAsRenderedOnce('9acaafb4-b801-4af5-a8bd-96b1e80a1f00');
+<?php if (! $__env->hasRenderedOnce('503b8895-b5bc-4704-898f-6eeb4d32029f')): $__env->markAsRenderedOnce('503b8895-b5bc-4704-898f-6eeb4d32029f');
 $__env->startPush('scripts'); ?>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/drawer.js")); ?>"></script>
     <script>
@@ -370,12 +372,41 @@ $__env->startPush('scripts'); ?>
                 <!-- Action Buttons -->
                 <div class="row mt-3">
                     <div class="col-md-6 mb-2">
-                        <button class="btn btn-primary w-100" id="applyBtn">
-                            <i class="fas fa-paper-plane me-2"></i> Apply to Promote
-                        </button>
+                        
+                        <?php if(isset($advertiser->advertiser_applies->status) && $advertiser->advertiser_applies->status == \App\Models\AdvertiserApply::STATUS_PENDING): ?>
+
+                            <button type="button" class="btn btn-warning w-100" disabled>
+                                <i class="fas fa-clock color-white me-2"></i> Pending
+                            </button>
+
+                        <?php elseif(isset($advertiser->advertiser_applies->status) && $advertiser->advertiser_applies->status == \App\Models\AdvertiserApply::STATUS_ACTIVE): ?>
+
+                            <button type="button" class="btn btn-success w-100" disabled>
+                                <i class="fas fa-check color-white me-2"></i> Joined
+                            </button>
+
+                        <?php elseif(isset($advertiser->advertiser_applies->status) && $advertiser->advertiser_applies->status == \App\Models\AdvertiserApply::STATUS_REJECTED): ?>
+
+                            <button type="button" class="btn btn-danger w-100" disabled>
+                                <i class="fas fa-times color-white me-2"></i> Rejected
+                            </button>
+
+                        <?php elseif(isset($advertiser->advertiser_applies->status) && $advertiser->advertiser_applies->status == \App\Models\AdvertiserApply::STATUS_HOLD): ?>
+
+                            <button type="button" class="btn btn-secondary w-100" disabled>
+                                <i class="fas fa-stop-circle color-white me-2"></i> Hold
+                            </button>
+
+                        <?php else: ?>
+
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modal-basic">
+                                <i class="fas fa-paper-plane me-2"></i> Apply
+                            </button>
+
+                        <?php endif; ?>
                     </div>
                     <div class="col-md-6">
-                        <button class="btn btn-outline-primary w-100" id="messageBtn">
+                        <button class="btn btn-outline-primary w-100 drawer-trigger" data-drawer="account" id="messageBtn">
                             <i class="fas fa-envelope me-2"></i> Send Message
                         </button>
                     </div>
@@ -415,18 +446,18 @@ $__env->startPush('scripts'); ?>
                     <div>
                         <h4 class="az-dashboard-title mb-2">About <?php echo e($advertiser->name); ?></h4>
                         <?php if($advertiser->short_description): ?>
-                        <p class="az-dashboard-text m-0">
+                        <p class="az-dashboard-text mb-4">
                             <?php echo \Illuminate\Support\Str::limit($advertiser->short_description, 1000); ?>
 
                         </p>
                         <?php else: ?>
-                        <p class="az-dashboard-text m-0">
+                        <p class="az-dashboard-text mb-4">
                             <?php echo \Illuminate\Support\Str::limit($advertiser->description, limit: 1000); ?>
 
                         </p>
                         <?php endif; ?>
                     </div>
-                    <div class="">
+                    <div class="border-top pt-4">
                         <h4 class="az-dashboard-title mb-2">Categories</h4>
                         <?php if($advertiser->categories): ?>
                             <?php $__currentLoopData = \App\Helper\PublisherData::getMixNames($advertiser->categories); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -658,6 +689,78 @@ $__env->startPush('scripts'); ?>
         </div>
     </div>
 </div>
+<div class="modal-basic modal fade" id="modal-basic" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form action="<?php echo e(route("publisher.apply-advertiser")); ?>" method="POST" id="applyAdvertiser">
+            <?php echo csrf_field(); ?>
+            <input type="hidden" id="a_id" name="a_id" value="<?php echo e($advertiser->sid); ?>">
+            <input type="hidden" id="a_name" name="a_name" value="<?php echo e($advertiser->name); ?>">
+            <div class="modal-content modal-bg-white ">
+                <div class="modal-header">
+                    <h6 class="modal-title">Apply To Program</h6>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span data-feather="x">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="ap-nameAddress__title text-black" id="advertiserName"><?php echo e($advertiser->name); ?></h6>
+                    <h6 class="ap-nameAddress__subTitle text-left justify-content-start fs-14 pt-1 m-0" id="advertiserID">Brand ID: <?php echo e($advertiser->sid); ?></h6>
+                    <p class="font-weight-bold mt-3 text-black">Optional: Tell us about your promotional methods and general marketing plan for this merchant to help speed up approval. (Websites you'll use, PPC terms, etc.)</p>
+                    <textarea class="form-control" rows="4" cols="4" name="message"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="applyAdvertiserBttn" class="btn btn-primary btn-sm">Apply</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+ <!-- .atbd-drawer -->
+<div class="drawer-basic-wrap right account">
+    <div class="atbd-drawer drawer-account d-none">
+        <div class="atbd-drawer__header d-flex aling-items-center justify-content-between">
+            <h6 class="drawer-title">Send Message To The Advertiser</h6>
+            <a href="#" class="btdrawer-close"><i class="la la-times"></i></a>
+        </div><!-- ends: .atbd-drawer__header -->
+        <div class="atbd-drawer__body">
+            <div class="drawer-content">
+                <div class="drawer-account-form form-basic">
+                    <form action="<?php echo e(route("publisher.send-msg-to-advertiser")); ?>" method="POST">
+                        <?php echo csrf_field(); ?>
+                        <input type="hidden" name="advertiser_id" id="advertiser_id" value="<?php echo e($advertiser->id); ?>">
+
+                        <div class="form-row">
+                            <div class="form-group col-lg-6">
+                                <label for="publisher_name">From</label>
+                                <input type="text" name="publisher_name" id="publisher_name" class="form-control form-control-sm" placeholder="Publisher Name" value="<?php echo e(auth()->user()->first_name); ?> <?php echo e(auth()->user()->last_name); ?>" readonly>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="advertiser_name">To</label>
+                                <input type="text" name="advertiser_name" id="advertiser_name" class="form-control form-control-sm" placeholder="Advertiser Name" readonly value="<?php echo e($advertiser->name); ?>">
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="subject">Subject</label>
+                                <input type="text" name="subject" id="subject" class="form-control form-control-sm" placeholder="Please Enter Subject For This Message" >
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="question_or_comment">Your Question or Comments</label>
+                                <textarea name="question_or_comment" id="question_or_comment" class="form-control form-control-sm" placeholder="Please Enter Your Question or Comments"></textarea>
+                            </div>
+                            <button class="btn btn-primary btn-default btn-squared ">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- ends: .atbd-drawer__body -->
+    </div>
+</div>
+<div class="overlay-dark"></div>
+<div class="overlay-dark-l2"></div>
+<!-- ends: .atbd-drawer -->
+
+
+
 
     
 
