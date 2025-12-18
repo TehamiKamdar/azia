@@ -35,7 +35,7 @@
               </nav>
             </li>
 
-             <li class="nav-item {{ Route::is("publisher.reports.performance-by-transactions.list") || Route::is("publisherpublisher.reports.transactions.list") ? "active" : "" }}">
+             <li class="nav-item {{ Route::is("publisher.reports.performance-by-transactions.list") || Route::is("publisher.reports.transactions.list") ? "active" : "" }}">
               <a href="" class="nav-link with-sub"><i class="typcn typcn-chart-pie"></i>Analytics</a>
               <nav class="az-menu-sub">
                 <a href="{{ route("publisher.reports.performance-by-transactions.list") }}" class="nav-link">Analytical Report</a>
@@ -106,8 +106,8 @@
                 <div class="az-img-user">
                   <img src="{{ asset('publisher_dashboard/img/faces/face1.jpg') }}" alt="">
                 </div><!-- az-img-user -->
-                <h6>Aziana Pechon</h6>
-                <span>Premium Member</span>
+                <h6>{{ auth()->user()->full_name }}</h6>
+                <span>{{ auth()->user()->getRoleName() }} | ID: {{ auth()->user()->sid }}</span>
               </div><!-- az-header-profile -->
 
               <a href="" class="dropdown-item"><i class="typcn typcn-user-outline"></i> My Profile</a>
