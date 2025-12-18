@@ -218,10 +218,29 @@
                     </nav>
 
                     <nav class="nav">
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        @php
+                            $queryParams = request()->all();
+                        @endphp
+                        <a class="nav-link text-success" href="{{ route("publisher.creatives.coupons.export", array_merge(['type' => 'xlsx'], $queryParams)) }}" id="exportXLSX"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="{{ route("publisher.creatives.coupons.export", array_merge(['type' => 'csv'], $queryParams)) }}" id="exportCSV"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
+                    {{-- <div class="dropdown action-btn">
+                        <button class="btn btn-sm btn-default btn-white dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="la la-download"></i> Export
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <span class="dropdown-item">Export With</span>
+                            <div class="dropdown-divider"></div>
+                            @php
+                                $queryParams = request()->all();
+                            @endphp
+                            <a href="{{ route("publisher.creatives.coupons.export", array_merge(['type' => 'xlsx'], $queryParams)) }}" class="dropdown-item" id="exportXLSX">
+                                <i class="la la-file-excel"></i> Excel (XLSX)</a>
+                            <a href="{{ route("publisher.creatives.coupons.export", array_merge(['type' => 'csv'], $queryParams)) }}" class="dropdown-item" id="exportCSV">
+                                <i class="la la-file-csv"></i> CSV</a>
+                        </div>
+                    </div> --}}
                 </div>
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4 col-sm-12">
