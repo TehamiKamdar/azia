@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('f2d3843a-2b99-455d-942a-abcba599ce16')): $__env->markAsRenderedOnce('f2d3843a-2b99-455d-942a-abcba599ce16');
+<?php if (! $__env->hasRenderedOnce('4d4625bd-8566-44de-a187-41f6ea94cb9e')): $__env->markAsRenderedOnce('4d4625bd-8566-44de-a187-41f6ea94cb9e');
 $__env->startPush('styles'); ?>
 
 <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/select2.min.css")); ?>" />
@@ -243,7 +243,7 @@ $__env->startPush('styles'); ?>
 
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('85c26421-5634-4daf-bd94-e9ed02166af2')): $__env->markAsRenderedOnce('85c26421-5634-4daf-bd94-e9ed02166af2');
+<?php if (! $__env->hasRenderedOnce('c021e2c2-0b5c-4aab-98e1-3f82a07a267a')): $__env->markAsRenderedOnce('c021e2c2-0b5c-4aab-98e1-3f82a07a267a');
 $__env->startPush('scripts'); ?>
 <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/select2.full.min.js")); ?>"></script>
 <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/drawer.js")); ?>"></script>
@@ -595,10 +595,14 @@ $__env->startPush('scripts'); ?>
                     </nav>
 
                     <nav class="nav">
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
-                        <a class="nav-link text-success" href="#"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        <?php
+                            $queryParams = request()->all();
+                        ?>
+                        <a class="nav-link text-success" href="<?php echo e(route("publisher.export-advertisers", array_merge(['type' => 'xlsx'], $queryParams))); ?>" id="exportXLSX"><i class="fa-solid fa-file-excel"></i> Export to Excel</a>
+                        <a class="nav-link text-success" href="<?php echo e(route("publisher.export-advertisers", array_merge(['type' => 'csv'], $queryParams))); ?>" id="exportCSV"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
+                    
                 </div>
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4 col-sm-12">
