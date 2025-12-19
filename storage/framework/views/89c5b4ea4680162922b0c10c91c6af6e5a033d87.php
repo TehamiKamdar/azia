@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr"  class="<?php echo e(request()->is('publisher/register') ? "bg-primary" : null); ?>">
+<html lang="en" dir="ltr">
 
     <head>
         <meta charset="UTF-8">
@@ -33,7 +33,7 @@
     </head>
 
     <body>
-        <main class="main-content <?php echo e(request()->is('publisher/register') ? "bg-primary" : null); ?>">
+        <main class="main-content">
             <?php echo $__env->yieldContent("content"); ?>
         </main>
 

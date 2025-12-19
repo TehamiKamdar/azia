@@ -270,7 +270,7 @@
             <div class="az-content-body">
                 <div class="az-dashboard-one-title">
                     <div>
-                        <h2 class="az-dashboard-title">Payments</h2>
+                        <h2 class="az-dashboard-title">Payouts</h2>
                     </div>
                 </div>
                 <div class="az-dashboard-nav">

@@ -2,7 +2,7 @@
 
 @section("content")
 
-    <div class=" checkout wizard8 global-shadow border px-sm-50 px-20 mx-auto my-30 bg-white radius-xl w-80" id="signUpForm">
+    <div class="checkout wizard8 global-shadow border px-sm-50 px-20 mx-auto my-30 bg-white radius-xl w-80" id="signUpForm">
         <div class="notification-wrapper top-right"></div>
 
         @if(($isStepOne && !$isStepTwo && !$isStepThree && !$isStepFour) || (!$isStepOne && !$isStepTwo && !$isStepThree && !$isStepFour))
@@ -427,23 +427,6 @@
                     });
                 }
             });
-
-            {{--$("#stepThree").submit(function() {--}}
-
-            {{--    $("#signUpForm").addClass("disableDiv");--}}
-            {{--    $("#showLoader").show();--}}
-
-            {{--    $.ajax({--}}
-            {{--        url: '{{ route('verification.send') }}',--}}
-            {{--        type: 'POST',--}}
-            {{--        headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')},--}}
-            {{--        success: function (data) {--}}
-            {{--            $("#signUpForm").removeClass("disableDiv");--}}
-            {{--            $("#showLoader").hide();--}}
-            {{--        }--}}
-            {{--    });--}}
-
-            {{--});--}}
         }
 
         function loadStepFourForm()

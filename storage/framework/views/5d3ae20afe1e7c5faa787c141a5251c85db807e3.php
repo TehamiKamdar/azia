@@ -1,4 +1,4 @@
-<?php if (! $__env->hasRenderedOnce('32b205fc-5f41-40ec-ae05-cd5ae345cf42')): $__env->markAsRenderedOnce('32b205fc-5f41-40ec-ae05-cd5ae345cf42');
+<?php if (! $__env->hasRenderedOnce('f1d5e95c-71c2-4811-b51a-49ead7d476d0')): $__env->markAsRenderedOnce('f1d5e95c-71c2-4811-b51a-49ead7d476d0');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/daterangepicker.css")); ?>">
     <style>
@@ -9,7 +9,7 @@ $__env->startPush('styles'); ?>
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('443a21e5-110b-4cfd-bb10-0ec68a2d198c')): $__env->markAsRenderedOnce('443a21e5-110b-4cfd-bb10-0ec68a2d198c');
+<?php if (! $__env->hasRenderedOnce('30880277-a99f-494f-af6b-a8275087880d')): $__env->markAsRenderedOnce('30880277-a99f-494f-af6b-a8275087880d');
 $__env->startPush('scripts'); ?>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/moment/moment.min.js")); ?>"></script>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/daterangepicker.js")); ?>"></script>
@@ -601,7 +601,7 @@ $__env->startPush('scripts'); ?>
             <div class="az-content-body">
                 <div class="az-dashboard-one-title">
                     <div>
-                        <h2 class="az-dashboard-title">Advertiser Performance</h2>
+                        <h2 class="az-dashboard-title">Analytical Report</h2>
                         <p class="az-dashboard-text" id="totalResults">Total Results: <strong><?php echo e($total); ?></strong></p>
                     </div>
                     <?php echo $__env->make("partial.publisher.transaction_alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

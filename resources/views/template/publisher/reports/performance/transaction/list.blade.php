@@ -601,7 +601,7 @@
             <div class="az-content-body">
                 <div class="az-dashboard-one-title">
                     <div>
-                        <h2 class="az-dashboard-title">Advertiser Performance</h2>
+                        <h2 class="az-dashboard-title">Analytical Report</h2>
                         <p class="az-dashboard-text" id="totalResults">Total Results: <strong>{{ $total }}</strong></p>
                     </div>
                     @include("partial.publisher.transaction_alert")

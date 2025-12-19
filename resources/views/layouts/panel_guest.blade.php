@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr"  class="{{ request()->is('publisher/register') ? "bg-primary" : null }}">
+<html lang="en" dir="ltr">
 
     <head>
         <meta charset="UTF-8">
@@ -29,7 +29,7 @@
     </head>
 
     <body>
-        <main class="main-content {{ request()->is('publisher/register') ? "bg-primary" : null }}">
+        <main class="main-content">
             @yield("content")
         </main>
 

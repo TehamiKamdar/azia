@@ -86,30 +86,21 @@
 <div class="auth-wrapper d-flex align-items-center justify-content-center">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-4 col-12">
 
                 @include("partial.admin.alert")
-
-                <div class="text-center mb-4">
-                    <a href="https://www.linkscircle.com/">
-                        <img src="{{ \App\Helper\Static\Methods::staticAsset('img/logo.png') }}"
-                             alt="LinksCircle Affiliate Network"
-                             class="img-fluid"
-                             style="max-width: 180px;">
-                    </a>
-                </div>
-
+                
                 <div class="card auth-card shadow-sm border-0">
-                    <div class="card-header auth-header text-center py-3">
-                        @if($type == $advertiser)
-                            <h5 class="mb-0 fw-semibold text-white">Sign in as Advertiser</h5>
-                        @elseif($type == $publisher)
-                            <h5 class="mb-0 fw-semibold text-white">Sign in as Publisher</h5>
-                        @endif
-                    </div>
-
                     <div class="card-body p-4">
-
+                        <div class="text-center mb-4">
+                            <a href="https://www.linkscircle.com/">
+                                <img src="{{ asset('publisher_dashboard/img/visa.png') }}"
+                                    alt="LinksCircle Affiliate Network"
+                                    class="img-fluid"
+                                    style="max-width: 180px;">
+                            </a>
+                            <h2 class="mt-5">Sign In</h2>
+                        </div>
                         <form method="POST" action="{{ route('login', ['type' => $type]) }}" id="loginForm">
                             @csrf
                             <div class="mb-3">
