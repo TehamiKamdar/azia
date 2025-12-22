@@ -1,8 +1,8 @@
 @extends("layouts.panel_guest")
 
 @section("content")
-
-    <div class="checkout wizard8 global-shadow border px-sm-50 px-20 mx-auto my-30 bg-white radius-xl w-80" id="signUpForm">
+    
+    <div class="checkout wizard8 global-shadow border px-sm-50 px-20 mx-auto my-30 bg-gray radius-xl w-100" id="signUpForm">
         <div class="notification-wrapper top-right"></div>
 
         @if(($isStepOne && !$isStepTwo && !$isStepThree && !$isStepFour) || (!$isStepOne && !$isStepTwo && !$isStepThree && !$isStepFour))
@@ -466,7 +466,9 @@
     <link rel="stylesheet" href="{{ \App\Helper\Static\Methods::staticAsset("vendor_assets/css/phone/demo.css") }}">
     <link rel="stylesheet" href="{{ \App\Helper\Static\Methods::staticAsset("vendor_assets/css/select2.min.css") }}"/>
     <style>
-
+        .select2-container{
+            height: 40px;
+        }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             margin-bottom: 5px;
         }
@@ -477,7 +479,8 @@
             padding: 20px;
         }
         .iti__selected-flag {
-            height: 48px;
+            height: 40px;
+            background:none!important;
         }
         @media only screen and (max-width: 575px){
             .checkout-progress {

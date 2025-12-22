@@ -276,6 +276,7 @@
                 <div class="az-dashboard-nav">
                     <nav class="nav" style="width: 600px;">
                         <a class="nav-link active" data-toggle="tab" href="#">Payments (Record)</a>
+                        <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
                 </div>
                 <div class="col-12 px-0">

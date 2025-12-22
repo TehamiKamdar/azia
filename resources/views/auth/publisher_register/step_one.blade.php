@@ -2,26 +2,17 @@
 
 @section("step_form_content")
 
-    <div class="card checkout-shipping-form" style="padding-bottom: 20px;">
-        <div class="card-header border-bottom-0 align-content-start pb-sm-0 pb-1 px-0">
-            <h4 class="font-weight-bold">1. Create Account</h4>
-        </div>
-        <div class="card-body p-0">
+    <div class="card checkout-shipping-form border-0 bg-gray" style="padding-bottom: 20px;">
+        <div class="card-body">
             <div class="edit-profile__body">
                 <form id="stepOne" class="stepOne" action="javascript:void(0)">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="first_name" class="font-weight-bold">First name<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="{{ $stepOne['first_name'] ?? null }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="last_name" class="font-weight-bold">Last name<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="{{ $stepOne['last_name'] ?? null }}">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="first_name" class="font-weight-bold">First name<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="{{ $stepOne['first_name'] ?? null }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name" class="font-weight-bold">Last name<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="{{ $stepOne['last_name'] ?? null }}">
                     </div>
                     <div class="form-group">
                         <label for="user_name" class="font-weight-bold">Username<span class="text-danger">*</span></label>

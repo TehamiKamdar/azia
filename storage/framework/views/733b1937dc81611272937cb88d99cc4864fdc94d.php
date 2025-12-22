@@ -1,9 +1,9 @@
-<?php if (! $__env->hasRenderedOnce('85567c4f-c7fd-423b-88a5-d035b340f243')): $__env->markAsRenderedOnce('85567c4f-c7fd-423b-88a5-d035b340f243');
+<?php if (! $__env->hasRenderedOnce('3cfa1fa5-b89f-4f85-96da-b36315e6eac0')): $__env->markAsRenderedOnce('3cfa1fa5-b89f-4f85-96da-b36315e6eac0');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/daterangepicker.css")); ?>">
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('b2b00cf3-4e00-4fe1-8ca8-fdf2ed10aa69')): $__env->markAsRenderedOnce('b2b00cf3-4e00-4fe1-8ca8-fdf2ed10aa69');
+<?php if (! $__env->hasRenderedOnce('72f1bb06-d2e3-459a-b549-b022072e5d6b')): $__env->markAsRenderedOnce('72f1bb06-d2e3-459a-b549-b022072e5d6b');
 $__env->startPush('scripts'); ?>
 
     <?php
@@ -270,12 +270,13 @@ $__env->startPush('scripts'); ?>
             <div class="az-content-body">
                 <div class="az-dashboard-one-title">
                     <div>
-                        <h2 class="az-dashboard-title">Payments</h2>
+                        <h2 class="az-dashboard-title">Payouts</h2>
                     </div>
                 </div>
                 <div class="az-dashboard-nav">
                     <nav class="nav" style="width: 600px;">
                         <a class="nav-link active" data-toggle="tab" href="#">Payments (Record)</a>
+                        <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i></a>
                     </nav>
                 </div>
                 <div class="col-12 px-0">

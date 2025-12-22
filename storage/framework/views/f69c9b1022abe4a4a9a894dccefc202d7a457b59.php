@@ -1,9 +1,9 @@
-<?php if (! $__env->hasRenderedOnce('dbc8301b-795f-4cdb-91f5-b1ffdcb1f8cf')): $__env->markAsRenderedOnce('dbc8301b-795f-4cdb-91f5-b1ffdcb1f8cf');
+<?php if (! $__env->hasRenderedOnce('669e9b7c-78f7-458c-aed5-2e92db0573ba')): $__env->markAsRenderedOnce('669e9b7c-78f7-458c-aed5-2e92db0573ba');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/daterangepicker.css")); ?>">
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('2f1dafe1-18ea-4cb6-8c7d-862240a98e42')): $__env->markAsRenderedOnce('2f1dafe1-18ea-4cb6-8c7d-862240a98e42');
+<?php if (! $__env->hasRenderedOnce('8f2b9bf7-7f2d-4855-be93-d4261dc62402')): $__env->markAsRenderedOnce('8f2b9bf7-7f2d-4855-be93-d4261dc62402');
 $__env->startPush('scripts'); ?>
 
     <?php
@@ -306,7 +306,7 @@ $__env->startPush('scripts'); ?>
 
                 <div class="az-dashboard-one-title">
                     <div>
-                        <h2 class="az-dashboard-title">Transactions</h2>
+                        <h2 class="az-dashboard-title">All Conversions</h2>
                         <p class="az-dashboard-text">Total Results: <strong><?php echo e($total); ?></strong> </p>
                     </div>
                     <?php echo $__env->make("partial.publisher.transaction_alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

@@ -2,22 +2,15 @@
 
 @section("step_form_content")
 
-    <div class="card checkout-shipping-form">
-        <div class="card-header border-bottom-0 pb-sm-0 pb-1 px-0">
-            <h4 class="font-weight-bold">2. Company Information</h4>
-        </div>
-        <div class="card-body p-0" data-select2-id="7">
+    <div class="card checkout-shipping-form border-0 bg-gray">
+        <div class="card-body" data-select2-id="7">
             <div class="edit-profile__body" data-select2-id="6">
                 <form id="stepTwo" action="javascript:void(0)">
                     <input type="hidden" id="dialCode" name="dialCode" value="{{ $stepTwo['dialCode'] ?? "+1" }}">
-                    <div class="row">
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="company_name" class="font-weight-bold">Company Legal Name<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Enter company name (Legal)" value="{{ $stepTwo['company_name'] ?? null }}">
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <div class="countryOption">
                                     <label for="entity_type" class="font-weight-bold">Entity Type<span class="text-danger">*</span></label>
@@ -31,25 +24,15 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="contact_name" class="font-weight-bold">Contact name<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="" value="{{ $stepTwo['contact_name'] ?? null }}">
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="phone_number" class="font-weight-bold">phone number<span class="text-danger">*</span></label>
                                 <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="" value="{{ $stepTwo['phone_number'] ?? null }}">
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <div class="countryOption">
                                     <label for="country" class="font-weight-bold">Country / Region<span class="text-danger">*</span></label>
@@ -61,8 +44,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="state" class="font-weight-bold">State<span class="text-danger">*</span></label>
                                 <select class="js-example-basic-single js-states form-control" id="state" name="state">
@@ -72,10 +53,6 @@
                                     @endforeach
                                 </select>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="city" class="font-weight-bold">City</label>
                                 <select class="js-example-basic-single js-states form-control" id="city" name="city">
@@ -85,14 +62,10 @@
                                     @endforeach
                                 </select>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="postal_code" class="font-weight-bold">Postal code<span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="" value="{{ $stepTwo['postal_code'] ?? null }}">
                             </div>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label for="address" class="font-weight-bold">Address<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="address" name="address" placeholder="Apartment, suite, unit etc." value="{{ $stepTwo['address'] ?? null }}">

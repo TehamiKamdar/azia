@@ -1,7 +1,9 @@
-<?php if (! $__env->hasRenderedOnce('e975fa8e-c6f4-4eff-9bdb-e59d5dfb9e20')): $__env->markAsRenderedOnce('e975fa8e-c6f4-4eff-9bdb-e59d5dfb9e20');
+<?php if (! $__env->hasRenderedOnce('a578e53d-a326-42f1-b2a5-f563ddba7706')): $__env->markAsRenderedOnce('a578e53d-a326-42f1-b2a5-f563ddba7706');
 $__env->startPush('styles'); ?>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css" />
 <style>
+
     :root {
         --primary: #5b47fb;
         --primary-dark: #4a3ac9;
@@ -280,7 +282,7 @@ $__env->startPush('styles'); ?>
 </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('60d6e1b2-a60a-4626-a7a2-cca3da52e153')): $__env->markAsRenderedOnce('60d6e1b2-a60a-4626-a7a2-cca3da52e153');
+<?php if (! $__env->hasRenderedOnce('d8773344-2004-44e4-b532-9c5b4c2cef37')): $__env->markAsRenderedOnce('d8773344-2004-44e4-b532-9c5b4c2cef37');
 $__env->startPush('scripts'); ?>
 <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/drawer.js")); ?>"></script>
 <script>
@@ -827,82 +829,103 @@ $__env->startPush('scripts'); ?>
             </div>
         </div>
     </div>
-    <div class="modal-basic modal fade" id="modal-basic" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
-            <form action="<?php echo e(route("publisher.apply-advertiser")); ?>" method="POST" id="applyAdvertiser">
-                <?php echo csrf_field(); ?>
-                <input type="hidden" id="a_id" name="a_id" value="<?php echo e($advertiser->sid); ?>">
-                <input type="hidden" id="a_name" name="a_name" value="<?php echo e($advertiser->name); ?>">
-                <div class="modal-content modal-bg-white ">
-                    <div class="modal-header">
-                        <h6 class="modal-title">Apply To Program</h6>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span data-feather="x">&times;</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <h6 class="ap-nameAddress__title text-black" id="advertiserName"><?php echo e($advertiser->name); ?></h6>
-                        <h6 class="ap-nameAddress__subTitle text-left justify-content-start fs-14 pt-1 m-0"
-                            id="advertiserID">Brand ID: <?php echo e($advertiser->sid); ?></h6>
-                        <p class="font-weight-bold mt-3 text-black">Optional: Tell us about your promotional methods and
-                            general marketing plan for this merchant to help speed up approval. (Websites you'll use, PPC
-                            terms, etc.)</p>
-                        <textarea class="form-control" rows="4" cols="4" name="message"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" id="applyAdvertiserBttn" class="btn btn-primary btn-sm">Apply</button>
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
-                    </div>
+<div class="modal-basic modal fade" id="modal-basic" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <form action="<?php echo e(route('publisher.apply-advertiser')); ?>" method="POST" id="applyAdvertiser">
+            <?php echo csrf_field(); ?>
+            <input type="hidden" name="a_id" value="<?php echo e($advertiser->sid); ?>">
+            <input type="hidden" name="a_name" value="<?php echo e($advertiser->name); ?>">
+
+            <div class="modal-content modal-bg-white">
+                <div class="modal-header">
+                    <h5 class="modal-title">Apply to Program</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-            </form>
-        </div>
+
+                <div class="modal-body">
+
+                    <!-- Advertiser Info -->
+                    <div class="mb-3">
+                        <h5 class="mb-1"><?php echo e($advertiser->name); ?></h5>
+                        <span class="text-muted fs-14">Brand ID: <?php echo e($advertiser->sid); ?></span>
+                    </div>
+
+                    <!-- Extra Details -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="info-box py-2 px-3 border rounded">
+                                <div class="info-label text-muted fs-13">Commission Rate</div>
+                                <div class="info-value fw-600 text-success">
+                                    <?php echo e($advertiser->commission); ?>
+
+                                    <?php echo e(str_contains($advertiser->commission, '%') ? '' : ($advertiser->commission_type == 'percentage' ? '%' : $advertiser->commission_type)); ?>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info-box py-2 px-3 border rounded">
+                                <div class="info-label text-muted fs-13">Payout Time</div>
+                                <div class="info-value fw-600">
+                                    <?php echo e($advertiser->average_payment_time ?? 30); ?> days
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info-box py-2 px-3 border rounded">
+                                <div class="info-label text-muted fs-13">Regions</div>
+                                <div class="info-value">
+
+                                    <?php
+                                        $regions = $advertiser->primary_regions ?? [];
+                                    ?>
+
+                                    <?php if(count($regions) > 1): ?>
+                                        <span class="badge bg-primary">Multi-Region</span>
+                                    <?php elseif(count($regions) == 1 && $regions[0] == "00"): ?>
+                                        <span class="badge bg-success">Global</span>
+                                    <?php elseif(count($regions) == 1): ?>
+                                        <span class="fi fi-<?php echo e(strtolower($regions[0])); ?> me-1"></span>
+                                        <?php echo e($regions[0]); ?>
+
+                                    <?php else: ?>
+                                        <span class="text-muted">Not Available</span>
+                                    <?php endif; ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="mb-3">
+                        <label class="fw-600 mb-1">
+                            Promotional Plan <span class="text-muted fs-12">(Optional)</span>
+                        </label>
+                        <textarea class="form-control" rows="4" name="message"
+                            placeholder="Websites, traffic sources, PPC terms, social media, etc."></textarea>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        Apply Now
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
+</div>
+
 
     <!-- .atbd-drawer -->
-    <div class="drawer-basic-wrap right account">
-        <div class="atbd-drawer drawer-account d-none">
-            <div class="atbd-drawer__header d-flex aling-items-center justify-content-between">
-                <h6 class="drawer-title">Send Message To The Advertiser</h6>
-                <a href="#" class="btdrawer-close"><i class="la la-times"></i></a>
-            </div><!-- ends: .atbd-drawer__header -->
-            <div class="atbd-drawer__body">
-                <div class="drawer-content">
-                    <div class="drawer-account-form form-basic">
-                        <form action="<?php echo e(route("publisher.send-msg-to-advertiser")); ?>" method="POST">
-                            <?php echo csrf_field(); ?>
-                            <input type="hidden" name="advertiser_id" id="advertiser_id" value="<?php echo e($advertiser->id); ?>">
-
-                            <div class="form-row">
-                                <div class="form-group col-lg-6">
-                                    <label for="publisher_name">From</label>
-                                    <input type="text" name="publisher_name" id="publisher_name"
-                                        class="form-control form-control-sm" placeholder="Publisher Name"
-                                        value="<?php echo e(auth()->user()->first_name); ?> <?php echo e(auth()->user()->last_name); ?>" readonly>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label for="advertiser_name">To</label>
-                                    <input type="text" name="advertiser_name" id="advertiser_name"
-                                        class="form-control form-control-sm" placeholder="Advertiser Name" readonly
-                                        value="<?php echo e($advertiser->name); ?>">
-                                </div>
-                                <div class="form-group col-lg-12">
-                                    <label for="subject">Subject</label>
-                                    <input type="text" name="subject" id="subject" class="form-control form-control-sm"
-                                        placeholder="Please Enter Subject For This Message">
-                                </div>
-                                <div class="form-group col-12">
-                                    <label for="question_or_comment">Your Question or Comments</label>
-                                    <textarea name="question_or_comment" id="question_or_comment"
-                                        class="form-control form-control-sm"
-                                        placeholder="Please Enter Your Question or Comments"></textarea>
-                                </div>
-                                <button class="btn btn-primary btn-default btn-squared ">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div><!-- ends: .atbd-drawer__body -->
-        </div>
-    </div>
+    
     <div class="overlay-dark"></div>
     <div class="overlay-dark-l2"></div>
     <!-- ends: .atbd-drawer -->

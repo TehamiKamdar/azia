@@ -2,38 +2,48 @@
 
 @section("step_form_content")
 
-    <div class="card checkout-shipping-form">
-        <div class="card-header border-bottom-0 pb-sm-0 pb-1 px-0">
-            <h4 class="fw-500">Email Verification</h4>
-        </div>
+   <div class="card border-0 bg-gray py-5">
 
-        <div class="card payment-status bg-normal mt-0 p-sm-30 p-15">
-            <div class="card-body bg-white bg-shadow radius-xl px-sm-30 pt-sm-25 m-0 p-0">
-                <div class="payment-status__area  py-sm-10 py-10 text-center">
-                    <div class="content-center">
-                        <span class="wh-34 bg-success rounded-circle content-center">
-                            <span class="las la-check fs-16 color-white"></span>
-                        </span>
-                    </div>
-                    <h4 class="fw-500 mt-20 mb-10">Account Created</h4>
+    <!-- Status Card -->
+    <div class="card mt-0">
+        <div class="card-body text-center py-4">
+
+            <div class="d-flex justify-content-center mb-3">
+                <div class="rounded-circle bg-success d-flex align-items-center justify-content-center"
+                     style="width:40px; height:40px;">
+                    <span class="las la-check text-white"></span>
                 </div>
             </div>
-        </div>
 
-        <div class="card-body p-0 mt-20" data-select2-id="7">
-            <div class="edit-profile__body">
-                <h2 class="pt-2">You're Only One Step Away!</h2>
-                <p>An email has been sent to your inbox, please check and verify to complete your registration.</p>
-                <p>If you did not receive any email, please check your spam/junk folder or click on the resend button below.</p>
-                <div class="button-group d-flex pt-3 justify-content-between flex-wrap">
-                    <form id="stepFour" action="javascript:void(0)">
-                        {{--                            <form method="POST" action="{{ route('verification.send') }}">--}}
-                        {{--                                @csrf--}}
-                        <button type="submit" class="btn text-white btn-primary btn-default btn-squared text-capitalize m-1">Resend Verification Email</button>
-                    </form>
-                </div>
-            </div>
+            <h4 class="font-weight-normal mb-0">Account Created</h4>
         </div>
-    </div><!-- ends: .card -->
+    </div>
+
+    <!-- Content -->
+    <div class="card-body mt-4 p-0">
+        <div class="text-center px-3">
+
+            <h5 class="mb-3">You're Only One Step Away!</h5>
+
+            <p class="mb-2">
+                An email has been sent to your inbox. Please verify your email to complete registration.
+            </p>
+
+            <p class="text-muted mb-4">
+                If you didn’t receive the email, check your spam folder or resend it below.
+            </p>
+
+            <form id="stepFour" action="javascript:void(0)">
+                <button type="submit"
+                        class="btn btn-primary text-white px-4 mx-auto">
+                    Resend Verification Email
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
 
 @endsection

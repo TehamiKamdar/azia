@@ -1,19 +1,18 @@
-<div class="checkout-progress justify-content-center px-0">
-    <div class="step completed" id="1">
+<div class="checkout-progress justify-content-around px-0">
+    <div class="step completed d-flex flex-column align-items-center" style="gap: 16px;" id="1">
         <span class="las la-check"></span>
+        <h6>Account Information</h6>
     </div>
-    <div class="step completed" id="2">
+    <div class="step completed d-flex flex-column align-items-center" style="gap: 16px;" id="2">
         <span class="las la-check"></span>
+        <h6>Promotional Type</h6>
     </div>
-    <div class="step current" id="3">
+    <div class="step current d-flex flex-column align-items-center" style="gap: 16px;" id="3">
         <span>3</span>
+        <h6 style="color: #5b47fb;">Promotional Space</h6>
     </div>
-    <div class="step" id="4">
+    <div class="step d-flex flex-column align-items-center" style="gap: 16px;" id="4">
         <span>4</span>
+        <h6>Verification</h6>
     </div>
-</div>
-<div class="card-header border-bottom-0">
-    <h4>Fill in your website information</h4>
-    <p>Enter your promotional space details. Advertisers & we can view this information.</p>
-    <img class="svg" src="{{ \App\Helper\Static\Methods::staticAsset("img/svg/progress4.svg") }}" alt="">
 </div>

@@ -90,7 +90,7 @@
 
             function setDeeplinkContent(response)
             {
-                $("#mainDeeplinkBody").addClass("border-bottom mb-20");
+                $("#mainDeeplinkBody").addClass("border-bottom mb-20 pb-2");
 
                 let content = '';
 
@@ -117,7 +117,7 @@
                 }
 
                 $("#deeplinkWrapper").append(`
-                            <div class="card-body" id="deeplinkBottomWrapper">
+                            <div class="card-body px-0" id="deeplinkBottomWrapper">
                                 <div class="files-area d-flex justify-content-between align-items-center">
                                     <div class="files-area__left d-flex align-items-center">
                                         <div class="files-area__title">

@@ -94,10 +94,7 @@
                     <div class="card-body p-4">
                         <div class="text-center mb-4">
                             <a href="https://www.linkscircle.com/">
-                                <img src="{{ asset('publisher_dashboard/img/visa.png') }}"
-                                    alt="LinksCircle Affiliate Network"
-                                    class="img-fluid"
-                                    style="max-width: 180px;">
+                                <img src="{{ asset('publisher_dashboard/img/visa.png') }}" alt="LinksCircle Affiliate Network" class="img-fluid" style="max-width: 180px;">
                             </a>
                             <h2 class="mt-5">Sign In</h2>
                         </div>

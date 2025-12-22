@@ -87,17 +87,12 @@
             <div class="col-lg-4 col-12">
 
                 <?php echo $__env->make("partial.admin.alert", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-
-
+                
                 <div class="card auth-card shadow-sm border-0">
                     <div class="card-body p-4">
                         <div class="text-center mb-4">
                             <a href="https://www.linkscircle.com/">
-                                <img src="<?php echo e(asset('publisher_dashboard/img/visa.png')); ?>"
-                                    alt="LinksCircle Affiliate Network"
-                                    class="img-fluid"
-                                    style="max-width: 180px;">
+                                <img src="<?php echo e(asset('publisher_dashboard/img/visa.png')); ?>" alt="LinksCircle Affiliate Network" class="img-fluid" style="max-width: 180px;">
                             </a>
                             <h2 class="mt-5">Sign In</h2>
                         </div>

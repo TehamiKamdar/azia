@@ -1,22 +1,19 @@
-<div class="checkout-progress justify-content-center px-0">
-    <div class="step current" id="1">
+<div class="checkout-progress justify-content-around px-0">
+    <div class="step current d-flex flex-column align-items-center" style="gap: 16px;" id="1">
         <span>1</span>
+        <h6 style="color: #5b47fb;">Account Information</h6>
     </div>
-    <div class="step" id="2">
+    <div class="step d-flex flex-column align-items-center" style="gap: 16px;" id="2">
         <span>2</span>
+        <h6>Promotional Type</h6>
     </div>
-    <div class="step" id="3">
+    <div class="step d-flex flex-column align-items-center" style="gap: 16px;" id="3">
         <span>3</span>
+        <h6>Promotional Space</h6>
     </div>
-    <div class="step" id="4">
+    <div class="step d-flex flex-column align-items-center" style="gap: 16px;" id="4">
         <span>4</span>
-    </div>
-</div>
-<div class="card-header border-bottom-0">
-    <h1 class="pt-20">Join as a Publisher</h1>
-    <p>Start registering your publisher account with LinksCircle and partner with advertisers.</p>
-    <div class="div">
-        <img class="svg w-100" src="<?php echo e(\App\Helper\Static\Methods::staticAsset("img/svg/progress1.svg")); ?>" alt="img">
+        <h6>Verification</h6>
     </div>
 </div>
 <?php /**PATH C:\Users\lenovo\Downloads\application\resources\views/auth/publisher_register/steps/one.blade.php ENDPATH**/ ?>

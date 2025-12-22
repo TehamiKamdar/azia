@@ -1,21 +1,18 @@
-<div class="checkout-progress justify-content-center px-0">
-    <div class="step completed" id="1">
+<div class="checkout-progress justify-content-around px-0">
+    <div class="step completed d-flex flex-column align-items-center" style="gap: 16px;" id="1">
         <span class="las la-check"></span>
+        <h6>Account Information</h6>
     </div>
-    <div class="step current" id="2">
+    <div class="step current d-flex flex-column align-items-center" style="gap: 16px;" id="2">
         <span>2</span>
+        <h6 style="color: #5b47fb;">Promotional Type</h6>
     </div>
-    <div class="step" id="3">
+    <div class="step d-flex flex-column align-items-center" style="gap: 16px;" id="3">
         <span>3</span>
+        <h6>Promotional Space</h6>
     </div>
-    <div class="step" id="4">
+    <div class="step d-flex flex-column align-items-center" style="gap: 16px;" id="4">
         <span>4</span>
-    </div>
-</div>
-<div class="card-header border-bottom-0">
-    <h1 class="pt-20">Fill in your company information</h1>
-    <p>Show your authenticity by filling in your legal information. We do not share data with anyone.</p>
-    <div class="div">
-        <img class="svg w-100" src="{{ \App\Helper\Static\Methods::staticAsset("img/svg/progress3.svg") }}" alt="img">
+        <h6>Verification</h6>
     </div>
 </div>

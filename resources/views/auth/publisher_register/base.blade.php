@@ -1,8 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-xl-12">
-        <div class="row justify-content-center">
-            <div class="col-xl-5">
-                <div class="checkout-progress-indicator ">
+            <div class="col-12">
+                <div class="checkout-progress-indicator border-bottom pb-3">
                     @if(($isStepOne && !$isStepTwo && !$isStepThree && !$isStepFour) || (!$isStepOne && !$isStepTwo && !$isStepThree && !$isStepFour))
                         @include("auth.publisher_register.steps.one")
 
@@ -18,9 +17,8 @@
                     @endif
                 </div><!-- checkout -->
             </div>
-            <div class="col-xl-7 col-lg-8 col-sm-10">
+            <div class="col-6 mx-auto">
                 @yield("step_form_content")
             </div><!-- ends: col -->
-        </div>
     </div><!-- ends: col -->
 </div>

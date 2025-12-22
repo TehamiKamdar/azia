@@ -2,7 +2,9 @@
 
 @pushonce('styles')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css" />
 <style>
+
     :root {
         --primary: #5b47fb;
         --primary-dark: #4a3ac9;
@@ -819,38 +821,100 @@
             </div>
         </div>
     </div>
-    <div class="modal-basic modal fade" id="modal-basic" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
-            <form action="{{ route("publisher.apply-advertiser") }}" method="POST" id="applyAdvertiser">
-                @csrf
-                <input type="hidden" id="a_id" name="a_id" value="{{ $advertiser->sid }}">
-                <input type="hidden" id="a_name" name="a_name" value="{{ $advertiser->name }}">
-                <div class="modal-content modal-bg-white ">
-                    <div class="modal-header">
-                        <h6 class="modal-title">Apply To Program</h6>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span data-feather="x">&times;</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <h6 class="ap-nameAddress__title text-black" id="advertiserName">{{ $advertiser->name }}</h6>
-                        <h6 class="ap-nameAddress__subTitle text-left justify-content-start fs-14 pt-1 m-0"
-                            id="advertiserID">Brand ID: {{ $advertiser->sid }}</h6>
-                        <p class="font-weight-bold mt-3 text-black">Optional: Tell us about your promotional methods and
-                            general marketing plan for this merchant to help speed up approval. (Websites you'll use, PPC
-                            terms, etc.)</p>
-                        <textarea class="form-control" rows="4" cols="4" name="message"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" id="applyAdvertiserBttn" class="btn btn-primary btn-sm">Apply</button>
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
-                    </div>
+<div class="modal-basic modal fade" id="modal-basic" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <form action="{{ route('publisher.apply-advertiser') }}" method="POST" id="applyAdvertiser">
+            @csrf
+            <input type="hidden" name="a_id" value="{{ $advertiser->sid }}">
+            <input type="hidden" name="a_name" value="{{ $advertiser->name }}">
+
+            <div class="modal-content modal-bg-white">
+                <div class="modal-header">
+                    <h5 class="modal-title">Apply to Program</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-            </form>
-        </div>
+
+                <div class="modal-body">
+
+                    <!-- Advertiser Info -->
+                    <div class="mb-3">
+                        <h5 class="mb-1">{{ $advertiser->name }}</h5>
+                        <span class="text-muted fs-14">Brand ID: {{ $advertiser->sid }}</span>
+                    </div>
+
+                    <!-- Extra Details -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="info-box py-2 px-3 border rounded">
+                                <div class="info-label text-muted fs-13">Commission Rate</div>
+                                <div class="info-value fw-600 text-success">
+                                    {{ $advertiser->commission }}
+                                    {{ str_contains($advertiser->commission, '%') ? '' : ($advertiser->commission_type == 'percentage' ? '%' : $advertiser->commission_type) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info-box py-2 px-3 border rounded">
+                                <div class="info-label text-muted fs-13">Payout Time</div>
+                                <div class="info-value fw-600">
+                                    {{ $advertiser->average_payment_time ?? 30 }} days
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="info-box py-2 px-3 border rounded">
+                                <div class="info-label text-muted fs-13">Regions</div>
+                                <div class="info-value">
+
+                                    @php
+                                        $regions = $advertiser->primary_regions ?? [];
+                                    @endphp
+
+                                    @if(count($regions) > 1)
+                                        <span class="badge bg-primary">Multi-Region</span>
+                                    @elseif(count($regions) == 1 && $regions[0] == "00")
+                                        <span class="badge bg-success">Global</span>
+                                    @elseif(count($regions) == 1)
+                                        <span class="fi fi-{{ strtolower($regions[0]) }} me-1"></span>
+                                        {{ $regions[0] }}
+                                    @else
+                                        <span class="text-muted">Not Available</span>
+                                    @endif
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="mb-3">
+                        <label class="fw-600 mb-1">
+                            Promotional Plan <span class="text-muted fs-12">(Optional)</span>
+                        </label>
+                        <textarea class="form-control" rows="4" name="message"
+                            placeholder="Websites, traffic sources, PPC terms, social media, etc."></textarea>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        Apply Now
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
+</div>
+
 
     <!-- .atbd-drawer -->
-    <div class="drawer-basic-wrap right account">
+    {{-- <div class="drawer-basic-wrap right account">
         <div class="atbd-drawer drawer-account d-none">
             <div class="atbd-drawer__header d-flex aling-items-center justify-content-between">
                 <h6 class="drawer-title">Send Message To The Advertiser</h6>
@@ -894,7 +958,7 @@
                 </div>
             </div><!-- ends: .atbd-drawer__body -->
         </div>
-    </div>
+    </div> --}}
     <div class="overlay-dark"></div>
     <div class="overlay-dark-l2"></div>
     <!-- ends: .atbd-drawer -->

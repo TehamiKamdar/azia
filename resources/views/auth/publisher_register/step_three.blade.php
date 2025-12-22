@@ -2,11 +2,8 @@
 
 @section("step_form_content")
 
-    <div class="card checkout-shipping-form">
-        <div class="card-header border-bottom-0 pb-sm-0 pb-1 px-0">
-            <h4 class="font-weight-bold">3. Website Information / Promotional Space</h4>
-        </div>
-        <div class="card-body p-0" data-select2-id="7">
+    <div class="card checkout-shipping-form border-0 bg-gray">
+        <div class="card-body" data-select2-id="7">
             <div class="edit-profile__body" data-select2-id="6">
                 <form id="stepThree" action="javascript:void(0)">
 

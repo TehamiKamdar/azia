@@ -1,6 +1,6 @@
 <?php $__env->startSection("content"); ?>
 
-    <div class=" checkout wizard8 global-shadow border px-sm-50 px-20 mx-auto my-30 bg-white radius-xl w-80" id="signUpForm">
+    <div class="checkout wizard8 global-shadow border px-sm-50 px-20 mx-auto my-30 bg-gray radius-xl w-100" id="signUpForm">
         <div class="notification-wrapper top-right"></div>
 
         <?php if(($isStepOne && !$isStepTwo && !$isStepThree && !$isStepFour) || (!$isStepOne && !$isStepTwo && !$isStepThree && !$isStepFour)): ?>
@@ -459,13 +459,15 @@
 
 <?php $__env->stopPush(); ?>
 
-<?php if (! $__env->hasRenderedOnce('6c468b87-ada0-4c09-acb6-526efe8ac3fe')): $__env->markAsRenderedOnce('6c468b87-ada0-4c09-acb6-526efe8ac3fe');
+<?php if (! $__env->hasRenderedOnce('5ab8ae99-e849-42d3-a313-47d380cfedd8')): $__env->markAsRenderedOnce('5ab8ae99-e849-42d3-a313-47d380cfedd8');
 $__env->startPush('styles'); ?>
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/phone/intlTelInput.css")); ?>">
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/phone/demo.css")); ?>">
     <link rel="stylesheet" href="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/css/select2.min.css")); ?>"/>
     <style>
-
+        .select2-container{
+            height: 40px;
+        }
         .select2-container--default .select2-selection--multiple .select2-selection__choice {
             margin-bottom: 5px;
         }
@@ -476,7 +478,8 @@ $__env->startPush('styles'); ?>
             padding: 20px;
         }
         .iti__selected-flag {
-            height: 48px;
+            height: 40px;
+            background:none!important;
         }
         @media only screen and (max-width: 575px){
             .checkout-progress {
@@ -491,7 +494,7 @@ $__env->startPush('styles'); ?>
     </style>
 <?php $__env->stopPush(); endif; ?>
 
-<?php if (! $__env->hasRenderedOnce('304a9cdc-3d40-48fc-aea1-188ba384f70c')): $__env->markAsRenderedOnce('304a9cdc-3d40-48fc-aea1-188ba384f70c');
+<?php if (! $__env->hasRenderedOnce('665f5f49-3f13-4738-8340-708fd11b266b')): $__env->markAsRenderedOnce('665f5f49-3f13-4738-8340-708fd11b266b');
 $__env->startPush('scripts'); ?>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/phone/intlTelInput.js")); ?>"></script>
     <script src="<?php echo e(\App\Helper\Static\Methods::staticAsset("vendor_assets/js/select2.full.min.js")); ?>"></script>
